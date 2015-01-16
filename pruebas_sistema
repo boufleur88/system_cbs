@@ -1,0 +1,7 @@
+# PRUEBAS DEL SISTEMA CBS INFORMATICA.
+[--]- Personas. Siempre verificar los campos Funcionario, Proveedor, Cliente que solo debe irse S/N. Nunca pueden estar vacios.
+[--]- Personas. Verificar las fechas de nacimiento si estan correctas. 
+[--]- Personas. Realizar varios registros, alteraciones y eliminacion.
+
+
+[--]- Stock. Encontrar errores en los registros de mercaderias.

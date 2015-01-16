@@ -1,0 +1,75 @@
+########################################################################
+					Cristiano Boufleur 05/11/2013.
+########################################################################					
+[OK]- Estandarizar todas los botones para salir de los registros. Hide(); 
+[OK]- Formulario grupo de personas. frm_grupo_per
+[OK]- ERRORES. Menu / Grupo y Subgrupo estan trayendo los mismos datos. Verificar!!!. Estaba cargando el componente equivocado.
+[OK]- Estandarizar todas las conexiones con los bancos de datos. (Camadas); 
+[OK]- Produtos. Registro de productos con campos basicos.
+[OK]- ERRORES. Produtos. Error al registar los produtos en el banco. Tuve problema con el nombre del db nombre del campo estaba erroneo.
+[OK]- ERRORES. Ventana de registro de ciudades inconvenientes para ocultar. Hide(); Problema que a janela estava sendo mostrada con .ShowDialog y ahora .Show. Funciono.
+[OK]- Personas. Registro de personas. Algunos campos como nombre necesitan ser  obligatorios.
+[OK]- Produtos. Algunos campos necesitan ser obligatorios, algunos no permiten valor 0 y null.
+[OK]- Pruebas. Pruebas con los registros de personas y mercaderias.
+
+########################################################################
+					Cristiano Boufleur 08/01/2014.
+########################################################################				
+[OK]- Productos. Obligar en algunos campos solamente dos caracteres si (S) o no (N). 22/01/2014. He sacado este validador porque al alterar los datos me estaba generando un error.
+[OK]- Personas. Cargar list box con ciudades desde banco de datos...23/01/2014.
+[OK]- Personas. Editar los datos y guardar en el banco. 24/01/2014.
+[OK]- Personas. No permitir guarda fechas como 00/01/98; 01/01/98; etc. Capacitacion de los usuarios.
+[OK]- Formularios. Hemos estandarizado los formularios para una resolucion 1024x768.
+[OK]- Formularios. Hemos estandarizado los botones para size 80;30;
+[OK]- Personas. Para las buscas de personas siempre reemplazar los espacios en blanco por % y utilizar LIKE en el banco de datos. 30/01/2014.
+[OK]- Bancos de datos. Relacionar tablas. Personas y Mercaderias. 29/01/2014.
+[OK]- Sistema. Estandarizar ENTER en los textbox. 31/01/2014.
+[OK]- Usuarios. Estandarizar la conexion con el banco de datos de los usuarios. 01/02/2014.
+[OK]- Produtos. Solucionado el error de buscar produtos en el data Table. 04/02/2014.
+[OK]- Personas. Error al buscar los datos. No se puede convertir un objeto de tipo 'System.DBNull' al tipo 'System.String'. 04/02/2014.
+[OK]- Produtos. Grupo, SubGrupo y Marca, implementado .showdialog para registrar desde registro de produtos. 05/02/2014.
+[OK]- Produtos. Grillas. Formatar grillas. 05/02/2014.
+[OK]- Buscas. Optimizado el sistema de las busquedas. 06/02/2014.
+[OK]- Script. Crear script para la instalación del sistema. 06/02/2014.
+[OK]- Instalador. Crear instalador del sistema. 06/02/2014.
+[OK]- Personas. No permitir guardar 2 registros con el mismo nombre. 07/02/2014.
+[OK]- Produtos. No permitir guardar 2 registros con el mismo nombre. 07/02/2014.
+[OK]- Produtos. Marca, Grupo y Subgrupo. No permitir guardar 2 registros con el mismo nombre. 07/02/2014.
+[OK]- Excluir. Traer la opcion de cancelar sin eliminar el registro. 07/02/2014.
+
+########################################################################
+					Cristiano Boufleur 08/02/2014.
+########################################################################	
+[--]- Compras. Formulario para registrar una compra.
+[--]- Compras. Personas. Registrar y Cargar listado de personas.
+[--]- Compras. Produtos. Registrar y Cargar listado de produtos.
+[--]- Compras. Guardar compras.
+
+[--]- Ventas. Formulario para registrar una compra.
+[--]- Ventas. Personas. Registrar y Cargar listado de personas.
+[--]- Ventas. Produtos. Registrar y Cargar listado de produtos.
+[--]- Ventas. Guardar Ventas.
+
+# Compras.
+- prever cuando elimine un item de la lista. Volver a calcular el total.
+- permitir alterar todos los campos menos codigo y descripcion.
+- traer columna de iva para que pueda calcular la cantidad del iva.
+- no permitir facturar sin proveedor u mercaderias.
+- no permitir eliminar una compra ya facturada.
+- no permitir alterar una compra facturada.
+- solo salvar los precios cuando se facture la compra.
+- gurdar fecha de inclusion, fecha de facturacion y fecha de la factura (Libro compra).
+- tener en cuenta el libro compra.
+- imprimir la compra con los datos necesarios. Modelo estandar por texto para que sea de facil configuracion, solo importar las variables.
+
+
+[--]- Informaciones sobre la empresa. Contactos. Direccion. Pagina Web. ETC.
+[--]- Cotizacion. Historico de cotizacion ultimos 15 dias, traer cargado un datagrid con los valores. Opcion de poder alterar solo de la fecha actual.
+[--]- Cotizacion. Guardara en una banco de datos. Opcion de alterar del dia. Traer la cotizacion en la pantalla principal del sistema.
+[--]- Cotizacion. No permitir realizar ninguna operacion sin haber registrado la cotizacion del dia. 
+[--]- Plan de cuenta.
+[--]- Compras. Implementar formulario de compras.
+[--]- Ventas. Implementar formulario de ventas.
+[--]- Documentos a cobrar. Cobros.
+[--]- Documentos a pagar. Pagos.
+[--]- Caja. Gastos y Cierre de caja.
