@@ -6,7 +6,7 @@ using Npgsql;
 using System.Data;
 
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
    class GrupoProdutoDal : GrupoProduto
    {
@@ -145,37 +145,8 @@ namespace cbs_sistema
             _lista.Add(pGrupo);
          }
 
-         conexion.Close();
          return _lista;
       }
-
-      /*
-       Función para buscar mientras escribas en el textbox. Cargar una nueva tabla Datagrid y buscar en la tabla directamente.
-       * query es la consulta.
-       * dataset donde cargara los datos.
-       * tabla es el resulado.
-       */
-      public void Buscar_datos(string query, ref DataSet dstprincipal, string tabla)
-      {
-         try
-         {
-            NpgsqlConnection conexion = Servidor.conectar();
-
-            NpgsqlCommand sql = new NpgsqlCommand(query, conexion);
-
-            NpgsqlDataAdapter dt = new NpgsqlDataAdapter(sql);
-            dt.Fill(dstprincipal, tabla);
-            dt.Dispose();  // detiene cualquier carga adicional en la tabla. 
-
-            conexion.Close();
-
-         }
-         catch (Exception error)
-         {
-            throw error;
-         }
-      }
-
 
    }
 }

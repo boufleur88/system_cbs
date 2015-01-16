@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
    class ProdutoSubGrupoDal : ProdutoSubGrupo
    {
@@ -21,7 +21,6 @@ namespace cbs_sistema
             sql.Parameters.AddWithValue("@st_subgrupo", pSubGrupo.Subgrupo);
 
             sql.ExecuteNonQuery();
-            
             conexion.Close();
             
          }
@@ -45,7 +44,6 @@ namespace cbs_sistema
             dt_adapter.Fill(dt_lista);
 
             conexion.Close();
-            
             return dt_lista;
          }
          catch (Exception error)
@@ -108,7 +106,6 @@ namespace cbs_sistema
             dt_adapter.Fill(dt_buscar);
 
             conexion.Close();
-            
             return dt_buscar;
          }
          catch (Exception error)
@@ -136,33 +133,9 @@ namespace cbs_sistema
 
             _lista.Add(pSubGrupo);
          }
-         conexion.Close();
+
          return _lista;
       }
-
-
-      public void Buscar_datos(string query, ref DataSet dstprincipal, string tabla)
-      {
-         try
-         {
-            NpgsqlConnection conexion = Servidor.conectar();
-
-            //NpgsqlCommand sql = new NpgsqlCommand(string.Format("select id_marca, st_marca from st_marca WHERE st_marca LIKE '%{0}%' order by st_marca", query), conexion);
-            NpgsqlCommand sql = new NpgsqlCommand(query, conexion);
-
-            NpgsqlDataAdapter dt = new NpgsqlDataAdapter(sql);
-            dt.Fill(dstprincipal, tabla);
-            dt.Dispose();  // detiene cualquier carga adicional en la tabla. 
-
-            conexion.Close();
-
-         }
-         catch (Exception error)
-         {
-            throw error;
-         }
-      }
-
 
    }
 }

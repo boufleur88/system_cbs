@@ -8,16 +8,16 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("sistema_cbs")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CBS INFORMATICA")]
-[assembly: AssemblyProduct("CBS SISTEMAS")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("sistema_cbs")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
-[assembly: AssemblyTrademark("CBS")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible como false, los tipos de este ensamblado no estarán visibles 
 // para los componentes COM. Si necesita obtener acceso a un tipo de este ensamblado desde 
 // COM, establezca el atributo ComVisible como true en este tipo.
-[assembly: ComVisible(true)]
+[assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
 [assembly: Guid("01d38a75-68d2-4b60-a63d-7d44b7f0d253")]

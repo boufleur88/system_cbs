@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_tabla_subgrupo : Form
     {
@@ -19,9 +19,6 @@ namespace cbs_sistema
        // VARIABLES.
         String buscar;
         public DataGridViewContentAlignment Alignment { get; set; }
-
-        DataSet resultado = new DataSet();
-        DataView mifiltro;
 
         private void btn_alterar_Click(object sender, EventArgs e)
         {
@@ -45,41 +42,28 @@ namespace cbs_sistema
         public void atualiza_tabla()
         {
            ProdutoSubGrupoDal listar = new ProdutoSubGrupoDal();
-           listar.Buscar_datos("select id_subgrupo, st_subgrupo from st_subgrupo order by id_subgrupo", ref resultado, "st_subgrupo");
-
-           this.mifiltro = ((DataTable)resultado.Tables["st_subgrupo"]).DefaultView;
-
-           this.dt_lista_subgrupo.DataSource = mifiltro;
-
-           dt_lista_subgrupo.Columns["id_subgrupo"].HeaderText = "CODIGO";
-           dt_lista_subgrupo.Columns["id_subgrupo"].Width = 80;
-           dt_lista_subgrupo.Columns["st_subgrupo"].HeaderText = "SUBGRUPO";
-           dt_lista_subgrupo.Columns["st_subgrupo"].Width = 380;
-
-
-           /* antigo metodo de busca.
-           ProdutoSubGrupoDal listar = new ProdutoSubGrupoDal();
            dt_lista_subgrupo.DataSource = listar.listar();
 
            dt_lista_subgrupo.Columns["id_subgrupo"].HeaderText = "CODIGO";
+           
            dt_lista_subgrupo.Columns["st_subgrupo"].HeaderText = "SUBGRUPO";
-            * */
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-           this.Close();
+            frm_reg_subgrupo sub_grupo = new frm_reg_subgrupo();
+            sub_grupo.ShowDialog();
 
-           frm_reg_subgrupo sub_grupo = new frm_reg_subgrupo();
-           sub_grupo.Show();
+            btn_buscar.Focus();
+            
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-           if (MessageBox.Show("ELIMINAR REGISTROS", "ELIMINAR", MessageBoxButtons.OKCancel) == DialogResult.OK)
-           {
-              int codigo;
+           int codigo;
 
+           try
+           {
               if (dt_lista_subgrupo.SelectedRows.Count == 1)
               {
 
@@ -93,14 +77,12 @@ namespace cbs_sistema
                  ProdutoSubGrupoDal excluir = new ProdutoSubGrupoDal();
                  excluir.excluir(obj);
 
-                 this.Close();
-                 frm_tabla_subgrupo fr = new frm_tabla_subgrupo();
-                 fr.Show();
+                 btn_buscar.Focus();
               }
            }
-           else
+           catch (Exception erro)
            {
-              btn_excluir.Focus();
+              MessageBox.Show("ERROR AL GUARDAR PERSONA" + erro);
            }
         }
 
@@ -120,7 +102,7 @@ namespace cbs_sistema
                  obj.codigo = codigo;
                  obj.subgrupo = subgrupo;
 
-                 obj.Show();
+                 obj.ShowDialog();
 
               }
            }
@@ -146,9 +128,19 @@ namespace cbs_sistema
            dt_lista_subgrupo.DataSource = lista.Buscar(buscar);
         }
 
+        private void txt_buscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if (e.KeyChar == Convert.ToChar(Keys.Enter))
+           {
+              btn_buscar.Focus();
+           }
+        }
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
            editar_datos();
+
+           btn_buscar.Focus();
         }
 
         private void btn_nuevo_Leave(object sender, EventArgs e)
@@ -164,27 +156,6 @@ namespace cbs_sistema
         private void btn_excluir_Leave(object sender, EventArgs e)
         {
            atualiza_tabla();
-        }
-
-        private void txt_buscar_KeyUp(object sender, KeyEventArgs e)
-        {
-           string salida_datos = ""; // muestra el resultado final.
-
-           string[] palabras_busqueda = this.txt_buscar.Text.Split(' '); // posibles palabras que el usuario digitara...
-
-           foreach (string palabra in palabras_busqueda)
-           {
-              if (salida_datos.Length == 0)
-              {
-                 salida_datos = "(st_subgrupo LIKE '%" + palabra + "%')";
-              }
-              else
-              {
-                 salida_datos += " AND (st_subgrupo LIKE '%" + palabra + "%')";
-              }
-           }
-
-           this.mifiltro.RowFilter = salida_datos;
         }
 
     }

@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
    partial class frmcotizacion
    {

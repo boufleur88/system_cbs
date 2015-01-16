@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28E5ADFB-DEA1-44D3-A486-BB7FEDC47050}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sistema_cbs</RootNamespace>
+    <AssemblyName>principal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\instalador\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Sirubico-Black-Metal-PC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>80209A636813DF61446856A592B344653ACE0B3C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>principal_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Npgsql2.0.9-bin-ms.net\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\Npgsql2.0.9-bin-ms.net\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.2.0.Npgsql">
+      <HintPath>..\..\Npgsql2.0.9-bin-ms.net\policy.2.0.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cotizacion\frmcotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizacion\frmcotizacion.Designer.cs">
+      <DependentUpon>frmcotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personas\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personas\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personas\frmFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personas\frmFuncionarios.Designer.cs">
+      <DependentUpon>frmFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\Produto.cs" />
+    <Compile Include="Produtos\ProdutoDal.cs" />
+    <Compile Include="ProdutosMarca\ProdutoMarca.cs" />
+    <Compile Include="ProdutosMarca\ProdutoMarcaDal.cs" />
+    <Compile Include="ProdutosGrupo\GrupoProduto.cs" />
+    <Compile Include="ProdutosGrupo\GrupoProdutoDal.cs" />
+    <Compile Include="Presupuesto\frmpresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presupuesto\frmpresupuesto.Designer.cs">
+      <DependentUpon>frmpresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personas\Persona.cs" />
+    <Compile Include="Personas\PersonaDal.cs" />
+    <Compile Include="PersonasCiudad\CiudadDal.cs" />
+    <Compile Include="PersonasCiudad\Ciudad.cs" />
+    <Compile Include="ProdutosSubGrupo\ProdutoSubGrupoDal.cs" />
+    <Compile Include="ProdutosSubGrupo\ProdutoSubGrupo.cs" />
+    <Compile Include="clases\conexao_datos.cs" />
+    <Compile Include="Config\frm_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\frm_backup.Designer.cs">
+      <DependentUpon>frm_backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frm_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_compra.Designer.cs">
+      <DependentUpon>frm_compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonasGrupo\GrupoPersona.cs" />
+    <Compile Include="PersonasGrupo\GrupoPersonaDal.cs" />
+    <Compile Include="clases\Servidor.cs" />
+    <Compile Include="Ventas\frm_ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frm_ventas.Designer.cs">
+      <DependentUpon>frm_ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonasCiudad\frm_reg_ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonasCiudad\frm_reg_ciudad.Designer.cs">
+      <DependentUpon>frm_reg_ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosGrupo\frm_reg_grupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutosGrupo\frm_reg_grupo.Designer.cs">
+      <DependentUpon>frm_reg_grupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonasGrupo\frm_reg_grupo_persona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonasGrupo\frm_reg_grupo_persona.Designer.cs">
+      <DependentUpon>frm_reg_grupo_persona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosMarca\frm_reg_marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutosMarca\frm_reg_marca.Designer.cs">
+      <DependentUpon>frm_reg_marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\frm_reg_productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\frm_reg_productos.Designer.cs">
+      <DependentUpon>frm_reg_productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosSubGrupo\frm_reg_subgrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutosSubGrupo\frm_reg_subgrupo.Designer.cs">
+      <DependentUpon>frm_reg_subgrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonasCiudad\frm_tabla_ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonasCiudad\frm_tabla_ciudad.Designer.cs">
+      <DependentUpon>frm_tabla_ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosGrupo\frm_tabla_grupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutosGrupo\frm_tabla_grupo.Designer.cs">
+      <DependentUpon>frm_tabla_grupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonasGrupo\frm_tabla_grupo_per.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonasGrupo\frm_tabla_grupo_per.Designer.cs">
+      <DependentUpon>frm_tabla_grupo_per.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosMarca\frm_tabla_marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutosMarca\frm_tabla_marca.Designer.cs">
+      <DependentUpon>frm_tabla_marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personas\frm_tabla_personas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personas\frm_tabla_personas.Designer.cs">
+      <DependentUpon>frm_tabla_personas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos\frm_tabla_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos\frm_tabla_stock.Designer.cs">
+      <DependentUpon>frm_tabla_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosSubGrupo\frm_tabla_subgrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutosSubGrupo\frm_tabla_subgrupo.Designer.cs">
+      <DependentUpon>frm_tabla_subgrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clases\modelo_datos.cs" />
+    <Compile Include="Config\frm_control_usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\frm_control_usuario.Designer.cs">
+      <DependentUpon>frm_control_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\frm_lista_usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\frm_lista_usuarios.Designer.cs">
+      <DependentUpon>frm_lista_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_principal.Designer.cs">
+      <DependentUpon>frm_principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personas\frm_registro_personas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personas\frm_registro_personas.Designer.cs">
+      <DependentUpon>frm_registro_personas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\frm_registro_usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\frm_registro_usuario.Designer.cs">
+      <DependentUpon>frm_registro_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clases\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="clases\validar_datos.cs" />
+    <EmbeddedResource Include="Config\frm_control_usuario.resx">
+      <DependentUpon>frm_control_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\frm_lista_usuarios.resx">
+      <DependentUpon>frm_lista_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\frm_backup.resx">
+      <DependentUpon>frm_backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_compra.resx">
+      <DependentUpon>frm_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion\frmcotizacion.resx">
+      <DependentUpon>frmcotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personas\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personas\frmFuncionarios.resx">
+      <DependentUpon>frmFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_principal.resx">
+      <DependentUpon>frm_principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presupuesto\frmpresupuesto.resx">
+      <DependentUpon>frmpresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frm_ventas.resx">
+      <DependentUpon>frm_ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personas\frm_registro_personas.resx">
+      <DependentUpon>frm_registro_personas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\frm_registro_usuario.resx">
+      <DependentUpon>frm_registro_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonasCiudad\frm_reg_ciudad.resx">
+      <DependentUpon>frm_reg_ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutosGrupo\frm_reg_grupo.resx">
+      <DependentUpon>frm_reg_grupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonasGrupo\frm_reg_grupo_persona.resx">
+      <DependentUpon>frm_reg_grupo_persona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutosMarca\frm_reg_marca.resx">
+      <DependentUpon>frm_reg_marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\frm_reg_productos.resx">
+      <DependentUpon>frm_reg_productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutosSubGrupo\frm_reg_subgrupo.resx">
+      <DependentUpon>frm_reg_subgrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonasCiudad\frm_tabla_ciudad.resx">
+      <DependentUpon>frm_tabla_ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutosGrupo\frm_tabla_grupo.resx">
+      <DependentUpon>frm_tabla_grupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonasGrupo\frm_tabla_grupo_per.resx">
+      <DependentUpon>frm_tabla_grupo_per.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutosMarca\frm_tabla_marca.resx">
+      <DependentUpon>frm_tabla_marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personas\frm_tabla_personas.resx">
+      <DependentUpon>frm_tabla_personas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos\frm_tabla_stock.resx">
+      <DependentUpon>frm_tabla_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutosSubGrupo\frm_tabla_subgrupo.resx">
+      <DependentUpon>frm_tabla_subgrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="principal_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PersonasFuncionarios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sirubico-Black-Metal-PC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

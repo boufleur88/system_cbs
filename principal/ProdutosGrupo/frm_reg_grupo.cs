@@ -6,9 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_reg_grupo : Form
     {
@@ -44,43 +43,21 @@ namespace cbs_sistema
 
                  try
                  {
-                      NpgsqlConnection conexion = Servidor.conectar();
-                      NpgsqlCommand sql = new NpgsqlCommand("select * from st_grupo where st_grupo ='" + grupo + "' AND id_grupo != '" + txt_cod_grupo.Text + "'", conexion);
-                      NpgsqlDataReader leer_datos = sql.ExecuteReader();
-               
-                      if (leer_datos.Read())
-                      {
-                         MessageBox.Show("YA EXISTE ESTE REGISTRO");
-                         txt_grupo.BackColor = Color.Aqua;
-                         txt_grupo.Focus();
-               
-                         conexion.Close();
-                      }
-                      else
-                      {
-                         conexion.Close();
+                    GrupoProduto obj = new GrupoProduto();
+                    obj.Id = codigo;
+                    obj.Grupo = grupo;
 
-                         txt_grupo.BackColor = Color.White;
+                    GrupoProdutoDal editar = new GrupoProdutoDal();
+                    editar.alterar(obj);
 
-                         GrupoProduto obj = new GrupoProduto();
-                         obj.Id = codigo;
-                         obj.Grupo = grupo;
-               
-                         GrupoProdutoDal editar = new GrupoProdutoDal();
-                         editar.alterar(obj);
-               
-               
-                         MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
-               
-                         this.Close();
-               
-                         frm_tabla_grupo fr = new frm_tabla_grupo();
-                         fr.Show();
-                      }
+
+                    MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
+
+                    this.Close();
                  }
                  catch (Exception erro)
                  {
-                        MessageBox.Show("ERROR AL GUARDAR" + erro);
+                    MessageBox.Show("Error al guardar ciudad" + erro);
                  }
               }
            }
@@ -102,49 +79,43 @@ namespace cbs_sistema
 
                  try
                  {
-                    NpgsqlConnection conexion = Servidor.conectar();
-                   
-                    NpgsqlCommand sql = new NpgsqlCommand("select * from st_grupo where st_grupo ='"+grupo+"'", conexion);
+                    GrupoProduto obj = new GrupoProduto();
+                    obj.Grupo = grupo;
 
-                    NpgsqlDataReader leer_datos = sql.ExecuteReader();
+                    GrupoProdutoDal gravar = new GrupoProdutoDal();
+                    gravar.gravar(obj);
 
-                    if (leer_datos.Read())
-                      {
-                        MessageBox.Show("YA EXISTE ESTE REGISTRO");
-                        txt_grupo.BackColor = Color.Aqua; 
-                        txt_grupo.Focus();
-         
-                        conexion.Close();
-                     }
-                     else
-                     {
-                        conexion.Close();
 
-                        txt_grupo.BackColor = Color.White;
+                    MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
 
-                        GrupoProduto obj = new GrupoProduto();
-                        obj.Grupo = grupo;
-         
-                        GrupoProdutoDal gravar = new GrupoProdutoDal();
-                        gravar.gravar(obj);
-         
-         
-                        MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
-         
-                        this.Close();
-         
-                        frm_tabla_grupo fr = new frm_tabla_grupo();
-                        fr.Show();
-                     }
+                    this.Close();
                  }
                  catch (Exception erro)
                  {
-                    MessageBox.Show("Error al guardar ciudad" + erro);     
+                    MessageBox.Show("Error al guardar ciudad" + erro);
+                    
                  }
               }
-           }       
+
+           }
+           
         }
     
+
+        public void limpar()
+        {
+            txt_cod_grupo.Text = "";
+            txt_grupo.Text = "";
+            txt_grupo.Focus();
+        }
+
+        
+
+        private void txt_cod_grupo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v1.solonumeros(e);
+        }
+
         private void frm_reg_grupo_Load(object sender, EventArgs e)
         {
            txt_cod_grupo.Text = Convert.ToString(codigo);
@@ -154,20 +125,8 @@ namespace cbs_sistema
         private void btn_salir_Click(object sender, EventArgs e)
         {
            this.Close();
-
-           frm_tabla_grupo fr = new frm_tabla_grupo();
-           fr.Show();
         }
 
-        private void txt_grupo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           if (e.KeyChar == Convert.ToChar(Keys.Enter))
-           {
-              btn_guardar.Focus();
-           }
-        }
-
-       
        
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Npgsql;                       // adicionar com o postgresql.
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_registro_usuario : Form
     {

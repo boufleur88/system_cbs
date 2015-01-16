@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
     partial class frm_tabla_stock
     {
@@ -92,6 +92,7 @@
            // dt_lista_produto
            // 
            this.dt_lista_produto.AllowUserToDeleteRows = false;
+           this.dt_lista_produto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
            this.dt_lista_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
            this.dt_lista_produto.Location = new System.Drawing.Point(5, 69);
            this.dt_lista_produto.Name = "dt_lista_produto";
@@ -129,6 +130,7 @@
            this.btn_historico.TabIndex = 4;
            this.btn_historico.Text = "&HISTORICO";
            this.btn_historico.UseVisualStyleBackColor = true;
+           this.btn_historico.Click += new System.EventHandler(this.btn_historico_Click);
            // 
            // button2
            // 
@@ -169,11 +171,9 @@
            this.txt_buscar.Name = "txt_buscar";
            this.txt_buscar.Size = new System.Drawing.Size(441, 22);
            this.txt_buscar.TabIndex = 51;
-           this.txt_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyUp);
            // 
            // btn_buscar
            // 
-           this.btn_buscar.Enabled = false;
            this.btn_buscar.Location = new System.Drawing.Point(597, 34);
            this.btn_buscar.Name = "btn_buscar";
            this.btn_buscar.Size = new System.Drawing.Size(80, 30);
@@ -260,7 +260,7 @@
            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
            this.Name = "frm_tabla_stock";
            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-           this.Text = "CBS SISTEMA - LISTADO DE PRODUTOS";
+           this.Text = "frm_tabla_stock";
            this.Load += new System.EventHandler(this.frm_tabla_stock_Load);
            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_produto)).EndInit();
            this.ResumeLayout(false);

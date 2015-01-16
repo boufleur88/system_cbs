@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
     partial class frm_tabla_subgrupo
     {
@@ -35,6 +35,7 @@
            this.dt_lista_subgrupo = new System.Windows.Forms.DataGridView();
            this.btn_alterar = new System.Windows.Forms.Button();
            this.label1 = new System.Windows.Forms.Label();
+           this.btn_buscar = new System.Windows.Forms.Button();
            this.txt_buscar = new System.Windows.Forms.TextBox();
            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_subgrupo)).BeginInit();
            this.SuspendLayout();
@@ -43,7 +44,7 @@
            // 
            this.label5.AutoSize = true;
            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           this.label5.Location = new System.Drawing.Point(154, 9);
+           this.label5.Location = new System.Drawing.Point(146, 9);
            this.label5.Name = "label5";
            this.label5.Size = new System.Drawing.Size(222, 20);
            this.label5.TabIndex = 44;
@@ -52,7 +53,7 @@
            // 
            // btn_excluir
            // 
-           this.btn_excluir.Location = new System.Drawing.Point(158, 565);
+           this.btn_excluir.Location = new System.Drawing.Point(159, 538);
            this.btn_excluir.Name = "btn_excluir";
            this.btn_excluir.Size = new System.Drawing.Size(65, 23);
            this.btn_excluir.TabIndex = 43;
@@ -63,7 +64,7 @@
            // 
            // btnAlterar
            // 
-           this.btnAlterar.Location = new System.Drawing.Point(87, 565);
+           this.btnAlterar.Location = new System.Drawing.Point(88, 538);
            this.btnAlterar.Name = "btnAlterar";
            this.btnAlterar.Size = new System.Drawing.Size(65, 23);
            this.btnAlterar.TabIndex = 42;
@@ -74,7 +75,7 @@
            // 
            // btn_nuevo
            // 
-           this.btn_nuevo.Location = new System.Drawing.Point(18, 565);
+           this.btn_nuevo.Location = new System.Drawing.Point(19, 538);
            this.btn_nuevo.Name = "btn_nuevo";
            this.btn_nuevo.Size = new System.Drawing.Size(65, 23);
            this.btn_nuevo.TabIndex = 41;
@@ -86,18 +87,19 @@
            // dt_lista_subgrupo
            // 
            this.dt_lista_subgrupo.AllowUserToDeleteRows = false;
+           this.dt_lista_subgrupo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
            this.dt_lista_subgrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-           this.dt_lista_subgrupo.Location = new System.Drawing.Point(18, 54);
+           this.dt_lista_subgrupo.Location = new System.Drawing.Point(18, 91);
            this.dt_lista_subgrupo.Name = "dt_lista_subgrupo";
            this.dt_lista_subgrupo.ReadOnly = true;
            this.dt_lista_subgrupo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-           this.dt_lista_subgrupo.Size = new System.Drawing.Size(500, 500);
+           this.dt_lista_subgrupo.Size = new System.Drawing.Size(538, 441);
            this.dt_lista_subgrupo.TabIndex = 40;
            this.dt_lista_subgrupo.DoubleClick += new System.EventHandler(this.dt_lista_subgrupo_DoubleClick);
            // 
            // btn_alterar
            // 
-           this.btn_alterar.Location = new System.Drawing.Point(453, 565);
+           this.btn_alterar.Location = new System.Drawing.Point(491, 538);
            this.btn_alterar.Name = "btn_alterar";
            this.btn_alterar.Size = new System.Drawing.Size(65, 23);
            this.btn_alterar.TabIndex = 39;
@@ -109,31 +111,42 @@
            // 
            this.label1.AutoSize = true;
            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           this.label1.Location = new System.Drawing.Point(14, 29);
+           this.label1.Location = new System.Drawing.Point(14, 52);
            this.label1.Name = "label1";
            this.label1.Size = new System.Drawing.Size(140, 20);
            this.label1.TabIndex = 62;
            this.label1.Text = "BUSCAR GRUPO";
            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
            // 
+           // btn_buscar
+           // 
+           this.btn_buscar.Location = new System.Drawing.Point(454, 51);
+           this.btn_buscar.Name = "btn_buscar";
+           this.btn_buscar.Size = new System.Drawing.Size(102, 24);
+           this.btn_buscar.TabIndex = 61;
+           this.btn_buscar.Text = "&BUSCAR";
+           this.btn_buscar.UseVisualStyleBackColor = true;
+           this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+           // 
            // txt_buscar
            // 
            this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           this.txt_buscar.Location = new System.Drawing.Point(163, 29);
+           this.txt_buscar.Location = new System.Drawing.Point(163, 52);
            this.txt_buscar.Margin = new System.Windows.Forms.Padding(0);
            this.txt_buscar.MaxLength = 40;
            this.txt_buscar.Name = "txt_buscar";
-           this.txt_buscar.Size = new System.Drawing.Size(355, 22);
+           this.txt_buscar.Size = new System.Drawing.Size(265, 22);
            this.txt_buscar.TabIndex = 60;
-           this.txt_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyUp);
+           this.txt_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscar_KeyPress);
            // 
            // frm_tabla_subgrupo
            // 
            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-           this.ClientSize = new System.Drawing.Size(550, 600);
+           this.ClientSize = new System.Drawing.Size(576, 571);
            this.Controls.Add(this.label1);
+           this.Controls.Add(this.btn_buscar);
            this.Controls.Add(this.txt_buscar);
            this.Controls.Add(this.label5);
            this.Controls.Add(this.btn_excluir);
@@ -161,6 +174,7 @@
         private System.Windows.Forms.DataGridView dt_lista_subgrupo;
         private System.Windows.Forms.Button btn_alterar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox txt_buscar;
     }
 }

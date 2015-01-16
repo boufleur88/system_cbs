@@ -6,9 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_registro_personas : Form
     {
@@ -49,6 +48,7 @@ namespace cbs_sistema
 
 
        // EVENTOS KEYPRESS DE LOS TEXTBOX.
+        /*
         private void txt_ruc_KeyPress(object sender, KeyPressEventArgs e)
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -57,6 +57,7 @@ namespace cbs_sistema
            }
            v1.solonumeros(e);
         }
+        */
 
         private void txt_cedula_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -173,8 +174,8 @@ namespace cbs_sistema
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
-           // frmTablaPersonasCompra fr = new frmTablaPersonasCompra();
-           // fr.Show();
+           frm_tabla_personas fr = new frm_tabla_personas();
+           fr.Show();
 
            this.Close();
            /*
@@ -208,23 +209,6 @@ namespace cbs_sistema
            }
            else
            {
-              NpgsqlConnection conexion = Servidor.conectar();
-              NpgsqlCommand sql = new NpgsqlCommand("select * from persona where per_nombre ='" + txt_nombre.Text.Trim() + "' AND id_per != '" + txt_codigo.Text + "'", conexion);
-              NpgsqlDataReader leer_datos = sql.ExecuteReader();
-
-              if (leer_datos.Read())
-              {
-                 MessageBox.Show("YA EXISTE ESTE REGISTRO");
-                 txt_nombre.BackColor = Color.Aqua;
-                 txt_nombre.Focus();
-
-                 conexion.Close();
-              }
-              else
-              {
-                 conexion.Close();
-              }
-
               txt_nombre.BackColor = Color.White;
            }
         }
@@ -375,7 +359,7 @@ namespace cbs_sistema
                  editar.alterar(obj);
 
                  this.Close();
-                 frmTablaPersonasCompra fr = new frmTablaPersonasCompra();
+                 frm_tabla_personas fr = new frm_tabla_personas();
                  fr.Show();
                 
               }
@@ -506,7 +490,7 @@ namespace cbs_sistema
                     gravar.gravar(obj);
 
                     this.Close();
-                    frmTablaPersonasCompra fr = new frmTablaPersonasCompra();
+                    frm_tabla_personas fr = new frm_tabla_personas();
                     fr.Show();
                     
                  }

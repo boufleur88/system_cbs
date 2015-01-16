@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
    public partial class frmProveedor : Form
    {
@@ -134,7 +134,7 @@ namespace cbs_sistema
 
                this.Close();
 
-               frmTablaPersonasCompra fr = new frmTablaPersonasCompra();
+               frm_tabla_personas fr = new frm_tabla_personas();
                fr.Show();
 
             }

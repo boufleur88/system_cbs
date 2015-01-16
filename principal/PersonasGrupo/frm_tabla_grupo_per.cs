@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_tabla_grupo_per : Form
     {

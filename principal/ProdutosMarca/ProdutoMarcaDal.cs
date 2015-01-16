@@ -5,10 +5,11 @@ using System.Text;
 using System.Data;
 using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
    class ProdutoMarcaDal : ProdutoMarca
    {
+
       
       // METODOS GRAVA SUB GRUPO PRODUTO
       public void gravar(ProdutoMarca pMarca)
@@ -45,7 +46,6 @@ namespace cbs_sistema
             dt_adapter.Fill(dt_lista);
 
             conexion.Close();
-           
             return dt_lista;
 
          }
@@ -66,7 +66,6 @@ namespace cbs_sistema
             sql.Parameters.AddWithValue("@marca", pMarca.marca);
 
             sql.ExecuteNonQuery();
-            
             conexion.Close();
          }
          catch (Exception erro)
@@ -86,7 +85,6 @@ namespace cbs_sistema
             sql.Parameters.AddWithValue("@codigo", pMarca.codigo);
 
             sql.ExecuteNonQuery();
-            
             conexion.Close();
          }
          catch (Exception error)
@@ -95,7 +93,6 @@ namespace cbs_sistema
          }
       }
 
-      // Botao buscar 
       public DataTable Buscar(string pMarca)
       {
          try
@@ -110,7 +107,6 @@ namespace cbs_sistema
             dt_adapter.Fill(dt_buscar);
 
             conexion.Close();
-            
             return dt_buscar;
 
          }
@@ -119,36 +115,6 @@ namespace cbs_sistema
             throw error;
          }
       }
-
-      /*
-       Función para buscar mientras escribas en el textbox. Cargar una nueva tabla Datagrid y buscar en la tabla directamente.
-       * query es la consulta.
-       * dataset donde cargara los datos.
-       * tabla es el resulado.
-       */
-      public void Buscar_datos(string query, ref DataSet dstprincipal, string tabla) 
-      {
-         try
-         {
-            NpgsqlConnection conexion = Servidor.conectar();
-
-            //NpgsqlCommand sql = new NpgsqlCommand(string.Format("select id_marca, st_marca from st_marca WHERE st_marca LIKE '%{0}%' order by st_marca", query), conexion);
-            NpgsqlCommand sql = new NpgsqlCommand(query, conexion);
-
-            NpgsqlDataAdapter dt = new NpgsqlDataAdapter(sql);
-            dt.Fill(dstprincipal, tabla);
-            dt.Dispose();  // detiene cualquier carga adicional en la tabla. 
-
-            conexion.Close();
-
-         }
-         catch (Exception error)
-         {
-            throw error;
-         }
-      }
-
-
 
       // Metodo carcar combo box marca
       public List<ProdutoMarca> ObtenerLista()
@@ -170,8 +136,6 @@ namespace cbs_sistema
             _lista.Add(pMarca);
          }
 
-         conexion.Close();
-        
          return _lista;
       }
 

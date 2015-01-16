@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_reg_grupo_persona : Form
     {

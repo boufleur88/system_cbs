@@ -1,6 +1,6 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
-    partial class frmTablaPersonasCompra
+    partial class frm_tabla_personas
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -179,7 +179,6 @@
            this.txt_buscar.Size = new System.Drawing.Size(356, 22);
            this.txt_buscar.TabIndex = 60;
            this.txt_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscar_KeyPress);
-           this.txt_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyUp);
            // 
            // button5
            // 
@@ -238,7 +237,7 @@
            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
            this.Name = "frm_tabla_personas";
            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-           this.Text = "TABLA DE PERSONAS";
+           this.Text = "frm_tabla_personas";
            this.Load += new System.EventHandler(this.frm_tabla_personas_Load);
            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).EndInit();
            this.ResumeLayout(false);

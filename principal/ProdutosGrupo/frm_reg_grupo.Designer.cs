@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
     partial class frm_reg_grupo
     {
@@ -80,7 +80,6 @@
            this.txt_grupo.Name = "txt_grupo";
            this.txt_grupo.Size = new System.Drawing.Size(265, 22);
            this.txt_grupo.TabIndex = 0;
-           this.txt_grupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_grupo_KeyPress);
            // 
            // txt_cod_grupo
            // 
@@ -93,6 +92,7 @@
            this.txt_cod_grupo.Name = "txt_cod_grupo";
            this.txt_cod_grupo.Size = new System.Drawing.Size(107, 22);
            this.txt_cod_grupo.TabIndex = 28;
+           this.txt_cod_grupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cod_grupo_KeyPress);
            // 
            // btn_guardar
            // 

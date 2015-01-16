@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.OleDb; // biblioteca para coneccion con datos.
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public class modelo_datos
     {

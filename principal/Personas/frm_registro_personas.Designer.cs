@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
     partial class frm_registro_personas
     {
@@ -450,7 +450,6 @@
            this.txt_ruc.Name = "txt_ruc";
            this.txt_ruc.Size = new System.Drawing.Size(174, 22);
            this.txt_ruc.TabIndex = 1;
-           this.txt_ruc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ruc_KeyPress);
            // 
            // txt_codigo
            // 

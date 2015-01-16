@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
     partial class frm_control_usuario
     {
@@ -131,7 +131,7 @@
            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
            this.Name = "frm_control_usuario";
            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-           this.Text = "CBS SISTEMA";
+           this.Text = "frm_control_usuario";
            this.Load += new System.EventHandler(this.frm_control_usuario_Load);
            this.ResumeLayout(false);
            this.PerformLayout();

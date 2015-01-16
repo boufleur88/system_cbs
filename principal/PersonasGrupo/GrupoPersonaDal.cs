@@ -5,7 +5,7 @@ using System.Text;
 using Npgsql;
 using System.Data;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
    class GrupoPersonaDal:GrupoPersona
    {

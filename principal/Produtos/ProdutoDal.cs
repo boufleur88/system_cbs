@@ -5,11 +5,10 @@ using System.Text;
 using System.Data;
 using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
    class ProdutoDal: Produto
    {
-      
       // METODOS PARA GRAVAR PRODUTOS
       public void gravar(Produto pProduto)
       {
@@ -17,6 +16,7 @@ namespace cbs_sistema
          {
             NpgsqlConnection conexion = Servidor.conectar();
 
+            
             // comando insert sql para o banco                       
             NpgsqlCommand sql = new NpgsqlCommand("insert into produto (pro_ean, pro_orig, pro_fabr, pro_descr, pro_unidad, pro_moneda, pro_iva, pro_costocon, pro_costoadm, pro_ventamay, pro_ventamin, pro_cantmin, pro_obs, id_marca, id_grupo, id_subgrupo) values (@pro_ean, @pro_orig, @pro_fabr, @pro_descr, @pro_unidad, @pro_moneda, @pro_iva, @pro_costocon, @pro_costoadm, @pro_ventamay, @pro_ventamin, @pro_cantmin, @pro_obs, @pro_marca, @pro_grupo, @pro_subgrupo);", conexion);
             sql.Parameters.AddWithValue("@pro_ean", pProduto.ean);
@@ -37,7 +37,6 @@ namespace cbs_sistema
             sql.Parameters.AddWithValue("@pro_subgrupo", pProduto.subgrupo);
 
             sql.ExecuteNonQuery();
-            
             conexion.Close();
          }
          catch (Exception erro)
@@ -57,7 +56,6 @@ namespace cbs_sistema
             sql.Parameters.AddWithValue("@codigo", pProduto.codigo);
 
             sql.ExecuteNonQuery();
-            
             conexion.Close();
          }
          catch (Exception error)
@@ -94,7 +92,6 @@ namespace cbs_sistema
             sql.Parameters.AddWithValue("@costoadm", pProduto.costoadm);
 
             sql.ExecuteNonQuery();
-            
             conexion.Close();
          }
          catch (Exception erro)
@@ -121,7 +118,6 @@ namespace cbs_sistema
             dt_adapter.Fill(dt_lista_produto);
 
             conexion.Close();
-            
             return dt_lista_produto;
          }
          catch (Exception error)
@@ -147,7 +143,6 @@ namespace cbs_sistema
             dt_adapter.Fill(dt_lista);
 
             conexion.Close();
-            
             return dt_lista;
          }
          catch (Exception error)
@@ -202,32 +197,7 @@ namespace cbs_sistema
          }
       }
 */
-      /*
-       Función para buscar mientras escribas en el textbox. Cargar una nueva tabla Datagrid y buscar en la tabla directamente.
-       * query es la consulta.
-       * dataset donde cargara los datos.
-       * tabla es el resulado.
-       */
-      public void Buscar_datos(string query, ref DataSet dstprincipal, string tabla)
-      {
-         try
-         {
-            NpgsqlConnection conexion = Servidor.conectar();
 
-            NpgsqlCommand sql = new NpgsqlCommand(query, conexion);
-
-            NpgsqlDataAdapter dt = new NpgsqlDataAdapter(sql);
-            dt.Fill(dstprincipal, tabla);
-            dt.Dispose();  // detiene cualquier carga adicional en la tabla. 
-
-            conexion.Close();
-
-         }
-         catch (Exception error)
-         {
-            throw error;
-         }
-      }
       
    }
 }

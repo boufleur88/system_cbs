@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     class validar_datos
     {

@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Npgsql;
+using System.Data;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
    class Servidor
    {
+      /*
+       public static MySqlConnection ObtenerConexion()
+        {
+            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=Tutorial; Uid=root; pwd=;");
+           
+                conectar.Open();
+                return conectar;        
+        }
+       */
+
       public static NpgsqlConnection conectar()
       {
          NpgsqlConnection conectar = new NpgsqlConnection("Server=localhost; Port=5432; User id=postgres; Password=kikiu159; Database=cbs_master");

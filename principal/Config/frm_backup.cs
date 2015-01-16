@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO; // biblioteca input ouput
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_backup : Form
     {

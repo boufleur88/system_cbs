@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_reg_marca : Form
     {
@@ -45,40 +45,18 @@ namespace cbs_sistema
 
                       try
                       {
-                         NpgsqlConnection conexion = Servidor.conectar();
-                         NpgsqlCommand sql = new NpgsqlCommand("select * from st_marca where st_marca ='" + marca + "'", conexion);
-                         NpgsqlDataReader leer_datos = sql.ExecuteReader();
+                         ProdutoMarca obj = new ProdutoMarca();
+                         obj.codigo = codigo;
+                         obj.marca = marca;
 
-                         if (leer_datos.Read())
-                         {
-                            txt_marca.BackColor = Color.Aqua;
-                            txt_marca.Focus();
+                          // chamando clase para gravar os dados. 
+                          ProdutoMarcaDal editar = new ProdutoMarcaDal();
+                          editar.alterar(obj);
 
-                            MessageBox.Show("Esta Marca ya existe");
-
-                            conexion.Close();
-                         }
-                         else
-                         {
-                            conexion.Close();
-
-                            txt_marca.BackColor = Color.White;
-
-                            ProdutoMarca obj = new ProdutoMarca();
-                            obj.codigo = codigo;
-                            obj.marca = marca;
-
-                            // chamando clase para gravar os dados. 
-                            ProdutoMarcaDal editar = new ProdutoMarcaDal();
-                            editar.alterar(obj);
-
-                            MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
-
-                            this.Close();
-
-                            frm_tabla_marca fr = new frm_tabla_marca();
-                            fr.Show();
-                         }
+                          MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
+                          
+                         this.Close();
+                         
                       }
                       catch (Exception erro)
                       {
@@ -104,42 +82,16 @@ namespace cbs_sistema
 
                       try
                       {
+                         ProdutoMarca obj = new ProdutoMarca();
+                         obj.marca = marca;
 
-                         NpgsqlConnection conexion = Servidor.conectar();
-                   
-                         NpgsqlCommand sql = new NpgsqlCommand("select * from st_marca where st_marca ='"+marca+"'", conexion);
+                         // chamando clase para gravar os dados. 
+                         ProdutoMarcaDal gravar = new ProdutoMarcaDal();
+                         gravar.gravar(obj);
 
-                         NpgsqlDataReader leer_datos = sql.ExecuteReader();
+                          MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
 
-                         if (leer_datos.Read())
-                         {
-                            txt_marca.BackColor = Color.Aqua;
-                            txt_marca.Focus();
-
-                            MessageBox.Show("Esta Marca ya existe");
-
-                            conexion.Close();
-                         }
-                         else 
-                         {
-                            conexion.Close();
-
-                            txt_marca.BackColor = Color.White;
-
-                            ProdutoMarca obj = new ProdutoMarca();
-                            obj.marca = marca;
-
-                            // chamando clase para gravar os dados. 
-                            ProdutoMarcaDal gravar = new ProdutoMarcaDal();
-                            gravar.gravar(obj);
-
-                             MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
-
-                             this.Close();
-
-                             frm_tabla_marca fr = new frm_tabla_marca();
-                             fr.Show();
-                         }
+                         this.Close();
                       }
                       catch (Exception erro)
                       {
@@ -149,13 +101,21 @@ namespace cbs_sistema
            }
         }
 
+
+        public void limpar()
+        {
+            txt_cod_marca.Text = "";
+            txt_marca.Text = "";
+            txt_marca.Focus();
+        }
+
         private void btn_alterar_Click(object sender, EventArgs e)
         {
-           Close(); 
-           
-           frm_tabla_marca fr = new frm_tabla_marca();
-           fr.Show();
-            
+           this.Close();
+           // frm_tabla_marca fr = new frm_tabla_marca();
+           // fr.Show();
+           // this.Hide();
+
         }
 
         private void txt_cod_marca_KeyPress(object sender, KeyPressEventArgs e)
@@ -178,9 +138,9 @@ namespace cbs_sistema
            }
         }
 
-        
-
-
-
+        private void btn_guardar_Leave(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

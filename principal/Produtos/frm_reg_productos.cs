@@ -6,9 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_reg_productos : Form
     {
@@ -18,26 +17,24 @@ namespace cbs_sistema
         }
 
         validar_datos v1 = new validar_datos();
-        
-       public int codigo;
-       public string ean, original, fabricante, grupo, subgrupo, marca, aplicacion, descripcion, iva, moneda, observacion, medida, stminimo;
-       public Double costo_adm, costo_cont, ventamay, ventamin;
+        public int codigo;
+        public string ean, original, fabricante, grupo, subgrupo, marca, aplicacion, descripcion, iva, moneda, observacion, medida, stminimo;
+        public Double costo_adm, costo_cont, ventamay, ventamin;
 
 
         private void btn_alterar_Click(object sender, EventArgs e)
         {
-            //frm_tabla_stock fr = new frm_tabla_stock();
-            //fr.Show();
-
-           this.Close();
+            frm_tabla_stock fr = new frm_tabla_stock();
+            fr.Show();
+            this.Hide();
         }
 
         private void frm_reg_productos_Load(object sender, EventArgs e)
         {
            // verifico si o codigo e igual a cero ou distinto que zero.
            txt_codigo.Text = Convert.ToString(codigo);
-
-
+           
+             
            if (txt_codigo.Text != "0")
            {
 
@@ -70,7 +67,7 @@ namespace cbs_sistema
               txt_descripcion.Text = Convert.ToString(descripcion);
               txt_costoadmin.Text = Convert.ToString(costo_adm);
               txt_costocont.Text = Convert.ToString(costo_cont);
-              txt_ventamay.Text = Convert.ToString(ventamay);
+              txt_ventamay.Text = Convert.ToString(ventamay); 
               txt_ventamin.Text = Convert.ToString(ventamin);
               txt_obser.Text = Convert.ToString(observacion);
               txt_iva.Text = Convert.ToString(iva);
@@ -85,13 +82,13 @@ namespace cbs_sistema
               txt_costoadmin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costoadmin.Text));
               txt_costocont.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costocont.Text));
            }
+           
 
-
-           else
-           {
-              // Carga para gravar.
+           else 
+           { 
+               // Carga para gravar.
               // CARREGAR COMBO MARCA.
-
+              
               ProdutoMarcaDal ls_marca = new ProdutoMarcaDal();
 
               cmbmarca.DataSource = ls_marca.ObtenerLista();
@@ -110,7 +107,7 @@ namespace cbs_sistema
               cmbsubgrupo.DataSource = ls_subgrupo.ObtenerLista();
               cmbsubgrupo.ValueMember = "Id";
               cmbsubgrupo.DisplayMember = "Subgrupo";
-
+              
               txt_codigo.Text = Convert.ToString(codigo);
               txt_ean.Text = Convert.ToString(ean);
               txt_fabricante.Text = Convert.ToString(fabricante);
@@ -123,8 +120,12 @@ namespace cbs_sistema
               txt_obser.Text = Convert.ToString(observacion);
               txt_iva.Text = Convert.ToString(iva);
               txt_medida.Text = Convert.ToString(medida);
-
-           }        
+              
+           }
+           
+           
+           
+          
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -532,25 +533,8 @@ namespace cbs_sistema
             }
             else
             {
-               NpgsqlConnection conexion = Servidor.conectar();
-               NpgsqlCommand sql = new NpgsqlCommand("select * from produto where pro_descr ='" + txt_descripcion.Text.Trim() + "' AND id_produto != '"+txt_codigo.Text+"'", conexion);
-               NpgsqlDataReader leer_datos = sql.ExecuteReader();
-
-               if (leer_datos.Read())
-               {
-                  MessageBox.Show("YA EXISTE ESTE REGISTRO");
-                  txt_descripcion.BackColor = Color.Aqua;
-                  txt_descripcion.Focus();
-
-                  conexion.Close();
-               }
-               else
-               {
-                  //conexion.Close();
-               }
-
                 txt_descripcion.BackColor = Color.White;
-            }           
+            }
         }
 
         private void btnmarca_Click(object sender, EventArgs e)
@@ -650,19 +634,23 @@ namespace cbs_sistema
 
         private void btnMarca_Click_1(object sender, EventArgs e)
         {
-           frmRegMarcaPersonas fr = new frmRegMarcaPersonas();
+           
+           frm_reg_marca fr = new frm_reg_marca();
            fr.ShowDialog();
+
+
         }
 
         private void btnGrupo_Click_1(object sender, EventArgs e)
         {
-           frmRegSubgrupoProduto fr = new frmRegSubgrupoProduto();
+           frm_reg_grupo fr = new frm_reg_grupo( );
            fr.ShowDialog();
+
         }
 
         private void btnSubGrupo_Click_1(object sender, EventArgs e)
         {
-           frmRegSubgrupoProduto fr = new frmRegSubgrupoProduto();
+           frm_reg_subgrupo fr = new frm_reg_subgrupo();
            fr.ShowDialog();
         }
 

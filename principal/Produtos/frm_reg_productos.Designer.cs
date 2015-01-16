@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
     partial class frm_reg_productos
     {
@@ -235,7 +235,7 @@
            this.txt_descripcion.Margin = new System.Windows.Forms.Padding(0);
            this.txt_descripcion.MaxLength = 79;
            this.txt_descripcion.Name = "txt_descripcion";
-           this.txt_descripcion.Size = new System.Drawing.Size(542, 22);
+           this.txt_descripcion.Size = new System.Drawing.Size(508, 22);
            this.txt_descripcion.TabIndex = 3;
            this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
            this.txt_descripcion.Leave += new System.EventHandler(this.txt_descripcion_Leave);
@@ -306,7 +306,7 @@
            this.txt_obser.MaxLength = 499;
            this.txt_obser.Multiline = true;
            this.txt_obser.Name = "txt_obser";
-           this.txt_obser.Size = new System.Drawing.Size(692, 124);
+           this.txt_obser.Size = new System.Drawing.Size(658, 124);
            this.txt_obser.TabIndex = 17;
            // 
            // label12
@@ -602,7 +602,7 @@
            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
            this.Name = "frm_reg_productos";
            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-           this.Text = "REGISTRO DE MERCADERIAS";
+           this.Text = "frm_reg_productos";
            this.Load += new System.EventHandler(this.frm_reg_productos_Load);
            this.ResumeLayout(false);
            this.PerformLayout();

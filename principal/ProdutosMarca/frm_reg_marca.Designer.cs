@@ -1,4 +1,4 @@
-﻿namespace cbs_sistema
+﻿namespace sistema_cbs
 {
     partial class frm_reg_marca
     {
@@ -104,6 +104,7 @@
            this.btn_guardar.Text = "&GUARDAR";
            this.btn_guardar.UseVisualStyleBackColor = true;
            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+           this.btn_guardar.Leave += new System.EventHandler(this.btn_guardar_Leave);
            // 
            // btn_alterar
            // 

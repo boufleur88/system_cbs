@@ -29,44 +29,19 @@
 [OK]- Personas. Error al buscar los datos. No se puede convertir un objeto de tipo 'System.DBNull' al tipo 'System.String'. 04/02/2014.
 [OK]- Produtos. Grupo, SubGrupo y Marca, implementado .showdialog para registrar desde registro de produtos. 05/02/2014.
 [OK]- Produtos. Grillas. Formatar grillas. 05/02/2014.
-[OK]- Buscas. Optimizado el sistema de las busquedas. 06/02/2014.
-[OK]- Script. Crear script para la instalación del sistema. 06/02/2014.
-[OK]- Instalador. Crear instalador del sistema. 06/02/2014.
-[OK]- Personas. No permitir guardar 2 registros con el mismo nombre. 07/02/2014.
-[OK]- Produtos. No permitir guardar 2 registros con el mismo nombre. 07/02/2014.
-[OK]- Produtos. Marca, Grupo y Subgrupo. No permitir guardar 2 registros con el mismo nombre. 07/02/2014.
-[OK]- Excluir. Traer la opcion de cancelar sin eliminar el registro. 07/02/2014.
 
-########################################################################
-					Cristiano Boufleur 08/02/2014.
-########################################################################	
-[--]- Compras. Formulario para registrar una compra.
-[--]- Compras. Personas. Registrar y Cargar listado de personas.
-[--]- Compras. Produtos. Registrar y Cargar listado de produtos.
-[--]- Compras. Guardar compras.
 
-[--]- Ventas. Formulario para registrar una compra.
-[--]- Ventas. Personas. Registrar y Cargar listado de personas.
-[--]- Ventas. Produtos. Registrar y Cargar listado de produtos.
-[--]- Ventas. Guardar Ventas.
+[--]- Personas. No permitir guardar 2 registros con el mismo nombre.
+[--]- Excluir. Traer la opcion de cancelar sin eliminar el registro.
 
-# Compras.
-- prever cuando elimine un item de la lista. Volver a calcular el total.
-- permitir alterar todos los campos menos codigo y descripcion.
-- traer columna de iva para que pueda calcular la cantidad del iva.
-- no permitir facturar sin proveedor u mercaderias.
-- no permitir eliminar una compra ya facturada.
-- no permitir alterar una compra facturada.
-- solo salvar los precios cuando se facture la compra.
-- gurdar fecha de inclusion, fecha de facturacion y fecha de la factura (Libro compra).
-- tener en cuenta el libro compra.
-- imprimir la compra con los datos necesarios. Modelo estandar por texto para que sea de facil configuracion, solo importar las variables.
 
 
 [--]- Informaciones sobre la empresa. Contactos. Direccion. Pagina Web. ETC.
+
 [--]- Cotizacion. Historico de cotizacion ultimos 15 dias, traer cargado un datagrid con los valores. Opcion de poder alterar solo de la fecha actual.
 [--]- Cotizacion. Guardara en una banco de datos. Opcion de alterar del dia. Traer la cotizacion en la pantalla principal del sistema.
 [--]- Cotizacion. No permitir realizar ninguna operacion sin haber registrado la cotizacion del dia. 
+
 [--]- Plan de cuenta.
 [--]- Compras. Implementar formulario de compras.
 [--]- Ventas. Implementar formulario de ventas.

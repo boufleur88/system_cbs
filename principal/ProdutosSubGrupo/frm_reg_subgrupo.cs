@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Npgsql;
 
-namespace cbs_sistema
+namespace sistema_cbs
 {
     public partial class frm_reg_subgrupo : Form
     {
@@ -45,41 +45,18 @@ namespace cbs_sistema
 
                  try
                  {
-                      NpgsqlConnection conexion = Servidor.conectar();
-                
-                      NpgsqlCommand sql = new NpgsqlCommand("select * from st_subgrupo where st_subgrupo ='"+subgrupo+"' ' AND id_subgrupo != '" + txt_cod_subgrupo.Text + "'", conexion);
-               
-                      NpgsqlDataReader leer_datos = sql.ExecuteReader();
+                    ProdutoSubGrupo obj = new ProdutoSubGrupo();
+                    obj.Id = codigo;
+                    obj.Subgrupo = subgrupo;
 
-                      if (leer_datos.Read())
-                      {
-                         MessageBox.Show("YA EXISTE ESTE REGISTRO");
-                         txt_subgrupo.BackColor = Color.Aqua;
-                         txt_subgrupo.Focus();
+                    // chamando clase para gravar os dados. 
+                    ProdutoSubGrupoDal editar = new ProdutoSubGrupoDal();
+                    editar.alterar(obj);
 
-                         conexion.Close();
-                      }
-                      else
-                      {
-                         conexion.Close();
+                    MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
 
-                         txt_subgrupo.BackColor = Color.White;
+                    this.Close();
 
-                         ProdutoSubGrupo obj = new ProdutoSubGrupo();
-                         obj.Id = codigo;
-                         obj.Subgrupo = subgrupo;
-
-                         // chamando clase para gravar os dados. 
-                         ProdutoSubGrupoDal editar = new ProdutoSubGrupoDal();
-                         editar.alterar(obj);
-
-                         MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
-
-                         this.Close();
-
-                         frm_tabla_subgrupo fr = new frm_tabla_subgrupo();
-                         fr.Show();
-                      }
                  }
                  catch (Exception erro)
                  {
@@ -108,40 +85,16 @@ namespace cbs_sistema
 
                  try
                  {
-                      NpgsqlConnection conexion = Servidor.conectar();
-                
-                      NpgsqlCommand sql = new NpgsqlCommand("select * from st_subgrupo where st_subgrupo ='"+subgrupo+"'", conexion);
-               
-                      NpgsqlDataReader leer_datos = sql.ExecuteReader();
+                    ProdutoSubGrupo obj = new ProdutoSubGrupo();
+                    obj.Subgrupo = subgrupo;
 
-                      if (leer_datos.Read())
-                      {
-                         MessageBox.Show("YA EXISTE ESTE REGISTRO");
-                         txt_subgrupo.BackColor = Color.Aqua;
-                         txt_subgrupo.Focus();
+                    // chamando clase para gravar os dados. 
+                    ProdutoSubGrupoDal gravar = new ProdutoSubGrupoDal();
+                    gravar.gravar(obj);
 
-                         conexion.Close();
-                      }
-                      else
-                      {
-                         conexion.Close();
+                    MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
 
-                         txt_subgrupo.BackColor = Color.White;
-
-                         ProdutoSubGrupo obj = new ProdutoSubGrupo();
-                         obj.Subgrupo = subgrupo;
-
-                         // chamando clase para gravar os dados. 
-                         ProdutoSubGrupoDal gravar = new ProdutoSubGrupoDal();
-                         gravar.gravar(obj);
-
-                         MessageBox.Show("OPERACION REALIZADA EXITOSAMENTE");
-
-                         this.Close();
-
-                         frm_tabla_subgrupo fr = new frm_tabla_subgrupo();
-                         fr.Show();
-                      }
+                    this.Close();
                  }
                  catch (Exception erro)
                  {
@@ -152,6 +105,14 @@ namespace cbs_sistema
            }
         }
 
+        public void limpar()
+        {
+            txt_cod_subgrupo.Text = "";
+            txt_subgrupo.Text = "";
+            txt_subgrupo.Focus();
+        }
+       
+
         private void txt_cod_subgrupo_KeyPress(object sender, KeyPressEventArgs e)
         {
             v1.solonumeros(e);
@@ -160,9 +121,6 @@ namespace cbs_sistema
         private void btn_salir_Click(object sender, EventArgs e)
         {
            this.Close();
-
-           frm_tabla_subgrupo fr = new frm_tabla_subgrupo();
-           fr.Show();
         }
 
         private void frm_reg_subgrupo_Load(object sender, EventArgs e)
