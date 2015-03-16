@@ -48,3 +48,11 @@
 [--]- Documentos a cobrar. Cobros.
 [--]- Documentos a pagar. Pagos.
 [--]- Caja. Gastos y Cierre de caja.
+
+########################################################################
+# Datatable 
+AllowUserToResizeColumns 	= false
+AllowUserToResizeRows 		= false
+Multiselect					= false
+ReadOnly					= false
+AlternatingRowsDefaultCellStyle

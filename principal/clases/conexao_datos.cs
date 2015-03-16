@@ -142,6 +142,7 @@ namespace sistema_cbs
                 conexao = new NpgsqlConnection(conexao_banco);
                 // executa a instrucao 
                 NpgsqlCommand sql_produtos = new NpgsqlCommand("select id_pro, pro_descr, pro_ventamay, pro_ventamin, pro_orig, pro_fabr, pro_marca, pro_grupo, pro_subgrupo, pro_ean, pro_unidad, pro_cantmin, pro_moneda, pro_iva, pro_obs, pro_costocon, pro_costoadm from produto order by id_pro", conexao);
+               
                 NpgsqlDataAdapter dt_adapter_produto = new NpgsqlDataAdapter();
                 dt_adapter_produto.SelectCommand = sql_produtos;
 
