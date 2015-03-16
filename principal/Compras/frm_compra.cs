@@ -20,5 +20,10 @@ namespace sistema_cbs
         {
             Close();
         }
+
+        private void btn_ticket_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

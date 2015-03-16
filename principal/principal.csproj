@@ -87,6 +87,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras\Compra.cs" />
+    <Compile Include="Compras\CompraDal.cs" />
     <Compile Include="Cotizacion\frmcotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
