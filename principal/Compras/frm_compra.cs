@@ -16,14 +16,14 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
+        public int codigo;
+        public string persona, fantasia, direccion, telefono, ruc, observacion;
+        public Double cantidad, costoadm, costocont, ventamay, ventamin;
+
+
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btn_ticket_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

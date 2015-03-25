@@ -103,7 +103,6 @@
             this.dt_lista_produto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dt_lista_produto.Size = new System.Drawing.Size(1012, 630);
             this.dt_lista_produto.TabIndex = 0;
-            this.dt_lista_produto.DoubleClick += new System.EventHandler(this.dt_lista_produto_DoubleClick);
             // 
             // btn_salir
             // 

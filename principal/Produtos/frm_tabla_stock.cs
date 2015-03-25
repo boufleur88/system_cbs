@@ -214,7 +214,6 @@ namespace sistema_cbs
               formata_tabla();
            }
         }
-
        
     }
 }

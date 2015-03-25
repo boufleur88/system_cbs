@@ -119,12 +119,8 @@ namespace sistema_cbs
               txt_ventamin.Text = Convert.ToString(ventamin);
               txt_obser.Text = Convert.ToString(observacion);
               txt_iva.Text = Convert.ToString(iva);
-              txt_medida.Text = Convert.ToString(medida);
-              
+              txt_medida.Text = Convert.ToString(medida);  
            }
-           
-           
-           
           
         }
 
