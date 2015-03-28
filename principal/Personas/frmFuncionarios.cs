@@ -104,7 +104,7 @@ namespace sistema_cbs
       private void editar_datos()
       {
          int codigo;
-         string nombre, fantasia, cedula, ruc, tel1, tel2, email, direccion, fnacimento, pais, clt, prov, func, obs, ciudad;
+         string nombre, fantasia, cedula, ruc, tel1, tel2, email, direccion, fnacimento, clt, prov, func, obs, ciudad;
 
          // per_clt, per_prov, per_func, per_obs
          try
@@ -121,12 +121,11 @@ namespace sistema_cbs
                email = Convert.ToString(dt_lista.CurrentRow.Cells[7].Value);
                direccion = Convert.ToString(dt_lista.CurrentRow.Cells[8].Value);
                ciudad = Convert.ToString(dt_lista.CurrentRow.Cells[9].Value);
-               pais = Convert.ToString(dt_lista.CurrentRow.Cells[10].Value);
-               fnacimento = Convert.ToString(dt_lista.CurrentRow.Cells[11].Value);
-               clt = Convert.ToString(dt_lista.CurrentRow.Cells[12].Value);
-               prov = Convert.ToString(dt_lista.CurrentRow.Cells[13].Value);
-               func = Convert.ToString(dt_lista.CurrentRow.Cells[14].Value);
-               obs = Convert.ToString(dt_lista.CurrentRow.Cells[15].Value);
+               fnacimento = Convert.ToString(dt_lista.CurrentRow.Cells[10].Value);
+               clt = Convert.ToString(dt_lista.CurrentRow.Cells[11].Value);
+               prov = Convert.ToString(dt_lista.CurrentRow.Cells[12].Value);
+               func = Convert.ToString(dt_lista.CurrentRow.Cells[13].Value);
+               obs = Convert.ToString(dt_lista.CurrentRow.Cells[14].Value);
 
                this.Close();
 
@@ -141,7 +140,6 @@ namespace sistema_cbs
                obj.correo = email;
                obj.direccion = direccion;
                obj.ciudad = ciudad;
-               obj.pais = pais;
                obj.fnacimento = fnacimento;
                obj.clt = clt;
                obj.prov = prov;
@@ -170,12 +168,12 @@ namespace sistema_cbs
          dt_lista.Columns["per_email"].HeaderText = "EMAIL";
          dt_lista.Columns["per_dir"].HeaderText = "DIRECCION";
          dt_lista.Columns["per_ciudad"].HeaderText = "CIUDAD";
-         dt_lista.Columns["per_pais"].HeaderText = "PAIS";
          dt_lista.Columns["per_nac"].HeaderText = "F. NACIMIENTO";
          dt_lista.Columns["per_clt"].HeaderText = "CLIENTE";
          dt_lista.Columns["per_prov"].HeaderText = "PROVEEDOR";
          dt_lista.Columns["per_func"].HeaderText = "FUNCIONARIO";
          dt_lista.Columns["per_obs"].HeaderText = "OBSERVACION";
+         dt_lista.Columns["per_obs"].Visible = false;
 
       }
 

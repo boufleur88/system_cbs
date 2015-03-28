@@ -14,7 +14,6 @@ namespace sistema_cbs
       public string cedula { get; set; }
       public string direccion { get; set; }
       public string ciudad { get; set; }
-      public string pais { get; set; }
       public string tel1 { get; set; }
       public string tel2 { get; set; }
       public string email { get; set; }
@@ -24,12 +23,11 @@ namespace sistema_cbs
       public string observacion { get; set; }
       public string nacimento { get; set; }
 
-
         // metodo constructor
         public Persona() 
         { }
 
-        public Persona(int pId, string pNombre, string pRuc, string pFantasia, string pCedula, string pDireccion, string pCiudad, string pPais, string pTel1, string pTel2, string pEmail, string pCliente, string pProveedor, string pFuncionario, string pObservacion, string pNacimiento)
+        public Persona(int pId, string pNombre, string pRuc, string pFantasia, string pCedula, string pDireccion, string pCiudad, string pTel1, string pTel2, string pEmail, string pCliente, string pProveedor, string pFuncionario, string pObservacion, string pNacimiento)
         {
             this.id = pId;
             this.nombre = pNombre;
@@ -38,7 +36,6 @@ namespace sistema_cbs
             this.cedula = pCedula;
             this.direccion = pDireccion;
             this.ciudad = pCiudad;
-            this.pais = pPais;
             this.tel1 = pTel1;
             this.tel2 = pTel2;
             this.email = pEmail;

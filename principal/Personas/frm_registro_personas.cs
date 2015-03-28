@@ -21,7 +21,7 @@ namespace sistema_cbs
 
         // VARIABLES DEL REGISTRO DE PERSONAS.
         public int codigo;
-        public String ruc, cedula, nombre, fantasia, direccion, tel1, tel2, correo, pais, fnacimento, clt, prov, obs, func, ciudad;
+        public String ruc, cedula, nombre, fantasia, direccion, tel1, tel2, correo, fnacimento, clt, prov, obs, func, ciudad;
 
         private void frm_reg_personas_Load(object sender, EventArgs e)
         {
@@ -38,12 +38,10 @@ namespace sistema_cbs
            txt_direccion.Text = Convert.ToString(direccion);
            txt_nacimiento.Text = Convert.ToString(fnacimento);
            txtCiudad.Text = Convert.ToString(ciudad);
-           txtPais.Text = Convert.ToString(pais);
            txt_cliente.Text = Convert.ToString(clt);
            txt_proveedor.Text = Convert.ToString(prov);
            txt_funcionario.Text = Convert.ToString(func);
            txt_observacion.Text = Convert.ToString(obs);
-
         }
 
 
@@ -114,18 +112,10 @@ namespace sistema_cbs
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
            {
-              txtPais.Focus();
+               txt_nacimiento.Focus();
            }
 
            v1.solonumeros(e);
-        }
-
-        private void txtPais_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           if (e.KeyChar == Convert.ToChar(Keys.Enter))
-           {
-              txt_nacimiento.Focus();
-           }
         }
 
         private void txt_nacimiento_KeyPress(object sender, KeyPressEventArgs e)
@@ -169,8 +159,7 @@ namespace sistema_cbs
               btn_guardar.Focus();
            }
         }
-
-        
+               
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
@@ -296,12 +285,6 @@ namespace sistema_cbs
                     ciudad = ciudad.Trim();
                  }
 
-                 // PAIS
-                 if (txtPais.Text == "")
-                    pais = "PY";
-                 else
-                    pais = txtPais.Text.ToString();
-
                  // CLIENTE
                  if (txt_cliente.Text == "")
                  {
@@ -334,7 +317,6 @@ namespace sistema_cbs
                     func = txt_funcionario.Text.ToString();
                  }
 
-
                  // instancio o modelo datos y gravo via get y set.
                  PersonaDal obj = new PersonaDal();
                  obj.id = codigo;
@@ -351,7 +333,6 @@ namespace sistema_cbs
                  obj.proveedor = prov;
                  obj.funcionario = func;
                  obj.observacion = obs;
-                 obj.pais = pais;
                  obj.ciudad = ciudad;
 
                  // chamando clase para gravar os dados. 
@@ -422,12 +403,6 @@ namespace sistema_cbs
                     ciudad = ciudad.Trim();
                  }
 
-                 // PAIS
-                 if (txtPais.Text == "")
-                    pais = "PY";
-                 else
-                    pais = txtPais.Text.ToString();
-
                  // CLIENTE
                  if (txt_cliente.Text == "")
                  {
@@ -482,7 +457,6 @@ namespace sistema_cbs
                     obj.proveedor = prov;
                     obj.funcionario = func;
                     obj.observacion = obs;
-                    obj.pais = pais;
                     obj.ciudad = ciudad;
 
                     // chamando clase para gravar os dados. 

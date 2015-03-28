@@ -102,6 +102,7 @@ namespace sistema_cbs
 
 
       // METODO LISTA PRODUTOS.
+       // A mesma consulta direto no banco demora 34ms y no C# 3 segundos.
       public DataTable listar()
       {
          try

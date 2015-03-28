@@ -32,11 +32,24 @@ namespace sistema_cbs
 
         private void frm_tabla_personas_Load(object sender, EventArgs e)
         {
-           PersonaDal lista = new PersonaDal();
-           dt_lista_personas.DataSource = lista.lista_personas();
-
-           formata_tabla();
+           txt_buscar.Focus();
+           btn_alterar.Visible = true;
+           btn_buscar.Visible = true;
+           btn_nuevo.Visible = true;
+           btn_excluir.Enabled = false;
+            
+           dt_lista_personas.Visible = true;
            
+        }
+
+
+
+        private void llamar_tabla()
+        {
+            PersonaDal lista = new PersonaDal();
+            dt_lista_personas.DataSource = lista.lista_personas();
+
+            formata_tabla();
         }
 
         private void formata_tabla()
@@ -53,14 +66,18 @@ namespace sistema_cbs
            dt_lista_personas.Columns["per_email"].HeaderText = "EMAIL";
            dt_lista_personas.Columns["per_dir"].HeaderText = "DIRECCION";
            dt_lista_personas.Columns["per_ciudad"].HeaderText = "CIUDAD";
-           dt_lista_personas.Columns["per_pais"].HeaderText = "PAIS";
            dt_lista_personas.Columns["per_nac"].HeaderText = "F. NACIMIENTO";
            dt_lista_personas.Columns["per_clt"].HeaderText = "CLIENTE";
+           
+           // Ocultar Campos
            dt_lista_personas.Columns["per_prov"].HeaderText = "PROVEEDOR";
+           dt_lista_personas.Columns["per_prov"].Visible = false;
            dt_lista_personas.Columns["per_func"].HeaderText = "FUNCIONARIO";
+           dt_lista_personas.Columns["per_func"].Visible = false;
            dt_lista_personas.Columns["per_obs"].HeaderText = "OBSERVACION";
+           dt_lista_personas.Columns["per_obs"].Visible = false;
 
-
+           dt_lista_personas.Visible = true;
         }
 
 
@@ -73,7 +90,7 @@ namespace sistema_cbs
         private void editar_datos()
         {
            int codigo;
-           string nombre, fantasia, cedula, ruc, tel1, tel2, email, direccion, fnacimento, pais, clt, prov, func, obs, ciudad;
+           string nombre, fantasia, cedula, ruc, tel1, tel2, email, direccion, fnacimento, clt, prov, func, obs, ciudad;
 
            // per_clt, per_prov, per_func, per_obs
            try
@@ -90,12 +107,11 @@ namespace sistema_cbs
                  email = Convert.ToString(dt_lista_personas.CurrentRow.Cells[7].Value);
                  direccion = Convert.ToString(dt_lista_personas.CurrentRow.Cells[8].Value);
                  ciudad = Convert.ToString(dt_lista_personas.CurrentRow.Cells[9].Value);
-                 pais = Convert.ToString(dt_lista_personas.CurrentRow.Cells[10].Value);
-                 fnacimento = Convert.ToString(dt_lista_personas.CurrentRow.Cells[11].Value);
-                 clt = Convert.ToString(dt_lista_personas.CurrentRow.Cells[12].Value);
-                 prov = Convert.ToString(dt_lista_personas.CurrentRow.Cells[13].Value);
-                 func = Convert.ToString(dt_lista_personas.CurrentRow.Cells[14].Value);
-                 obs = Convert.ToString(dt_lista_personas.CurrentRow.Cells[15].Value);
+                 fnacimento = Convert.ToString(dt_lista_personas.CurrentRow.Cells[10].Value);
+                 clt = Convert.ToString(dt_lista_personas.CurrentRow.Cells[11].Value);
+                 prov = Convert.ToString(dt_lista_personas.CurrentRow.Cells[12].Value);
+                 func = Convert.ToString(dt_lista_personas.CurrentRow.Cells[13].Value);
+                 obs = Convert.ToString(dt_lista_personas.CurrentRow.Cells[14].Value);
 
                  this.Close();
 
@@ -110,7 +126,6 @@ namespace sistema_cbs
                  obj.correo = email;
                  obj.direccion = direccion;
                  obj.ciudad = ciudad;
-                 obj.pais = pais;
                  obj.fnacimento = fnacimento;
                  obj.clt = clt;
                  obj.prov = prov;
@@ -188,5 +203,6 @@ namespace sistema_cbs
               btn_buscar.Focus();
            }
         }
+       
     }
 }

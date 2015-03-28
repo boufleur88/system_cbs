@@ -284,6 +284,7 @@
             this.Name = "frm_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COMPRAS CONTADO Y CREDITO";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

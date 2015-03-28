@@ -28,24 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_alterar = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.dt_lista_personas = new System.Windows.Forms.DataGridView();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_historico = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +56,8 @@
             // 
             // btn_excluir
             // 
-            this.btn_excluir.Location = new System.Drawing.Point(181, 704);
+            this.btn_excluir.Location = new System.Drawing.Point(848, 34);
+            this.btn_excluir.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(80, 30);
             this.btn_excluir.TabIndex = 3;
@@ -72,7 +67,8 @@
             // 
             // btn_alterar
             // 
-            this.btn_alterar.Location = new System.Drawing.Point(97, 704);
+            this.btn_alterar.Location = new System.Drawing.Point(764, 34);
+            this.btn_alterar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(80, 30);
             this.btn_alterar.TabIndex = 2;
@@ -82,7 +78,8 @@
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(14, 704);
+            this.btn_nuevo.Location = new System.Drawing.Point(681, 34);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(80, 30);
             this.btn_nuevo.TabIndex = 1;
@@ -95,22 +92,26 @@
             this.dt_lista_personas.AllowUserToDeleteRows = false;
             this.dt_lista_personas.AllowUserToResizeColumns = false;
             this.dt_lista_personas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_personas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dt_lista_personas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dt_lista_personas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dt_lista_personas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dt_lista_personas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dt_lista_personas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_lista_personas.Location = new System.Drawing.Point(6, 68);
+            this.dt_lista_personas.Location = new System.Drawing.Point(26, 80);
+            this.dt_lista_personas.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.dt_lista_personas.MultiSelect = false;
             this.dt_lista_personas.Name = "dt_lista_personas";
             this.dt_lista_personas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dt_lista_personas.Size = new System.Drawing.Size(1012, 630);
+            this.dt_lista_personas.Size = new System.Drawing.Size(1282, 796);
             this.dt_lista_personas.TabIndex = 0;
             this.dt_lista_personas.DoubleClick += new System.EventHandler(this.dt_lista_personas_DoubleClick);
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(930, 704);
+            this.btn_salir.Location = new System.Drawing.Point(1097, 34);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(80, 30);
             this.btn_salir.TabIndex = 8;
@@ -118,17 +119,10 @@
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(430, 704);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(347, 704);
+            this.button2.Location = new System.Drawing.Point(1014, 34);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 30);
             this.button2.TabIndex = 5;
@@ -137,20 +131,13 @@
             // 
             // btn_historico
             // 
-            this.btn_historico.Location = new System.Drawing.Point(264, 704);
+            this.btn_historico.Location = new System.Drawing.Point(931, 34);
+            this.btn_historico.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_historico.Name = "btn_historico";
             this.btn_historico.Size = new System.Drawing.Size(80, 30);
             this.btn_historico.TabIndex = 4;
             this.btn_historico.Text = "&HISTORICO";
             this.btn_historico.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(513, 704);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 7;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -185,52 +172,14 @@
             this.txt_buscar.TabIndex = 60;
             this.txt_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_buscar_KeyPress);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(762, 704);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 30);
-            this.button5.TabIndex = 64;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(679, 704);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 30);
-            this.button6.TabIndex = 65;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(596, 704);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(80, 30);
-            this.button7.TabIndex = 66;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(846, 704);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 30);
-            this.button4.TabIndex = 67;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // frm_tabla_personas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 740);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.ClientSize = new System.Drawing.Size(1341, 906);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_buscar);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_historico);
             this.Controls.Add(this.label5);
@@ -243,6 +192,7 @@
             this.Name = "frm_tabla_personas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_tabla_personas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_tabla_personas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).EndInit();
             this.ResumeLayout(false);
@@ -258,16 +208,10 @@
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.DataGridView dt_lista_personas;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_historico;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox txt_buscar;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button4;
     }
 }

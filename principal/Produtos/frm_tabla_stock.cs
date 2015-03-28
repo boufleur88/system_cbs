@@ -214,6 +214,11 @@ namespace sistema_cbs
               formata_tabla();
            }
         }
+
+        private void frm_tabla_stock_Shown(object sender, EventArgs e)
+        {
+            
+        }
        
     }
 }

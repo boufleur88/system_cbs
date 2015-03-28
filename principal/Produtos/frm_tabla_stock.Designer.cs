@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_alterar = new System.Windows.Forms.Button();
@@ -93,8 +93,8 @@
             // dt_lista_produto
             // 
             this.dt_lista_produto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dt_lista_produto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dt_lista_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dt_lista_produto.Location = new System.Drawing.Point(5, 69);
@@ -263,7 +263,9 @@
             this.Name = "frm_tabla_stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_tabla_stock";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_tabla_stock_Load);
+            this.Shown += new System.EventHandler(this.frm_tabla_stock_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
