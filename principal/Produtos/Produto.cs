@@ -17,9 +17,6 @@ namespace sistema_cbs
       public int grupo { get; set; }
       public int subgrupo { get; set; }
       
-      public String ean { get; set; }
-      public String orig { get; set; }
-      public String fabr { get; set; }
       public String descr { get; set; }
       public String unidad { get; set; }
       public String observacion { get; set; }
@@ -38,7 +35,7 @@ namespace sistema_cbs
       public Produto()
       { }
 
-      public Produto(int pCodigo, int pMoneda, int pIva, int pStminimo, int pMarca, int pGrupo, int pSubGrupo, String pEan, String pFabr, String pOrig, String pDescr, String pUnidad, String pObs, Double pCostoAdm, Double pCostocon, Double pVentamay, Double pVentamin, String Nmarca, String Ngrupo, String Nsubgrupo)
+      public Produto(int pCodigo, int pMoneda, int pIva, int pStminimo, int pMarca, int pGrupo, int pSubGrupo, String pDescr, String pUnidad, String pObs, Double pCostoAdm, Double pCostocon, Double pVentamay, Double pVentamin, String Nmarca, String Ngrupo, String Nsubgrupo)
       {
          this.codigo = pCodigo;
          this.moneda = pMoneda;
@@ -46,10 +43,7 @@ namespace sistema_cbs
          this.st_minimo = pStminimo;
          this.marca = pMarca;
          this.grupo = pGrupo;
-         this.subgrupo = pSubGrupo;
-         this.ean = pEan;
-         this.fabr = pFabr;
-         this.orig = pOrig;
+         this.subgrupo = pSubGrupo;         
          this.descr = pDescr;
          this.unidad = pUnidad;
          this.observacion = pObs;

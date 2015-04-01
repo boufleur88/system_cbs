@@ -18,7 +18,7 @@ namespace sistema_cbs
 
         validar_datos v1 = new validar_datos();
         public int codigo;
-        public string ean, original, fabricante, grupo, subgrupo, marca, aplicacion, descripcion, iva, moneda, observacion, medida, stminimo;
+        public string grupo, subgrupo, marca, aplicacion, descripcion, iva, moneda, observacion, medida, stminimo;
         public Double costo_adm, costo_cont, ventamay, ventamin;
 
 
@@ -61,9 +61,6 @@ namespace sistema_cbs
               // MessageBox.Show("DISTINTO DE CERO");
 
               txt_codigo.Text = Convert.ToString(codigo);
-              txt_ean.Text = Convert.ToString(ean);
-              txt_fabricante.Text = Convert.ToString(fabricante);
-              txt_original.Text = Convert.ToString(original);
               txt_descripcion.Text = Convert.ToString(descripcion);
               txt_costoadmin.Text = Convert.ToString(costo_adm);
               txt_costocont.Text = Convert.ToString(costo_cont);
@@ -72,7 +69,6 @@ namespace sistema_cbs
               txt_obser.Text = Convert.ToString(observacion);
               txt_iva.Text = Convert.ToString(iva);
               txt_medida.Text = Convert.ToString(medida);
-
               cmbmarca.Text = Convert.ToString(marca);
               cmbgrupo.Text = Convert.ToString(grupo);
               cmbsubgrupo.Text = Convert.ToString(subgrupo);
@@ -109,9 +105,6 @@ namespace sistema_cbs
               cmbsubgrupo.DisplayMember = "Subgrupo";
               
               txt_codigo.Text = Convert.ToString(codigo);
-              txt_ean.Text = Convert.ToString(ean);
-              txt_fabricante.Text = Convert.ToString(fabricante);
-              txt_original.Text = Convert.ToString(original);
               txt_descripcion.Text = Convert.ToString(descripcion);
               txt_costoadmin.Text = Convert.ToString(costo_adm);
               txt_costocont.Text = Convert.ToString(costo_cont);
@@ -121,12 +114,11 @@ namespace sistema_cbs
               txt_iva.Text = Convert.ToString(iva);
               txt_medida.Text = Convert.ToString(medida);  
            }
-          
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            String ean, fabric, orig, descr, medida, obs;
+            String descr, medida, obs;
             int moneda, iva, stmin, marca, grupo, subgrupo;
             Double coscont, cosadm, venmay, venmin;
 
@@ -188,21 +180,6 @@ namespace sistema_cbs
                       txt_medida.Text = "UN";
                   }
 
-                  // Codigo Ean
-                  ean = txt_ean.Text.ToString();
-                  ean = ean.ToUpper();
-                  ean = ean.Trim();
-
-                  // Codigo Original.
-                  orig = txt_original.Text.ToString();
-                  orig = orig.ToUpper();
-                  orig = orig.Trim();
-
-                  // Codigo Fabricante
-                  fabric = txt_fabricante.Text.ToString();
-                  fabric = fabric.ToUpper();
-                  fabric = fabric.Trim();
-
                   // Descripcion del Producto.
                   descr = txt_descripcion.Text.ToString();
                   descr = descr.ToUpper();
@@ -252,9 +229,6 @@ namespace sistema_cbs
                   {
                      Produto obj = new Produto();
                      obj.codigo = codigo;
-                     obj.ean = ean;
-                     obj.orig = orig;
-                     obj.fabr = fabric;
                      obj.descr = descr;
                      obj.unidad = medida;
                      obj.moneda = moneda;
@@ -342,21 +316,6 @@ namespace sistema_cbs
                          txt_medida.Text = "UN";
                      }
 
-                     // Codigo Ean
-                     ean = txt_ean.Text.ToString();
-                     ean = ean.ToUpper();
-                     ean = ean.Trim();
-
-                     // Codigo Original.
-                     orig = txt_original.Text.ToString();
-                     orig = orig.ToUpper();
-                     orig = orig.Trim();
-
-                     // Codigo Fabricante
-                     fabric = txt_fabricante.Text.ToString();
-                     fabric = fabric.ToUpper();
-                     fabric = fabric.Trim();
-
                      // Descripcion del Producto.
                      descr = txt_descripcion.Text.ToString();
                      descr = descr.ToUpper();
@@ -402,9 +361,6 @@ namespace sistema_cbs
                      try
                      {
                         Produto obj = new Produto();
-                        obj.ean = ean;
-                        obj.orig = orig;
-                        obj.fabr = fabric;
                         obj.descr = descr;
                         obj.unidad = medida;
                         obj.moneda = moneda;
@@ -552,30 +508,6 @@ namespace sistema_cbs
         }
 
        // EVENTOS KEY PRESS
-        private void txt_ean_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           if (e.KeyChar == Convert.ToChar(Keys.Enter))
-           {
-              txt_fabricante.Focus();
-           }
-        }
-
-        private void txt_fabricante_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           if (e.KeyChar == Convert.ToChar(Keys.Enter))
-           {
-              txt_original.Focus();
-           }
-        }
-
-        private void txt_original_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           if (e.KeyChar == Convert.ToChar(Keys.Enter))
-           {
-              txt_descripcion.Focus();
-           }
-        }
-
         private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -633,8 +565,6 @@ namespace sistema_cbs
            
            frm_reg_marca fr = new frm_reg_marca();
            fr.ShowDialog();
-
-
         }
 
         private void btnGrupo_Click_1(object sender, EventArgs e)
@@ -675,9 +605,7 @@ namespace sistema_cbs
            cmbsubgrupo.DataSource = ls_subgrupo.ObtenerLista();
            cmbsubgrupo.ValueMember = "Id";
            cmbsubgrupo.DisplayMember = "Subgrupo";
-
         }
 
-        
     }
 }

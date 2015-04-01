@@ -49,23 +49,23 @@ namespace sistema_cbs
            dt_lista_produto.Columns["pro_ventamin"].HeaderText = "VENTA MINORISTA";
            dt_lista_produto.Columns["pro_ventamin"].DefaultCellStyle.Format = "N0";
            dt_lista_produto.Columns["pro_ventamin"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-           dt_lista_produto.Columns["pro_orig"].HeaderText = "ORIGINAL";
-           dt_lista_produto.Columns["pro_fabr"].HeaderText = "FABRICANTE";
            dt_lista_produto.Columns["st_marca"].HeaderText = "MARCA";
            dt_lista_produto.Columns["st_grupo"].HeaderText = "GRUPO";
            dt_lista_produto.Columns["st_subgrupo"].HeaderText = "SUBGRUPO";
-           dt_lista_produto.Columns["pro_ean"].HeaderText = "EAN";
            dt_lista_produto.Columns["pro_unidad"].HeaderText = "UNIDAD MEDIDA";
            dt_lista_produto.Columns["pro_cantmin"].HeaderText = "STOCK MINIMO";
            dt_lista_produto.Columns["pro_moneda"].HeaderText = "MONEDA";
            dt_lista_produto.Columns["pro_iva"].HeaderText = "IVA";
            dt_lista_produto.Columns["pro_obs"].HeaderText = "OBSERVACION";
+           // dt_lista_produto.Columns["pro_obs"].Visible = false;
            dt_lista_produto.Columns["pro_costocon"].HeaderText = "COSTO CONTABLE";
            dt_lista_produto.Columns["pro_costocon"].DefaultCellStyle.Format = "N0";
            dt_lista_produto.Columns["pro_costocon"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+           dt_lista_produto.Columns["pro_costocon"].Visible = false;
            dt_lista_produto.Columns["pro_costoadm"].HeaderText = "COSTO ADMINISTRATIVO";
            dt_lista_produto.Columns["pro_costoadm"].DefaultCellStyle.Format = "N0";
            dt_lista_produto.Columns["pro_costoadm"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+           dt_lista_produto.Columns["pro_costoadm"].Visible = false;
 
         }
 
@@ -116,7 +116,7 @@ namespace sistema_cbs
         private void editar_datos()
         {
            int codigo;
-           string original, fabricante, grupo, subgrupo, marca, descripcion, iva, moneda, observacion, medida, ean, stminimo;
+           string grupo, subgrupo, marca, descripcion, iva, moneda, observacion, medida, stminimo;
            Double costo_adm, costo_cont, ventamay, ventamin;
 
            try
@@ -128,33 +128,27 @@ namespace sistema_cbs
                  descripcion = Convert.ToString(dt_lista_produto.CurrentRow.Cells[1].Value);
                  ventamay = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[2].Value);
                  ventamin = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[3].Value);
-                 original = Convert.ToString(dt_lista_produto.CurrentRow.Cells[4].Value);
-                 fabricante = Convert.ToString(dt_lista_produto.CurrentRow.Cells[5].Value);
-                 marca = Convert.ToString(dt_lista_produto.CurrentRow.Cells[6].Value);
-                 grupo = Convert.ToString(dt_lista_produto.CurrentRow.Cells[7].Value);
-                 subgrupo = Convert.ToString(dt_lista_produto.CurrentRow.Cells[8].Value);
-                 ean = Convert.ToString(dt_lista_produto.CurrentRow.Cells[9].Value);
-                 medida = Convert.ToString(dt_lista_produto.CurrentRow.Cells[10].Value);
-                 stminimo = Convert.ToString(dt_lista_produto.CurrentRow.Cells[11].Value);
-                 moneda = Convert.ToString(dt_lista_produto.CurrentRow.Cells[12].Value);
-                 iva = Convert.ToString(dt_lista_produto.CurrentRow.Cells[13].Value);
-                 observacion = Convert.ToString(dt_lista_produto.CurrentRow.Cells[14].Value);
-                 costo_adm = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[16].Value);
-                 costo_cont = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[15].Value);
+                 marca = Convert.ToString(dt_lista_produto.CurrentRow.Cells[4].Value);
+                 grupo = Convert.ToString(dt_lista_produto.CurrentRow.Cells[5].Value);
+                 subgrupo = Convert.ToString(dt_lista_produto.CurrentRow.Cells[6].Value);
+                 medida = Convert.ToString(dt_lista_produto.CurrentRow.Cells[7].Value);
+                 stminimo = Convert.ToString(dt_lista_produto.CurrentRow.Cells[8].Value);
+                 moneda = Convert.ToString(dt_lista_produto.CurrentRow.Cells[9].Value);
+                 iva = Convert.ToString(dt_lista_produto.CurrentRow.Cells[10].Value);
+                 observacion = Convert.ToString(dt_lista_produto.CurrentRow.Cells[11].Value);
+                 costo_adm = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[12].Value);
+                 costo_cont = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[13].Value);
 
                  this.Close();
 
                  frm_reg_productos obj = new frm_reg_productos();
                  obj.codigo = codigo;
                  obj.descripcion = descripcion;
-                 obj.original = original;
                  obj.ventamay = ventamay;
                  obj.ventamin = ventamin;
-                 obj.fabricante = fabricante;
                  obj.marca = marca;
                  obj.grupo = grupo;
                  obj.subgrupo = subgrupo;
-                 obj.ean = ean;
                  obj.medida = medida;
                  obj.moneda = moneda;
                  obj.iva = iva;
@@ -215,10 +209,6 @@ namespace sistema_cbs
            }
         }
 
-        private void frm_tabla_stock_Shown(object sender, EventArgs e)
-        {
-            
-        }
        
     }
 }
