@@ -78,7 +78,7 @@ namespace sistema_cbs
 
         private void cONTADOCREDITOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_compra fr = new frm_compra();
+            frm_tabla_compra fr = new frm_tabla_compra();
             fr.Show();
         }
 

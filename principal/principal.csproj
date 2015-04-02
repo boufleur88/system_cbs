@@ -95,6 +95,12 @@
     <Compile Include="Cotizacion\frmcotizacion.Designer.cs">
       <DependentUpon>frmcotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frm_tabla_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frm_tabla_compra.Designer.cs">
+      <DependentUpon>frm_tabla_compra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personas\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cotizacion\frmcotizacion.resx">
       <DependentUpon>frmcotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frm_tabla_compra.resx">
+      <DependentUpon>frm_tabla_compra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personas\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>

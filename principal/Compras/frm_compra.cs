@@ -25,5 +25,22 @@ namespace sistema_cbs
         {
             Close();
         }
+
+        private void frm_compra_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            frm_tabla_personas fr = new frm_tabla_personas();
+            fr.Show();
+        }
+
+        private void btn_productos_Click(object sender, EventArgs e)
+        {
+            frm_tabla_stock fr = new frm_tabla_stock();
+            fr.Show();
+        }
     }
 }

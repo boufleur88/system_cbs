@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_alterar = new System.Windows.Forms.Button();
             this.btn_1 = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnmostrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_produto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,8 +77,8 @@
             // dt_lista_produto
             // 
             this.dt_lista_produto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dt_lista_produto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dt_lista_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dt_lista_produto.Location = new System.Drawing.Point(9, 69);
@@ -120,7 +121,7 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(1014, 34);
+            this.btn_sair.Location = new System.Drawing.Point(1094, 34);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(80, 30);
             this.btn_sair.TabIndex = 7;
@@ -160,11 +161,22 @@
             this.label1.Text = "DESCRIPCION";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnmostrar
+            // 
+            this.btnmostrar.Location = new System.Drawing.Point(1011, 34);
+            this.btnmostrar.Name = "btnmostrar";
+            this.btnmostrar.Size = new System.Drawing.Size(80, 30);
+            this.btnmostrar.TabIndex = 54;
+            this.btnmostrar.Text = "TABLA";
+            this.btnmostrar.UseVisualStyleBackColor = true;
+            this.btnmostrar.Click += new System.EventHandler(this.btnmostrar_Click);
+            // 
             // frm_tabla_stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1741, 936);
+            this.Controls.Add(this.btnmostrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_buscar);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnmostrar;
     }
 }

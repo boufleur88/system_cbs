@@ -397,6 +397,7 @@
             // 
             // cmbmarca
             // 
+            this.cmbmarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbmarca.FormattingEnabled = true;
             this.cmbmarca.Location = new System.Drawing.Point(189, 112);
             this.cmbmarca.Name = "cmbmarca";
@@ -406,6 +407,7 @@
             // 
             // cmbgrupo
             // 
+            this.cmbgrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbgrupo.FormattingEnabled = true;
             this.cmbgrupo.Location = new System.Drawing.Point(189, 142);
             this.cmbgrupo.Name = "cmbgrupo";
@@ -415,6 +417,7 @@
             // 
             // cmbsubgrupo
             // 
+            this.cmbsubgrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbsubgrupo.FormattingEnabled = true;
             this.cmbsubgrupo.Location = new System.Drawing.Point(189, 172);
             this.cmbsubgrupo.Name = "cmbsubgrupo";

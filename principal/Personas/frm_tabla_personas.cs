@@ -32,14 +32,10 @@ namespace sistema_cbs
 
         private void frm_tabla_personas_Load(object sender, EventArgs e)
         {
-           txt_buscar.Focus();
-           btn_alterar.Visible = true;
-           btn_buscar.Visible = true;
-           btn_nuevo.Visible = true;
-           btn_excluir.Enabled = false;
-            
-           dt_lista_personas.Visible = true;
-           
+            PersonaDal ls = new PersonaDal();
+            dt_lista_personas.DataSource = ls.lista_algunos();
+
+            formata_tabla();
         }
 
 
@@ -54,6 +50,7 @@ namespace sistema_cbs
 
         private void formata_tabla()
         {
+            
            // FORMATEA EL DATATABLE
            // id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_pais, per_nac
            dt_lista_personas.Columns["id_per"].HeaderText = "CODIGO";
@@ -188,6 +185,8 @@ namespace sistema_cbs
            { 
               PersonaDal lista = new PersonaDal();
               dt_lista_personas.DataSource = lista.Buscar(buscar,buscar);
+
+              formata_tabla();
            }
         }
 

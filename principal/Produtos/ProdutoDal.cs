@@ -120,7 +120,30 @@ namespace sistema_cbs
             throw error;
          }
       }
-      
+
+      public DataTable listar_algunos()
+      {
+          try
+          {
+              NpgsqlConnection conexion = Servidor.conectar();
+
+              // executa a instrucao 
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT produto.id_produto, produto.pro_descr, produto.pro_ventamay, produto.pro_ventamin, st_marca.st_marca, st_grupo.st_grupo, st_subgrupo.st_subgrupo, produto.pro_unidad, produto.pro_cantmin, produto.pro_moneda, produto.pro_iva, produto.pro_obs, pro_costocon, produto.pro_costoadm FROM produto, st_grupo, st_marca, st_subgrupo WHERE produto.id_grupo = st_grupo.id_grupo AND produto.id_marca = st_marca.id_marca AND produto.id_subgrupo = st_subgrupo.id_subgrupo AND produto.id_produto < 100 ORDER BY produto.id_produto", conexion);
+
+              NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
+              dt_adapter.SelectCommand = sql;
+
+              DataTable ls = new DataTable();
+              dt_adapter.Fill(ls);
+
+              conexion.Close();
+              return ls;
+          }
+          catch (Exception error)
+          {
+              throw error;
+          }
+      }
 
       // METODO BUSCAR...
       public DataTable Buscar(string produto)

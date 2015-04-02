@@ -33,10 +33,10 @@ namespace sistema_cbs
 
         private void frm_tabla_stock_Load(object sender, EventArgs e)
         {
-           ProdutoDal listar = new ProdutoDal();
-           dt_lista_produto.DataSource = listar.listar();
+            ProdutoDal ls = new ProdutoDal();
+            dt_lista_produto.DataSource = ls.listar_algunos();
 
-           formata_tabla();
+            formata_tabla();
         }
 
         private void formata_tabla()
@@ -207,6 +207,14 @@ namespace sistema_cbs
 
               formata_tabla();
            }
+        }
+
+        private void btnmostrar_Click(object sender, EventArgs e)
+        {
+            ProdutoDal listar = new ProdutoDal();
+            dt_lista_produto.DataSource = listar.listar();
+
+            formata_tabla();
         }
 
        

@@ -180,3 +180,4 @@ C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_c
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\principal.csproj.GenerateResource.Cache
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\principal.exe.manifest
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\principal.application
+C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frm_tabla_compra.resources

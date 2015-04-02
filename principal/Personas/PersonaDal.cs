@@ -104,6 +104,33 @@ namespace sistema_cbs
             throw error;
          }
       }
+
+      // METODO LISTA PERSONAS.
+      public DataTable lista_algunos()
+      {
+          try
+          {
+              NpgsqlConnection conexion = Servidor.conectar();
+
+              // executa a instrucao 
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs FROM persona WHERE id_per < 100 ORDER BY id_per", conexion);
+              NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
+              dt_adapter_personas.SelectCommand = sql;
+
+
+              DataTable dt_lista_algunos = new DataTable();
+              dt_adapter_personas.Fill(dt_lista_algunos);
+
+              conexion.Close();
+              return dt_lista_algunos;
+
+          }
+          catch (Exception error)
+          {
+              throw error;
+          }
+      }
+
       
       // EXCLUIR DATOS...
       public void excluir(Persona persona)
