@@ -484,7 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(800, 493);
             this.Controls.Add(this.btnGrupo);
             this.Controls.Add(this.btnSubGrupo);
             this.Controls.Add(this.btnMarca);
@@ -525,7 +525,6 @@
             this.Name = "frm_reg_productos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_reg_productos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_reg_productos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,10 +16,99 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
+        // Declaraciones de variables.
         validar_datos v1 = new validar_datos();
         public int codigo;
         public string grupo, subgrupo, marca, aplicacion, descripcion, iva, moneda, observacion, medida, stminimo;
         public Double costo_adm, costo_cont, ventamay, ventamin;
+
+
+        private void frm_reg_productos_Load(object sender, EventArgs e)
+        {
+            // verifico si o codigo e igual a cero ou distinto que zero.
+            txt_codigo.Text = Convert.ToString(codigo);
+
+
+            if (txt_codigo.Text != "0")
+            {
+
+                ProdutoMarcaDal ls_marca = new ProdutoMarcaDal();
+
+                cmbmarca.DataSource = ls_marca.ObtenerLista();
+                cmbmarca.ValueMember = "codigo";
+                cmbmarca.DisplayMember = "marca";
+
+                GrupoProdutoDal ls_grupo = new GrupoProdutoDal();
+
+                cmbgrupo.DataSource = ls_grupo.ObtenerListaGrupo();
+                cmbgrupo.ValueMember = "Id";
+                cmbgrupo.DisplayMember = "Grupo";
+
+
+                ProdutoSubGrupoDal ls_subgrupo = new ProdutoSubGrupoDal();
+
+                cmbsubgrupo.DataSource = ls_subgrupo.ObtenerLista();
+                cmbsubgrupo.ValueMember = "Id";
+                cmbsubgrupo.DisplayMember = "Subgrupo";
+
+                // Carga para EDITAR.
+                // MessageBox.Show("DISTINTO DE CERO");
+
+                txt_codigo.Text = Convert.ToString(codigo);
+                txt_descripcion.Text = Convert.ToString(descripcion);
+                txt_costoadmin.Text = Convert.ToString(costo_adm);
+                txt_costocont.Text = Convert.ToString(costo_cont);
+                txt_ventamay.Text = Convert.ToString(ventamay);
+                txt_ventamin.Text = Convert.ToString(ventamin);
+                txt_obser.Text = Convert.ToString(observacion);
+                txt_iva.Text = Convert.ToString(iva);
+                txt_medida.Text = Convert.ToString(medida);
+                cmbmarca.Text = Convert.ToString(marca);
+                cmbgrupo.Text = Convert.ToString(grupo);
+                cmbsubgrupo.Text = Convert.ToString(subgrupo);
+
+                txt_ventamay.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamay.Text));
+                txt_ventamin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamin.Text));
+                txt_costoadmin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costoadmin.Text));
+                txt_costocont.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costocont.Text));
+            }
+
+
+            else
+            {
+                // Carga para gravar.
+                // CARREGAR COMBO MARCA.
+
+                ProdutoMarcaDal ls_marca = new ProdutoMarcaDal();
+
+                cmbmarca.DataSource = ls_marca.ObtenerLista();
+                cmbmarca.ValueMember = "codigo";
+                cmbmarca.DisplayMember = "marca";
+
+                GrupoProdutoDal ls_grupo = new GrupoProdutoDal();
+
+                cmbgrupo.DataSource = ls_grupo.ObtenerListaGrupo();
+                cmbgrupo.ValueMember = "Id";
+                cmbgrupo.DisplayMember = "Grupo";
+
+
+                ProdutoSubGrupoDal ls_subgrupo = new ProdutoSubGrupoDal();
+
+                cmbsubgrupo.DataSource = ls_subgrupo.ObtenerLista();
+                cmbsubgrupo.ValueMember = "Id";
+                cmbsubgrupo.DisplayMember = "Subgrupo";
+
+                txt_codigo.Text = Convert.ToString(codigo);
+                txt_descripcion.Text = Convert.ToString(descripcion);
+                txt_costoadmin.Text = Convert.ToString(costo_adm);
+                txt_costocont.Text = Convert.ToString(costo_cont);
+                txt_ventamay.Text = Convert.ToString(ventamay);
+                txt_ventamin.Text = Convert.ToString(ventamin);
+                txt_obser.Text = Convert.ToString(observacion);
+                txt_iva.Text = Convert.ToString(iva);
+                txt_medida.Text = Convert.ToString(medida);
+            }
+        }
 
 
         private void btn_alterar_Click(object sender, EventArgs e)
@@ -28,94 +117,7 @@ namespace sistema_cbs
             fr.Show();
             this.Hide();
         }
-
-        private void frm_reg_productos_Load(object sender, EventArgs e)
-        {
-           // verifico si o codigo e igual a cero ou distinto que zero.
-           txt_codigo.Text = Convert.ToString(codigo);
-           
-             
-           if (txt_codigo.Text != "0")
-           {
-
-              ProdutoMarcaDal ls_marca = new ProdutoMarcaDal();
-
-              cmbmarca.DataSource = ls_marca.ObtenerLista();
-              cmbmarca.ValueMember = "codigo";
-              cmbmarca.DisplayMember = "marca";
-
-              GrupoProdutoDal ls_grupo = new GrupoProdutoDal();
-
-              cmbgrupo.DataSource = ls_grupo.ObtenerListaGrupo();
-              cmbgrupo.ValueMember = "Id";
-              cmbgrupo.DisplayMember = "Grupo";
-
-
-              ProdutoSubGrupoDal ls_subgrupo = new ProdutoSubGrupoDal();
-
-              cmbsubgrupo.DataSource = ls_subgrupo.ObtenerLista();
-              cmbsubgrupo.ValueMember = "Id";
-              cmbsubgrupo.DisplayMember = "Subgrupo";
-
-              // Carga para EDITAR.
-              // MessageBox.Show("DISTINTO DE CERO");
-
-              txt_codigo.Text = Convert.ToString(codigo);
-              txt_descripcion.Text = Convert.ToString(descripcion);
-              txt_costoadmin.Text = Convert.ToString(costo_adm);
-              txt_costocont.Text = Convert.ToString(costo_cont);
-              txt_ventamay.Text = Convert.ToString(ventamay); 
-              txt_ventamin.Text = Convert.ToString(ventamin);
-              txt_obser.Text = Convert.ToString(observacion);
-              txt_iva.Text = Convert.ToString(iva);
-              txt_medida.Text = Convert.ToString(medida);
-              cmbmarca.Text = Convert.ToString(marca);
-              cmbgrupo.Text = Convert.ToString(grupo);
-              cmbsubgrupo.Text = Convert.ToString(subgrupo);
-
-              txt_ventamay.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamay.Text));
-              txt_ventamin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamin.Text));
-              txt_costoadmin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costoadmin.Text));
-              txt_costocont.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costocont.Text));
-           }
-           
-
-           else 
-           { 
-               // Carga para gravar.
-              // CARREGAR COMBO MARCA.
-              
-              ProdutoMarcaDal ls_marca = new ProdutoMarcaDal();
-
-              cmbmarca.DataSource = ls_marca.ObtenerLista();
-              cmbmarca.ValueMember = "codigo";
-              cmbmarca.DisplayMember = "marca";
-
-              GrupoProdutoDal ls_grupo = new GrupoProdutoDal();
-
-              cmbgrupo.DataSource = ls_grupo.ObtenerListaGrupo();
-              cmbgrupo.ValueMember = "Id";
-              cmbgrupo.DisplayMember = "Grupo";
-
-
-              ProdutoSubGrupoDal ls_subgrupo = new ProdutoSubGrupoDal();
-
-              cmbsubgrupo.DataSource = ls_subgrupo.ObtenerLista();
-              cmbsubgrupo.ValueMember = "Id";
-              cmbsubgrupo.DisplayMember = "Subgrupo";
-              
-              txt_codigo.Text = Convert.ToString(codigo);
-              txt_descripcion.Text = Convert.ToString(descripcion);
-              txt_costoadmin.Text = Convert.ToString(costo_adm);
-              txt_costocont.Text = Convert.ToString(costo_cont);
-              txt_ventamay.Text = Convert.ToString(ventamay);
-              txt_ventamin.Text = Convert.ToString(ventamin);
-              txt_obser.Text = Convert.ToString(observacion);
-              txt_iva.Text = Convert.ToString(iva);
-              txt_medida.Text = Convert.ToString(medida);  
-           }
-        }
-
+        
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             String descr, medida, obs;

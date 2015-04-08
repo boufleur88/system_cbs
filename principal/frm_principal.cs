@@ -118,6 +118,12 @@ namespace sistema_cbs
            fr.Show();
         }
 
+        private void rEGISTRODESERVICIOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_tabla_servicios fr = new frm_tabla_servicios();
+            fr.Show();
+        }
+
         
     }
 }

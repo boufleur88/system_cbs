@@ -16,6 +16,7 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
+        // Declaración de las variables.
         public DataGridViewContentAlignment Alignment { get; set; }
         String buscar;
 
@@ -24,15 +25,19 @@ namespace sistema_cbs
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frm_reg_productos registrar = new frm_reg_productos();
-            registrar.Show();
-            this.Hide();
-        }
-
         private void frm_tabla_stock_Load(object sender, EventArgs e)
         {
+            btn_buscar.Focus();
+            btn_buscar.TabIndex = 0;
+            btn_buscar.TabIndex = 1;
+            btn_nuevo.TabIndex = 2;
+            btn_alterar.TabIndex = 3;
+            btnExcluir.TabIndex = 4;
+            btnExcluir.Enabled = false;
+            btn_historico.TabIndex = 5;
+            btn_historico.Enabled = false;
+            btn_sair.TabIndex = 6;
+
             ProdutoDal ls = new ProdutoDal();
             dt_lista_produto.DataSource = ls.listar_algunos();
 
@@ -55,6 +60,7 @@ namespace sistema_cbs
            dt_lista_produto.Columns["pro_unidad"].HeaderText = "UNIDAD MEDIDA";
            dt_lista_produto.Columns["pro_cantmin"].HeaderText = "STOCK MINIMO";
            dt_lista_produto.Columns["pro_moneda"].HeaderText = "MONEDA";
+           dt_lista_produto.Columns["pro_moneda"].Visible = false;
            dt_lista_produto.Columns["pro_iva"].HeaderText = "IVA";
            dt_lista_produto.Columns["pro_obs"].HeaderText = "OBSERVACION";
            // dt_lista_produto.Columns["pro_obs"].Visible = false;
@@ -74,38 +80,7 @@ namespace sistema_cbs
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-           int codigo;
-
-           try
-           {
-              if (dt_lista_produto.SelectedRows.Count == 1)
-              {
-
-                 codigo = Convert.ToInt32(dt_lista_produto.CurrentRow.Cells[0].Value);
-
-                 MessageBox.Show("SEGURO QUE QUIERES ELIMINAR EL REGISTRO NUMERO " + codigo);
-
-                 Produto obj = new Produto();
-                 obj.codigo = codigo;
-
-                 ProdutoDal excluir = new ProdutoDal();
-                 excluir.excluir(obj);
-                 
-
-                 this.Close();
-
-                 frm_tabla_stock fr = new frm_tabla_stock();
-                 fr.Show();
-
-              }
-           }
-           catch (Exception erro)
-           {
-              MessageBox.Show("ERROR AL ELIMINAR CIUDAD" + erro);
-           }
-        }
+       
 
         private void btn_alterar_Click(object sender, EventArgs e)
         {
@@ -209,12 +184,44 @@ namespace sistema_cbs
            }
         }
 
-        private void btnmostrar_Click(object sender, EventArgs e)
+        private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            ProdutoDal listar = new ProdutoDal();
-            dt_lista_produto.DataSource = listar.listar();
+            frm_reg_productos registrar = new frm_reg_productos();
+            registrar.Show();
+            this.Hide();
+        }
 
-            formata_tabla();
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int codigo;
+
+            try
+            {
+                if (dt_lista_produto.SelectedRows.Count == 1)
+                {
+
+                    codigo = Convert.ToInt32(dt_lista_produto.CurrentRow.Cells[0].Value);
+
+                    MessageBox.Show("SEGURO QUE QUIERES ELIMINAR EL REGISTRO NUMERO " + codigo);
+
+                    Produto obj = new Produto();
+                    obj.codigo = codigo;
+
+                    ProdutoDal excluir = new ProdutoDal();
+                    excluir.excluir(obj);
+
+
+                    this.Close();
+
+                    frm_tabla_stock fr = new frm_tabla_stock();
+                    fr.Show();
+
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("ERROR AL ELIMINAR CIUDAD" + erro);
+            }
         }
 
        

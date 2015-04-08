@@ -35,12 +35,11 @@
             this.dt_lista_produto = new System.Windows.Forms.DataGridView();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_historico = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnmostrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_produto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,9 +56,9 @@
             // 
             // btn_alterar
             // 
-            this.btn_alterar.Location = new System.Drawing.Point(762, 34);
+            this.btn_alterar.Location = new System.Drawing.Point(686, 32);
             this.btn_alterar.Name = "btn_alterar";
-            this.btn_alterar.Size = new System.Drawing.Size(80, 30);
+            this.btn_alterar.Size = new System.Drawing.Size(76, 30);
             this.btn_alterar.TabIndex = 2;
             this.btn_alterar.Text = "&ALTERAR";
             this.btn_alterar.UseVisualStyleBackColor = true;
@@ -82,48 +81,49 @@
             this.dt_lista_produto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dt_lista_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dt_lista_produto.Location = new System.Drawing.Point(9, 69);
-            this.dt_lista_produto.Margin = new System.Windows.Forms.Padding(0, 2, 2, 0);
+            this.dt_lista_produto.Margin = new System.Windows.Forms.Padding(2);
             this.dt_lista_produto.Name = "dt_lista_produto";
             this.dt_lista_produto.ReadOnly = true;
+            this.dt_lista_produto.RowHeadersWidth = 50;
             this.dt_lista_produto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dt_lista_produto.Size = new System.Drawing.Size(1721, 858);
+            this.dt_lista_produto.Size = new System.Drawing.Size(980, 580);
             this.dt_lista_produto.TabIndex = 0;
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(679, 34);
+            this.btn_nuevo.Location = new System.Drawing.Point(607, 32);
             this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(80, 30);
+            this.btn_nuevo.Size = new System.Drawing.Size(76, 30);
             this.btn_nuevo.TabIndex = 1;
             this.btn_nuevo.Text = "&NUEVO";
             this.btn_nuevo.UseVisualStyleBackColor = true;
-            this.btn_nuevo.Click += new System.EventHandler(this.button1_Click);
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // btn_historico
             // 
-            this.btn_historico.Location = new System.Drawing.Point(928, 34);
+            this.btn_historico.Location = new System.Drawing.Point(844, 32);
             this.btn_historico.Name = "btn_historico";
-            this.btn_historico.Size = new System.Drawing.Size(80, 30);
+            this.btn_historico.Size = new System.Drawing.Size(76, 30);
             this.btn_historico.TabIndex = 4;
             this.btn_historico.Text = "&HISTORICO";
             this.btn_historico.UseVisualStyleBackColor = true;
             this.btn_historico.Click += new System.EventHandler(this.btn_historico_Click);
             // 
-            // button2
+            // btnExcluir
             // 
-            this.button2.Location = new System.Drawing.Point(845, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "&EXCLUIR";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnExcluir.Location = new System.Drawing.Point(765, 32);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(76, 30);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.Text = "&EXCLUIR";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(1094, 34);
+            this.btn_sair.Location = new System.Drawing.Point(923, 32);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(80, 30);
+            this.btn_sair.Size = new System.Drawing.Size(76, 30);
             this.btn_sair.TabIndex = 7;
             this.btn_sair.Text = "&SAIR";
             this.btn_sair.UseVisualStyleBackColor = true;
@@ -137,14 +137,14 @@
             this.txt_buscar.Margin = new System.Windows.Forms.Padding(0);
             this.txt_buscar.MaxLength = 40;
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(441, 22);
+            this.txt_buscar.Size = new System.Drawing.Size(391, 22);
             this.txt_buscar.TabIndex = 51;
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(597, 34);
+            this.btn_buscar.Location = new System.Drawing.Point(529, 32);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(80, 30);
+            this.btn_buscar.Size = new System.Drawing.Size(76, 30);
             this.btn_buscar.TabIndex = 52;
             this.btn_buscar.Text = "&BUSCAR";
             this.btn_buscar.UseVisualStyleBackColor = true;
@@ -161,28 +161,17 @@
             this.label1.Text = "DESCRIPCION";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnmostrar
-            // 
-            this.btnmostrar.Location = new System.Drawing.Point(1011, 34);
-            this.btnmostrar.Name = "btnmostrar";
-            this.btnmostrar.Size = new System.Drawing.Size(80, 30);
-            this.btnmostrar.TabIndex = 54;
-            this.btnmostrar.Text = "TABLA";
-            this.btnmostrar.UseVisualStyleBackColor = true;
-            this.btnmostrar.Click += new System.EventHandler(this.btnmostrar_Click);
-            // 
             // frm_tabla_stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1741, 936);
-            this.Controls.Add(this.btnmostrar);
+            this.ClientSize = new System.Drawing.Size(1008, 666);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_historico);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_alterar);
@@ -192,7 +181,6 @@
             this.Name = "frm_tabla_stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_tabla_stock";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_tabla_stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_produto)).EndInit();
             this.ResumeLayout(false);
@@ -208,11 +196,10 @@
         private System.Windows.Forms.DataGridView dt_lista_produto;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_historico;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnmostrar;
     }
 }

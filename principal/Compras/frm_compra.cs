@@ -21,26 +21,32 @@ namespace sistema_cbs
         public Double cantidad, costoadm, costocont, ventamay, ventamin;
 
 
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
 
         private void frm_compra_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            frm_tabla_stock fr = new frm_tabla_stock();
+            fr.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnPersonas_Click(object sender, EventArgs e)
         {
             frm_tabla_personas fr = new frm_tabla_personas();
             fr.Show();
         }
 
-        private void btn_productos_Click(object sender, EventArgs e)
-        {
-            frm_tabla_stock fr = new frm_tabla_stock();
-            fr.Show();
-        }
+        
     }
 }

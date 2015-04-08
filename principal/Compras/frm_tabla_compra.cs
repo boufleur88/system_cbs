@@ -16,13 +16,23 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
-        private void btn_nuevo_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frm_compra fr = new frm_compra();
-            fr.Show();
+
         }
 
-        private void btn_salir_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            frm_compra fr = new frm_compra();
+            fr.Show();   
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }

@@ -30,17 +30,14 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_historico = new System.Windows.Forms.Button();
-            this.btn_excluir = new System.Windows.Forms.Button();
-            this.btn_alterar = new System.Windows.Forms.Button();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.dt_lista_personas = new System.Windows.Forms.DataGridView();
-            this.btn_salir = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.dtListCompra = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtListCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,107 +51,79 @@
             this.label1.Text = "BUSCAR COMPRAS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btn_buscar
+            // btnBuscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(598, 32);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(80, 30);
-            this.btn_buscar.TabIndex = 71;
-            this.btn_buscar.Text = "&BUSCAR";
-            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(598, 32);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(80, 30);
+            this.btnBuscar.TabIndex = 71;
+            this.btnBuscar.Text = "&BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txt_buscar
+            // txtBuscar
             // 
-            this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.Location = new System.Drawing.Point(226, 40);
-            this.txt_buscar.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_buscar.MaxLength = 40;
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(356, 22);
-            this.txt_buscar.TabIndex = 70;
+            this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(226, 40);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(0);
+            this.txtBuscar.MaxLength = 40;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(356, 22);
+            this.txtBuscar.TabIndex = 70;
             // 
-            // button2
+            // btnAlterar
             // 
-            this.button2.Location = new System.Drawing.Point(1016, 32);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 30);
-            this.button2.TabIndex = 68;
-            this.button2.Text = "&CTA CTE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAlterar.Location = new System.Drawing.Point(766, 32);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(80, 30);
+            this.btnAlterar.TabIndex = 65;
+            this.btnAlterar.Text = "&ALTERAR";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // btn_historico
+            // btnNuevo
             // 
-            this.btn_historico.Location = new System.Drawing.Point(933, 32);
-            this.btn_historico.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.btn_historico.Name = "btn_historico";
-            this.btn_historico.Size = new System.Drawing.Size(80, 30);
-            this.btn_historico.TabIndex = 67;
-            this.btn_historico.Text = "&HISTORICO";
-            this.btn_historico.UseVisualStyleBackColor = true;
+            this.btnNuevo.Location = new System.Drawing.Point(683, 32);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(80, 30);
+            this.btnNuevo.TabIndex = 64;
+            this.btnNuevo.Text = "&NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btn_excluir
+            // dtListCompra
             // 
-            this.btn_excluir.Location = new System.Drawing.Point(850, 32);
-            this.btn_excluir.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(80, 30);
-            this.btn_excluir.TabIndex = 66;
-            this.btn_excluir.Text = "&EXCLUIR";
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            // 
-            // btn_alterar
-            // 
-            this.btn_alterar.Location = new System.Drawing.Point(766, 32);
-            this.btn_alterar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.btn_alterar.Name = "btn_alterar";
-            this.btn_alterar.Size = new System.Drawing.Size(80, 30);
-            this.btn_alterar.TabIndex = 65;
-            this.btn_alterar.Text = "&ALTERAR";
-            this.btn_alterar.UseVisualStyleBackColor = true;
-            // 
-            // btn_nuevo
-            // 
-            this.btn_nuevo.Location = new System.Drawing.Point(683, 32);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(80, 30);
-            this.btn_nuevo.TabIndex = 64;
-            this.btn_nuevo.Text = "&NUEVO";
-            this.btn_nuevo.UseVisualStyleBackColor = true;
-            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
-            // 
-            // dt_lista_personas
-            // 
-            this.dt_lista_personas.AllowUserToDeleteRows = false;
-            this.dt_lista_personas.AllowUserToResizeColumns = false;
-            this.dt_lista_personas.AllowUserToResizeRows = false;
+            this.dtListCompra.AllowUserToDeleteRows = false;
+            this.dtListCompra.AllowUserToResizeColumns = false;
+            this.dtListCompra.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_personas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dt_lista_personas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtListCompra.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtListCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dt_lista_personas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dt_lista_personas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dt_lista_personas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_lista_personas.Location = new System.Drawing.Point(28, 78);
-            this.dt_lista_personas.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.dt_lista_personas.MultiSelect = false;
-            this.dt_lista_personas.Name = "dt_lista_personas";
-            this.dt_lista_personas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dt_lista_personas.Size = new System.Drawing.Size(1282, 796);
-            this.dt_lista_personas.TabIndex = 63;
+            this.dtListCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtListCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtListCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtListCompra.Location = new System.Drawing.Point(28, 78);
+            this.dtListCompra.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.dtListCompra.MultiSelect = false;
+            this.dtListCompra.Name = "dtListCompra";
+            this.dtListCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtListCompra.Size = new System.Drawing.Size(1268, 796);
+            this.dtListCompra.TabIndex = 63;
             // 
-            // btn_salir
+            // btnSalir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(1099, 32);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(80, 30);
-            this.btn_salir.TabIndex = 69;
-            this.btn_salir.Text = "&SALIR";
-            this.btn_salir.UseVisualStyleBackColor = true;
-            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            this.btnSalir.Location = new System.Drawing.Point(849, 33);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(80, 30);
+            this.btnSalir.TabIndex = 69;
+            this.btnSalir.Text = "&SALIR";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label2
             // 
@@ -171,24 +140,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 679);
+            this.ClientSize = new System.Drawing.Size(1386, 679);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.txt_buscar);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btn_historico);
-            this.Controls.Add(this.btn_excluir);
-            this.Controls.Add(this.btn_alterar);
-            this.Controls.Add(this.btn_nuevo);
-            this.Controls.Add(this.dt_lista_personas);
-            this.Controls.Add(this.btn_salir);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.dtListCompra);
+            this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_tabla_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_tabla_compra";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtListCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,15 +163,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.TextBox txt_buscar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_historico;
-        private System.Windows.Forms.Button btn_excluir;
-        private System.Windows.Forms.Button btn_alterar;
-        private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.DataGridView dt_lista_personas;
-        private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridView dtListCompra;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
     }
 }

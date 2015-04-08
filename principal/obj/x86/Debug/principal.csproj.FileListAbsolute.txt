@@ -181,3 +181,5 @@ C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\principal
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\principal.exe.manifest
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\principal.application
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frm_tabla_compra.resources
+C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frm_tabla_servicios.resources
+C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frm_registro_servicios.resources

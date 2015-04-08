@@ -76,6 +76,7 @@
             this.sOBRELAEMPRESAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sOPORTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEGISTRODESERVICIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +102,7 @@
             // 
             this.sTOCKToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rEGISTROMERCADERIASToolStripMenuItem,
+            this.rEGISTRODESERVICIOSToolStripMenuItem,
             this.rEGISTRODEMARCASToolStripMenuItem,
             this.rEGISTRODEGRUPOSToolStripMenuItem,
             this.rEGISTRODESUBGRUPOSToolStripMenuItem,
@@ -445,6 +447,13 @@
             this.sALIRToolStripMenuItem.Text = "&SALIR";
             this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click_1);
             // 
+            // rEGISTRODESERVICIOSToolStripMenuItem
+            // 
+            this.rEGISTRODESERVICIOSToolStripMenuItem.Name = "rEGISTRODESERVICIOSToolStripMenuItem";
+            this.rEGISTRODESERVICIOSToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.rEGISTRODESERVICIOSToolStripMenuItem.Text = "REGISTRO DE SERVICIOS";
+            this.rEGISTRODESERVICIOSToolStripMenuItem.Click += new System.EventHandler(this.rEGISTRODESERVICIOSToolStripMenuItem_Click);
+            // 
             // frm_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,6 +525,7 @@
         private System.Windows.Forms.ToolStripMenuItem lIBROVENTAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pROVEEDORESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEGISTRODESERVICIOSToolStripMenuItem;
     }
 }
 

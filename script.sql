@@ -57,7 +57,6 @@ select l.id_produto, l.pro_descr, l.pro_costocon, l.pro_ventamay, l.id_grupo, e.
   join st_grupo as e
   on l.id_grupo=e.id_grupo;
 
-  
 select l.id_produto, l.pro_descr, l.pro_costocon, l.pro_ventamay, l.id_grupo, e.st_grupo, m.st_marca, l.pro_obs from (produto l, st_grupo e, st_marca m)
 where l.id_grupo=e.id_grupo AND l.id_marca=m.id_marca;
 
