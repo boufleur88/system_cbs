@@ -101,6 +101,30 @@
     <Compile Include="Compras\frm_tabla_compra.Designer.cs">
       <DependentUpon>frm_tabla_compra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\frmTablaServiciosVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frmTablaServiciosVentas.Designer.cs">
+      <DependentUpon>frmTablaServiciosVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frmTablaMercaderiasVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frmTablaMercaderiasVentas.Designer.cs">
+      <DependentUpon>frmTablaMercaderiasVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frmTablaPersonasVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frmTablaPersonasVentas.Designer.cs">
+      <DependentUpon>frmTablaPersonasVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frmTablaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frmTablaVentas.Designer.cs">
+      <DependentUpon>frmTablaVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Servicio\frm_registro_servicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +339,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Servicio\frm_tabla_servicios.resx">
       <DependentUpon>frm_tabla_servicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmTablaMercaderiasVentas.resx">
+      <DependentUpon>frmTablaMercaderiasVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmTablaPersonasVentas.resx">
+      <DependentUpon>frmTablaPersonasVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmTablaServiciosVentas.resx">
+      <DependentUpon>frmTablaServiciosVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmTablaVentas.resx">
+      <DependentUpon>frmTablaVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frm_ventas.resx">
       <DependentUpon>frm_ventas.cs</DependentUpon>
