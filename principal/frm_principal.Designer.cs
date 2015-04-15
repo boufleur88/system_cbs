@@ -76,7 +76,10 @@
             this.sOBRELAEMPRESAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sOPORTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEGISTRODESERVICIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sERVICIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sERVICIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTESToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gRUPOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +87,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sTOCKToolStripMenuItem,
+            this.sERVICIOToolStripMenuItem,
             this.pERSONASToolStripMenuItem,
             this.cOMPRASToolStripMenuItem,
             this.vENTASToolStripMenuItem,
@@ -94,7 +98,7 @@
             this.sALIRToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1694, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1378, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,42 +106,41 @@
             // 
             this.sTOCKToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rEGISTROMERCADERIASToolStripMenuItem,
-            this.rEGISTRODESERVICIOSToolStripMenuItem,
             this.rEGISTRODEMARCASToolStripMenuItem,
             this.rEGISTRODEGRUPOSToolStripMenuItem,
             this.rEGISTRODESUBGRUPOSToolStripMenuItem,
             this.iNVENTARIOToolStripMenuItem,
             this.rEPORTESToolStripMenuItem1});
             this.sTOCKToolStripMenuItem.Name = "sTOCKToolStripMenuItem";
-            this.sTOCKToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.sTOCKToolStripMenuItem.Text = "STOCK";
+            this.sTOCKToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.sTOCKToolStripMenuItem.Text = "MERCADERIAS";
             // 
             // rEGISTROMERCADERIASToolStripMenuItem
             // 
             this.rEGISTROMERCADERIASToolStripMenuItem.Name = "rEGISTROMERCADERIASToolStripMenuItem";
-            this.rEGISTROMERCADERIASToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.rEGISTROMERCADERIASToolStripMenuItem.Text = "REGISTRO MERCADERIAS";
+            this.rEGISTROMERCADERIASToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rEGISTROMERCADERIASToolStripMenuItem.Text = "MERCADERIAS";
             this.rEGISTROMERCADERIASToolStripMenuItem.Click += new System.EventHandler(this.rEGISTROMERCADERIASToolStripMenuItem_Click);
             // 
             // rEGISTRODEMARCASToolStripMenuItem
             // 
             this.rEGISTRODEMARCASToolStripMenuItem.Name = "rEGISTRODEMARCASToolStripMenuItem";
-            this.rEGISTRODEMARCASToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.rEGISTRODEMARCASToolStripMenuItem.Text = "REGISTRO DE MARCAS";
+            this.rEGISTRODEMARCASToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rEGISTRODEMARCASToolStripMenuItem.Text = "MARCAS";
             this.rEGISTRODEMARCASToolStripMenuItem.Click += new System.EventHandler(this.rEGISTRODEMARCASToolStripMenuItem_Click);
             // 
             // rEGISTRODEGRUPOSToolStripMenuItem
             // 
             this.rEGISTRODEGRUPOSToolStripMenuItem.Name = "rEGISTRODEGRUPOSToolStripMenuItem";
-            this.rEGISTRODEGRUPOSToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.rEGISTRODEGRUPOSToolStripMenuItem.Text = "REGISTRO DE GRUPOS";
+            this.rEGISTRODEGRUPOSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rEGISTRODEGRUPOSToolStripMenuItem.Text = "GRUPOS";
             this.rEGISTRODEGRUPOSToolStripMenuItem.Click += new System.EventHandler(this.rEGISTRODEGRUPOSToolStripMenuItem_Click);
             // 
             // rEGISTRODESUBGRUPOSToolStripMenuItem
             // 
             this.rEGISTRODESUBGRUPOSToolStripMenuItem.Name = "rEGISTRODESUBGRUPOSToolStripMenuItem";
-            this.rEGISTRODESUBGRUPOSToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.rEGISTRODESUBGRUPOSToolStripMenuItem.Text = "REGISTRO DE SUB GRUPOS";
+            this.rEGISTRODESUBGRUPOSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rEGISTRODESUBGRUPOSToolStripMenuItem.Text = "SUB GRUPOS";
             this.rEGISTRODESUBGRUPOSToolStripMenuItem.Click += new System.EventHandler(this.rEGISTRODESUBGRUPOSToolStripMenuItem_Click);
             // 
             // iNVENTARIOToolStripMenuItem
@@ -447,19 +450,42 @@
             this.sALIRToolStripMenuItem.Text = "&SALIR";
             this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click_1);
             // 
-            // rEGISTRODESERVICIOSToolStripMenuItem
+            // sERVICIOToolStripMenuItem
             // 
-            this.rEGISTRODESERVICIOSToolStripMenuItem.Name = "rEGISTRODESERVICIOSToolStripMenuItem";
-            this.rEGISTRODESERVICIOSToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.rEGISTRODESERVICIOSToolStripMenuItem.Text = "REGISTRO DE SERVICIOS";
-            this.rEGISTRODESERVICIOSToolStripMenuItem.Click += new System.EventHandler(this.rEGISTRODESERVICIOSToolStripMenuItem_Click);
+            this.sERVICIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sERVICIOSToolStripMenuItem,
+            this.gRUPOSToolStripMenuItem,
+            this.rEPORTESToolStripMenuItem6});
+            this.sERVICIOToolStripMenuItem.Name = "sERVICIOToolStripMenuItem";
+            this.sERVICIOToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.sERVICIOToolStripMenuItem.Text = "SERVICIOS";
+            // 
+            // sERVICIOSToolStripMenuItem
+            // 
+            this.sERVICIOSToolStripMenuItem.Name = "sERVICIOSToolStripMenuItem";
+            this.sERVICIOSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sERVICIOSToolStripMenuItem.Text = "SERVICIOS";
+            this.sERVICIOSToolStripMenuItem.Click += new System.EventHandler(this.sERVICIOSToolStripMenuItem_Click);
+            // 
+            // rEPORTESToolStripMenuItem6
+            // 
+            this.rEPORTESToolStripMenuItem6.Name = "rEPORTESToolStripMenuItem6";
+            this.rEPORTESToolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.rEPORTESToolStripMenuItem6.Text = "REPORTES";
+            // 
+            // gRUPOSToolStripMenuItem
+            // 
+            this.gRUPOSToolStripMenuItem.Name = "gRUPOSToolStripMenuItem";
+            this.gRUPOSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gRUPOSToolStripMenuItem.Text = "GRUPOS";
+            this.gRUPOSToolStripMenuItem.Click += new System.EventHandler(this.gRUPOSToolStripMenuItem_Click);
             // 
             // frm_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1694, 894);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
@@ -525,7 +551,10 @@
         private System.Windows.Forms.ToolStripMenuItem lIBROVENTAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pROVEEDORESToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rEGISTRODESERVICIOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sERVICIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sERVICIOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTESToolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem gRUPOSToolStripMenuItem;
     }
 }
 

@@ -20,25 +20,27 @@ namespace sistema_cbs
         validar_datos v1 = new validar_datos();
         public int codigo, c_grupo;
         public string descripcion, observacion, grupo;
-        public Double precio;
+        public Double costo, preciomin, precio;
 
         private void frm_registro_servicios_Load(object sender, EventArgs e)
         {
             // orden de tabindex, focus, etc.
-            txt_codigo.Text = Convert.ToString(codigo);
-            txt_codigo.Enabled = false;
-            txt_descripcion.Focus();
-            txt_descripcion.TabIndex = 0;
-            txt_venta.TabIndex = 1;
-            cmbgrupo.TabIndex = 2;
-            btnGrupo.TabIndex = 3;
+            txtCodigo.Text = Convert.ToString(codigo);
+            txtCodigo.Enabled = false;
+            txtDescripcion.Focus();
+            txtDescripcion.TabIndex = 0;
+            cmbgrupo.TabIndex = 1;
+            btnGrupo.TabIndex = 2;
             btnGrupo.Enabled = false;
-            txt_obser.TabIndex = 4;
-            btn_guardar.TabIndex = 5;
-            btn_salir.TabIndex = 6;
+            txtCosto.TabIndex = 3;
+            txtPrecioMinimo.TabIndex = 4;
+            txtVenta.TabIndex = 5;
+            txtObservacion.TabIndex = 6;
+            btn_guardar.TabIndex = 7;
+            btn_salir.TabIndex = 8;
 
             // verifico si o codigo e igual a cero ou distinto que zero.
-            if (txt_codigo.Text != "0")
+            if (txtCodigo.Text != "0")
             {
                 // Carga para EDITAR.
                 // MessageBox.Show("DISTINTO DE CERO");
@@ -49,13 +51,17 @@ namespace sistema_cbs
                 cmbgrupo.ValueMember = "id_grupo";
                 cmbgrupo.DisplayMember = "Grupo";
 
-                txt_codigo.Text = Convert.ToString(codigo);
-                txt_descripcion.Text = Convert.ToString(descripcion);
-                txt_venta.Text = Convert.ToString(precio);
-                txt_obser.Text = Convert.ToString(observacion);
+                txtCodigo.Text = Convert.ToString(codigo);
+                txtDescripcion.Text = Convert.ToString(descripcion);
+                txtCosto.Text = Convert.ToString(costo);
+                txtPrecioMinimo.Text = Convert.ToString(preciomin);
+                txtVenta.Text = Convert.ToString(precio);
+                txtObservacion.Text = Convert.ToString(observacion);
                 cmbgrupo.Text = Convert.ToString(grupo);
 
-                txt_venta.Text = string.Format("{0:N0}", Convert.ToDouble(txt_venta.Text));
+                txtCosto.Text = string.Format("{0:N0}", Convert.ToDouble(txtCosto.Text));
+                txtPrecioMinimo.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecioMinimo.Text));
+                txtVenta.Text = string.Format("{0:N0}", Convert.ToDouble(txtVenta.Text));
             }
 
             else
@@ -69,71 +75,85 @@ namespace sistema_cbs
                 cmbgrupo.ValueMember = "id_grupo";
                 cmbgrupo.DisplayMember = "Grupo";
 
-                txt_codigo.Text = Convert.ToString(codigo);
-                txt_descripcion.Text = Convert.ToString(descripcion);
-                txt_venta.Text = Convert.ToString(precio);
-                txt_obser.Text = Convert.ToString(observacion);
+                txtCodigo.Text = Convert.ToString(codigo);
+                txtDescripcion.Text = Convert.ToString(descripcion);
+                txtCosto.Text = Convert.ToString(costo);
+                txtPrecioMinimo.Text = Convert.ToString(preciomin);
+                txtVenta.Text = Convert.ToString(precio);
+                txtObservacion.Text = Convert.ToString(observacion);
             }
         }
 
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (txt_codigo.Text != "0")
+            if (txtCodigo.Text != "0")
             {
                 // EDITA
                 // MessageBox.Show("VAI EDITAR");
 
-                if (txt_descripcion.Text == "")
+                if (txtDescripcion.Text == "")
                 {
-                    txt_descripcion.BackColor = Color.Aqua;
-                    txt_descripcion.Focus();
+                    txtDescripcion.BackColor = Color.Aqua;
+                    txtDescripcion.Focus();
                 }
                 else
                 {
-                    txt_descripcion.BackColor = Color.White;
+                    txtDescripcion.BackColor = Color.White;
 
-                    if (txt_venta.Text == "0" || txt_venta.Text == "")
+                    if (txtVenta.Text == "0" || txtVenta.Text == "")
                     {
-                        txt_venta.Text = "1";
+                        txtVenta.Text = "1";
                     }
 
                     // Descripcion del Servicio.
-                    descripcion = txt_descripcion.Text.ToString();
+                    descripcion = txtDescripcion.Text.ToString();
                     descripcion = descripcion.ToUpper();
                     descripcion = descripcion.Trim();
 
-                    // Precio del Servicio. 
-                    precio = Convert.ToDouble(txt_venta.Text);
+                    // Precios del Servicio. 
+                    costo = Convert.ToDouble(txtCosto.Text);
+                    preciomin = Convert.ToDouble(txtPrecioMinimo.Text);
+                    precio = Convert.ToDouble(txtVenta.Text);
 
                     // Observacion del Servicio.
-                    observacion = txt_obser.Text.ToString();
+                    observacion = txtObservacion.Text.ToString();
                     observacion = observacion.Trim();
-
 
                     c_grupo = Convert.ToInt32(cmbgrupo.SelectedValue);
                     // MessageBox.Show(""+cmbgrupo.SelectedValue);
 
                     try
                     {
-                        // Crea el objeto Servicio.
-                        Servicios obj = new Servicios();
+                        if (descripcion == "")
+                        {
+                            txtDescripcion.BackColor = Color.Aqua;
+                            txtDescripcion.Focus();
+                        }
+                        else
+                        {
+                            // Crea el objeto Servicio.
+                            Servicios obj = new Servicios();
 
-                        obj.codigo = codigo;
-                        obj.descripcion = descripcion;
-                        obj.precio = precio;
-                        obj.observacion = observacion;
-                        obj.id_grupo = c_grupo;
+                            obj.id_servicio = codigo;
+                            obj.descripcion = descripcion;
+                            obj.costo = costo;
+                            obj.preciomin = preciomin;
+                            obj.precio = precio;
+                            obj.observacion = observacion;
+                            obj.id_grupo = c_grupo;
 
-                        // chamando clase para gravar os dados. 
-                        //ProdutoDal editar = new ProdutoDal();
-                        //editar.alterar(obj);
+                            // chamando clase para gravar os dados. 
+                            ServiciosDal editar = new ServiciosDal();
+                            editar.alterar(obj);
 
-                        MessageBox.Show("PRODUCTO ALTERADO EXITOSAMENTE");
+                            MessageBox.Show("SERVICIO ALTERADO EXITOSAMENTE", "CBS INFORMATICA");
 
-                        this.Close();
-                        frm_tabla_servicios fr = new frm_tabla_servicios();
-                        fr.Show();
+
+                            this.Close();
+                            frm_tabla_servicios fr = new frm_tabla_servicios();
+                            fr.Show();
+                        }
                     }
                     catch (Exception erro)
                     {
@@ -146,33 +166,32 @@ namespace sistema_cbs
             {
                 // GRAVAR
                 // MessageBox.Show("VAI GRAVAR");
-                if (txt_descripcion.Text == "")
+                if (txtDescripcion.Text == "")
                 {
-                    txt_descripcion.BackColor = Color.Aqua;
-                    txt_descripcion.Focus();
+                    txtDescripcion.BackColor = Color.Aqua;
+                    txtDescripcion.Focus();
                 }
                 else
                 {
-                    txt_descripcion.BackColor = Color.White;
+                    txtDescripcion.BackColor = Color.White;
 
-
-                    txt_descripcion.BackColor = Color.White;
-
-                    if (txt_venta.Text == "0" || txt_venta.Text == "")
+                    if (txtVenta.Text == "0" || txtVenta.Text == "")
                     {
-                        txt_venta.Text = "1";
+                        txtVenta.Text = "1";
                     }
 
                     // Descripcion del Servicio.
-                    descripcion = txt_descripcion.Text.ToString();
+                    descripcion = txtDescripcion.Text.ToString();
                     descripcion = descripcion.ToUpper();
                     descripcion = descripcion.Trim();
 
                     // Precio del Servicio. 
-                    precio = Convert.ToDouble(txt_venta.Text);
+                    costo = Convert.ToDouble(txtCosto.Text);
+                    preciomin = Convert.ToDouble(txtPrecioMinimo.Text);
+                    precio = Convert.ToDouble(txtVenta.Text);
 
                     // Observacion del Producto.
-                    observacion = txt_obser.Text.ToString();
+                    observacion = txtObservacion.Text.ToString();
                     observacion = observacion.Trim();
 
 
@@ -181,24 +200,33 @@ namespace sistema_cbs
 
                     try
                     {
+                        if (descripcion == "")
+                        {
+                            txtDescripcion.BackColor = Color.Aqua;
+                            txtDescripcion.Focus();
+                        }
+                        else
+                        { 
                         // Crea el objeto Servicio.
                         Servicios obj = new Servicios();
+                        obj.id_servicio = codigo;
                         obj.descripcion = descripcion;
+                        obj.costo = costo;
+                        obj.preciomin = preciomin;
                         obj.precio = precio;
                         obj.observacion = observacion;
                         obj.id_grupo = c_grupo;
-
 
                         // chamando clase para gravar os dados. 
                         ServiciosDal gravar = new ServiciosDal();
                         gravar.gravar(obj);
 
-                        MessageBox.Show("SERVICIO GRAVADO EXITOSAMENTE");
+                        MessageBox.Show("SERVICIO GRAVADO EXITOSAMENTE","CBS INFORMATICA");
 
                         this.Close();
                         frm_tabla_servicios fr = new frm_tabla_servicios();
                         fr.Show();
-
+                        }
                     }
                     catch (Exception erro)
                     {
@@ -208,7 +236,6 @@ namespace sistema_cbs
             }
         }
 
-
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -216,30 +243,12 @@ namespace sistema_cbs
             fr.Show();
         }
 
-
-
-        private void txt_venta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                cmbgrupo.Focus();
-            }
-            else
-            {
-                v1.solonumeros(e);
-            }
-        }
-
-        private void txt_venta_Leave(object sender, EventArgs e)
-        {
-            txt_venta.Text = string.Format("{0:N0}", Convert.ToDouble(txt_venta.Text));
-        }
-
+        // EVENTOS KEYPress.
         private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                txt_venta.Focus();
+                cmbgrupo.Focus();
             }
         }
 
@@ -247,22 +256,89 @@ namespace sistema_cbs
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                txt_obser.Focus();
+                txtCosto.Focus();
+            }
+        }
+
+        private void txtCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtPrecioMinimo.Focus();
+            }
+            else
+            {
+                v1.solonumeros(e);
+            }
+        }
+
+        private void txtPrecioMinimo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtVenta.Focus();
+            }
+            else
+            {
+                v1.solonumeros(e);
+            }
+        }
+
+        private void txt_venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                txtObservacion.Focus();
+            }
+            else
+            {
+                v1.solonumeros(e);
             }
         }
 
         private void txt_obser_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // COMO DETECTAR DOS ENTER SEGUIDOS.
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                btn_guardar.Focus();
+                    btn_guardar.Focus();
             }
+        }
+
+        // EVENTOS Leave.
+
+        private void txtDescripcion_Leave(object sender, EventArgs e)
+        {
+            // Validad o campo txt_nombre caso este vacio. Si esta vacio pinta de un color y vuelve el focus en el campo.
+            if (txtDescripcion.Text == "")
+            {
+                txtDescripcion.BackColor = Color.Aqua;
+                txtDescripcion.Focus();
+            }
+            else
+            {
+                txtDescripcion.BackColor = Color.White;
+            }
+        }
+        
+        private void txtCosto_Leave(object sender, EventArgs e)
+        {
+            txtCosto.Text = string.Format("{0:N0}", Convert.ToDouble(txtCosto.Text));
+        }
+
+        private void txtPrecioMinimo_Leave(object sender, EventArgs e)
+        {
+            txtPrecioMinimo.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecioMinimo.Text));
+        }
+
+        private void txt_venta_Leave(object sender, EventArgs e)
+        {
+            txtVenta.Text = string.Format("{0:N0}", Convert.ToDouble(txtVenta.Text));
         }
 
        
 
-       
-
+        
         
     }
 }

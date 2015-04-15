@@ -38,7 +38,10 @@ namespace sistema_cbs
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
+            frm_tabla_compra fr = new frm_tabla_compra();
+            fr.Show();
+
         }
 
         private void btnPersonas_Click(object sender, EventArgs e)

@@ -317,6 +317,7 @@ namespace sistema_cbs
                     func = txt_funcionario.Text.ToString();
                  }
 
+
                  // instancio o modelo datos y gravo via get y set.
                  PersonaDal obj = new PersonaDal();
                  obj.id = codigo;

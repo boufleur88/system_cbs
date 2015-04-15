@@ -47,8 +47,7 @@ namespace sistema_cbs
 
         private void rEGISTRODEGRUPOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_tabla_grupo tabla_grupo = new frm_tabla_grupo();
-            tabla_grupo.Show();
+            
         }
 
         private void rEGISTRODESUBGRUPOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,8 +119,19 @@ namespace sistema_cbs
 
         private void rEGISTRODESERVICIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void sERVICIOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             frm_tabla_servicios fr = new frm_tabla_servicios();
             fr.Show();
+        }
+
+        private void gRUPOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_tabla_grupo tabla_grupo = new frm_tabla_grupo();
+            tabla_grupo.Show();
         }
 
         

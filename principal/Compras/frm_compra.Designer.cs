@@ -81,10 +81,10 @@
             this.dtListaItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtListaItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtListaItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtListaItems.Location = new System.Drawing.Point(35, 199);
+            this.dtListaItems.Location = new System.Drawing.Point(14, 198);
             this.dtListaItems.Name = "dtListaItems";
             this.dtListaItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtListaItems.Size = new System.Drawing.Size(964, 490);
+            this.dtListaItems.Size = new System.Drawing.Size(998, 557);
             this.dtListaItems.TabIndex = 86;
             // 
             // label8
@@ -365,7 +365,6 @@
             this.Name = "frm_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COMPRAS CONTADO Y CREDITO";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_compra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtListaItems)).EndInit();
             this.ResumeLayout(false);

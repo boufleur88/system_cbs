@@ -113,7 +113,7 @@ namespace sistema_cbs
               NpgsqlConnection conexion = Servidor.conectar();
 
               // executa a instrucao 
-              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs FROM persona WHERE id_per < 100 ORDER BY id_per", conexion);
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs FROM persona WHERE id_per < 50 ORDER BY id_per", conexion);
               NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
               dt_adapter_personas.SelectCommand = sql;
 

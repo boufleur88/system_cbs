@@ -23,7 +23,9 @@ namespace sistema_cbs
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+            frm_compra fr = new frm_compra();
+            fr.Show();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)

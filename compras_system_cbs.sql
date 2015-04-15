@@ -1,4 +1,4 @@
-﻿	CREATE TABLE compra
+﻿CREATE TABLE compra
 (
   id_compra serial NOT NULL,
   id_cliente integer NOT NULL,

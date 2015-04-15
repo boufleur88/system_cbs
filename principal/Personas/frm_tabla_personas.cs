@@ -61,12 +61,16 @@ namespace sistema_cbs
            dt_lista_personas.Columns["per_tel1"].HeaderText = "TELEFONO";
            dt_lista_personas.Columns["per_tel2"].HeaderText = "CELULAR";
            dt_lista_personas.Columns["per_email"].HeaderText = "EMAIL";
-           dt_lista_personas.Columns["per_dir"].HeaderText = "DIRECCION";
-           dt_lista_personas.Columns["per_ciudad"].HeaderText = "CIUDAD";
-           dt_lista_personas.Columns["per_nac"].HeaderText = "F. NACIMIENTO";
-           dt_lista_personas.Columns["per_clt"].HeaderText = "CLIENTE";
            
            // Ocultar Campos
+           dt_lista_personas.Columns["per_ciudad"].HeaderText = "CIUDAD";
+           dt_lista_personas.Columns["per_ciudad"].Visible = false;
+           dt_lista_personas.Columns["per_dir"].HeaderText = "DIRECCION";
+           dt_lista_personas.Columns["per_dir"].Visible = false;
+           dt_lista_personas.Columns["per_nac"].HeaderText = "F. NACIMIENTO";
+           dt_lista_personas.Columns["per_nac"].Visible = false;
+           dt_lista_personas.Columns["per_clt"].HeaderText = "CLIENTE";
+           dt_lista_personas.Columns["per_clt"].Visible = false;
            dt_lista_personas.Columns["per_prov"].HeaderText = "PROVEEDOR";
            dt_lista_personas.Columns["per_prov"].Visible = false;
            dt_lista_personas.Columns["per_func"].HeaderText = "FUNCIONARIO";

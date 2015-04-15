@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_alterar = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(376, 9);
+            this.label5.Location = new System.Drawing.Point(358, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(217, 20);
             this.label5.TabIndex = 44;
@@ -56,7 +56,7 @@
             // 
             // btn_excluir
             // 
-            this.btn_excluir.Location = new System.Drawing.Point(848, 34);
+            this.btn_excluir.Location = new System.Drawing.Point(184, 67);
             this.btn_excluir.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(80, 30);
@@ -67,7 +67,7 @@
             // 
             // btn_alterar
             // 
-            this.btn_alterar.Location = new System.Drawing.Point(764, 34);
+            this.btn_alterar.Location = new System.Drawing.Point(100, 67);
             this.btn_alterar.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(80, 30);
@@ -78,7 +78,7 @@
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(681, 34);
+            this.btn_nuevo.Location = new System.Drawing.Point(17, 67);
             this.btn_nuevo.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(80, 30);
@@ -92,26 +92,26 @@
             this.dt_lista_personas.AllowUserToDeleteRows = false;
             this.dt_lista_personas.AllowUserToResizeColumns = false;
             this.dt_lista_personas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_personas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dt_lista_personas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dt_lista_personas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dt_lista_personas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dt_lista_personas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dt_lista_personas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_lista_personas.Location = new System.Drawing.Point(26, 80);
+            this.dt_lista_personas.Location = new System.Drawing.Point(8, 99);
             this.dt_lista_personas.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.dt_lista_personas.MultiSelect = false;
             this.dt_lista_personas.Name = "dt_lista_personas";
             this.dt_lista_personas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dt_lista_personas.Size = new System.Drawing.Size(1282, 796);
+            this.dt_lista_personas.Size = new System.Drawing.Size(1007, 590);
             this.dt_lista_personas.TabIndex = 0;
             this.dt_lista_personas.DoubleClick += new System.EventHandler(this.dt_lista_personas_DoubleClick);
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(1097, 34);
+            this.btn_salir.Location = new System.Drawing.Point(439, 67);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(80, 30);
             this.btn_salir.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1014, 34);
+            this.button2.Location = new System.Drawing.Point(353, 67);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 30);
@@ -131,7 +131,7 @@
             // 
             // btn_historico
             // 
-            this.btn_historico.Location = new System.Drawing.Point(931, 34);
+            this.btn_historico.Location = new System.Drawing.Point(267, 67);
             this.btn_historico.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btn_historico.Name = "btn_historico";
             this.btn_historico.Size = new System.Drawing.Size(80, 30);
@@ -143,7 +143,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 43);
+            this.label1.Location = new System.Drawing.Point(13, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 20);
             this.label1.TabIndex = 62;
@@ -152,7 +152,7 @@
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(596, 34);
+            this.btn_buscar.Location = new System.Drawing.Point(558, 34);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(80, 30);
             this.btn_buscar.TabIndex = 61;
@@ -164,7 +164,7 @@
             // 
             this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.Location = new System.Drawing.Point(224, 42);
+            this.txt_buscar.Location = new System.Drawing.Point(186, 42);
             this.txt_buscar.Margin = new System.Windows.Forms.Padding(0);
             this.txt_buscar.MaxLength = 40;
             this.txt_buscar.Name = "txt_buscar";
@@ -176,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1341, 906);
+            this.ClientSize = new System.Drawing.Size(1024, 700);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_buscar);
@@ -188,11 +188,10 @@
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.dt_lista_personas);
             this.Controls.Add(this.btn_salir);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_tabla_personas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_tabla_personas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_tabla_personas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).EndInit();
             this.ResumeLayout(false);

@@ -27,9 +27,7 @@ namespace sistema_cbs
             btn_buscar.TabIndex = 1;
             btn_nuevo.TabIndex = 2;
             btn_alterar.TabIndex = 3;
-            btnExcluir.TabIndex = 4;
-            btnExcluir.Enabled = false;
-            btn_sair.TabIndex = 5;
+            btn_sair.TabIndex = 4;
 
             ServiciosDal ls = new ServiciosDal();
             dt_lista.DataSource = ls.listar();
@@ -41,6 +39,12 @@ namespace sistema_cbs
         {
             dt_lista.Columns["id_servicio"].HeaderText = "CODIGO";
             dt_lista.Columns["descripcion"].HeaderText = "DESCRIPCION";
+            dt_lista.Columns["costo"].HeaderText = "COSTO";
+            dt_lista.Columns["costo"].DefaultCellStyle.Format = "N0";
+            dt_lista.Columns["costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dt_lista.Columns["precio_min"].HeaderText = "MINIMO";
+            dt_lista.Columns["precio_min"].DefaultCellStyle.Format = "N0";
+            dt_lista.Columns["precio_min"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dt_lista.Columns["precio"].HeaderText = "PRECIO";
             dt_lista.Columns["precio"].DefaultCellStyle.Format = "N0";
             dt_lista.Columns["precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -70,7 +74,7 @@ namespace sistema_cbs
         {
             int cServicio;
             string grupo, descripcion, observacion;
-            Double venta;
+            Double costo, minimo, venta;
 
             try
             {
@@ -79,15 +83,19 @@ namespace sistema_cbs
 
                     cServicio = Convert.ToInt32(dt_lista.CurrentRow.Cells[0].Value);
                     descripcion = Convert.ToString(dt_lista.CurrentRow.Cells[1].Value);
-                    venta = Convert.ToDouble(dt_lista.CurrentRow.Cells[2].Value);
-                    grupo = Convert.ToString(dt_lista.CurrentRow.Cells[3].Value);
-                    observacion = Convert.ToString(dt_lista.CurrentRow.Cells[4].Value);                    
+                    costo = Convert.ToDouble(dt_lista.CurrentRow.Cells[2].Value);
+                    minimo = Convert.ToDouble(dt_lista.CurrentRow.Cells[3].Value);
+                    venta = Convert.ToDouble(dt_lista.CurrentRow.Cells[4].Value);
+                    grupo = Convert.ToString(dt_lista.CurrentRow.Cells[5].Value);
+                    observacion = Convert.ToString(dt_lista.CurrentRow.Cells[6].Value);                    
 
                     this.Close();
 
                     frm_registro_servicios obj = new frm_registro_servicios();
                     obj.codigo = cServicio;
                     obj.descripcion = descripcion;
+                    obj.costo = costo;
+                    obj.preciomin = minimo;
                     obj.precio = venta;
                     obj.grupo = grupo;
                     obj.observacion = observacion;
@@ -97,7 +105,7 @@ namespace sistema_cbs
             }
             catch (Exception erro)
             {
-                MessageBox.Show("ERROR AL GUARDAR PERSONA" + erro);
+                MessageBox.Show("ERROR AL REGISTRA EL SERVICIO" + erro);
             }
         }
 
@@ -121,8 +129,5 @@ namespace sistema_cbs
                 formata_tabla();
             }
         }
-        
-
-        
     }
 }

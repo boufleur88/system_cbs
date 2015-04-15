@@ -49,6 +49,42 @@ CREATE TABLE produto (
   PRIMARY KEY(id_produto)
 );
 
+/* Nueva tabla para compras mas estandarizada y facil de interpretar */
+CREATE TABLE compras
+(
+	compra_id serial NOT NULL,
+	PRIMARY KEY (compra_id),
+	cliente_id INTEGER NOT NULL,
+	factura VARCHAR(15),
+	timbrado VARCHAR(12),
+	observacion VARCHAR(40),
+	f_inclusion date,
+	f_factura date,
+	status character(1),
+	iva00 numeric(15,2),
+	iva05 numeric(15,2),
+	iva10 numeric(15,2),
+	total numeric(15,2),
+	ts_creacion timestamp without time zone DEFAULT now()
+);
+
+/* Tabla de Servicios */
+CREATE TABLE servicio
+(
+  id_servicio serial NOT NULL,
+  PRIMARY KEY (id_servicio),
+  descripcion VARCHAR(80) NOT NULL,
+  costo numeric(20,2),
+  precio_min numeric(20,2),
+  precio numeric(20,2),
+  observacion VARCHAR(130),
+  id_sgrupo integer NOT NULL,
+  ts_creacion timestamp without time zone DEFAULT now()
+);
+
+SELECT * FROM servicio;
+
+DROP TABLE servicio;
 
 select id_grupo, st_grupo from st_grupo order by id_grupo
 

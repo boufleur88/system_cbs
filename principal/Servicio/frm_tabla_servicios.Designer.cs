@@ -33,7 +33,6 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.btn_sair = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_alterar = new System.Windows.Forms.Button();
@@ -75,22 +74,13 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(859, 33);
+            this.btn_sair.Location = new System.Drawing.Point(773, 33);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(80, 30);
             this.btn_sair.TabIndex = 58;
             this.btn_sair.Text = "&SAIR";
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(773, 33);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(80, 30);
-            this.btnExcluir.TabIndex = 57;
-            this.btnExcluir.Text = "&EXCLUIR";
-            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btn_nuevo
             // 
@@ -149,7 +139,6 @@
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.btn_sair);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_alterar);
@@ -171,7 +160,6 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.Button btn_sair;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_alterar;

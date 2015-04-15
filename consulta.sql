@@ -1,4 +1,4 @@
-﻿SELECT diario.c_ref, diario.c_codclt, diario.d_emis, 
+﻿ELECT diario.c_ref, diario.c_codclt, diario.d_emis, 
         CASE
             WHEN refinanciados(diario.c_ref) > diario.d_venc THEN refinanciados(diario.c_ref)
             ELSE diario.d_venc
