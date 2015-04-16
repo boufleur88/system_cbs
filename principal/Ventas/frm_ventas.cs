@@ -16,24 +16,26 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
-        private void frm_ventas_Load(object sender, EventArgs e)
-        {
-            // CONFIGURACION DE TABINDEX.
+        public int idCliente;
+        public string cliente, telefono, ruc;
 
+        private void frm_ventas_Load(object sender, EventArgs e)
+        {          
+            // CONFIGURACION DE TABINDEX.
             txtFecha.Enabled = false;
             txtCodigoVenta.Enabled = false;
-            txtCodCliente.Focus();
-            txtCodCliente.TabIndex = 0;
-            txtNombre.TabIndex = 1;
+            txtCodCliente.Enabled = false;
+            txtNombre.Enabled = false;
             txtTelefono.Enabled = false;
             txtRuc.Enabled = false;
-            txtObservacion.TabIndex = 2;
-            btnMercaderia.TabIndex = 3;
-            btnGuardar.TabIndex = 4;
-            btnFactura.TabIndex = 5;
-            btn_salir.TabIndex = 6;
+            btnBuscarClientes.Focus();
+            btnBuscarClientes.TabIndex = 0;
+            txtObservacion.TabIndex = 1;
+            btnMercaderia.TabIndex = 2;
+            btnGuardar.TabIndex = 3;
+            btnFactura.TabIndex = 4;
+            btn_salir.TabIndex = 5;
             txtTotalVenta.Enabled = false;
-
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
@@ -48,10 +50,13 @@ namespace sistema_cbs
             fr.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // EVENT DELEGATE
+        public void ejecutar(int codigo, string nombre, string telefono, string ruc)
         {
-            frmTablaPersonasVentas fr = new frmTablaPersonasVentas();
-            fr.Show();
+            txtCodCliente.Text = Convert.ToString(codigo);
+            txtNombre.Text = Convert.ToString(nombre);
+            txtTelefono.Text = Convert.ToString(telefono);
+            txtRuc.Text = Convert.ToString(ruc);
         }
 
         private void btnMercaderia_Click(object sender, EventArgs e)
@@ -63,6 +68,14 @@ namespace sistema_cbs
         private void btnServicios_Click(object sender, EventArgs e)
         {
             frmTablaServiciosVentas fr = new frmTablaServiciosVentas();
+            fr.Show();
+        }
+
+        private void btnBuscarClientes_Click(object sender, EventArgs e)
+        {
+            // UTILIZANDO DELEGADOS.
+            frmTablaPersonasVentas fr = new frmTablaPersonasVentas();
+            fr.pasado += new frmTablaPersonasVentas.pasar(ejecutar);
             fr.Show();
         }
 

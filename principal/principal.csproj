@@ -101,6 +101,24 @@
     <Compile Include="Compras\frm_tabla_compra.Designer.cs">
       <DependentUpon>frm_tabla_compra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmTablaMercaderiasCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmTablaMercaderiasCompras.Designer.cs">
+      <DependentUpon>frmTablaMercaderiasCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmRegistroCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmRegistroCompras.Designer.cs">
+      <DependentUpon>frmRegistroCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmTablaPersonasCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmTablaPersonasCompras.Designer.cs">
+      <DependentUpon>frmTablaPersonasCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\frmRegistroServicios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +351,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frm_tabla_compra.resx">
       <DependentUpon>frm_tabla_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmTablaMercaderiasCompras.resx">
+      <DependentUpon>frmTablaMercaderiasCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmRegistroCompras.resx">
+      <DependentUpon>frmRegistroCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmTablaPersonasCompras.resx">
+      <DependentUpon>frmTablaPersonasCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmRegistroServicios.resx">
       <DependentUpon>frmRegistroServicios.cs</DependentUpon>

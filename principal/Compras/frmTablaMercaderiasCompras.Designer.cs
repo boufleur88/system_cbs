@@ -1,6 +1,6 @@
 ﻿namespace sistema_cbs
 {
-    partial class frmTablaPersonasVentas
+    partial class frmTablaMercaderiasCompras
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btmAdicionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.btn_sair = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dt_lista_cliente = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_cliente)).BeginInit();
+            this.dt_lista = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_lista)).BeginInit();
             this.SuspendLayout();
             // 
             // btmAdicionar
             // 
-            this.btmAdicionar.Location = new System.Drawing.Point(542, 49);
+            this.btmAdicionar.Location = new System.Drawing.Point(543, 49);
             this.btmAdicionar.Name = "btmAdicionar";
             this.btmAdicionar.Size = new System.Drawing.Size(76, 30);
-            this.btmAdicionar.TabIndex = 74;
+            this.btmAdicionar.TabIndex = 67;
             this.btmAdicionar.Text = "&ADICIONAR";
             this.btmAdicionar.UseVisualStyleBackColor = true;
             this.btmAdicionar.Click += new System.EventHandler(this.btmAdicionar_Click);
@@ -53,19 +53,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 53);
+            this.label1.Location = new System.Drawing.Point(3, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 20);
-            this.label1.TabIndex = 73;
-            this.label1.Text = "CLIENTE";
+            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "DESCRIPCION";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(460, 49);
+            this.btn_buscar.Location = new System.Drawing.Point(461, 49);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(76, 30);
-            this.btn_buscar.TabIndex = 72;
+            this.btn_buscar.TabIndex = 65;
             this.btn_buscar.Text = "&BUSCAR";
             this.btn_buscar.UseVisualStyleBackColor = true;
             // 
@@ -73,19 +73,19 @@
             // 
             this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.Location = new System.Drawing.Point(125, 53);
+            this.txt_buscar.Location = new System.Drawing.Point(126, 53);
             this.txt_buscar.Margin = new System.Windows.Forms.Padding(0);
             this.txt_buscar.MaxLength = 40;
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(332, 22);
-            this.txt_buscar.TabIndex = 71;
+            this.txt_buscar.TabIndex = 64;
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(621, 49);
+            this.btn_sair.Location = new System.Drawing.Point(622, 49);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(76, 30);
-            this.btn_sair.TabIndex = 69;
+            this.btn_sair.TabIndex = 62;
             this.btn_sair.Text = "&SAIR";
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
@@ -94,30 +94,30 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(252, 24);
+            this.label5.Location = new System.Drawing.Point(253, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 20);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "CATALOGO DE CLIENTES";
+            this.label5.Size = new System.Drawing.Size(248, 20);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "CATALOGO DE MERCADERIAS";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dt_lista_cliente
+            // dt_lista
             // 
-            this.dt_lista_cliente.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_cliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dt_lista_cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dt_lista_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_lista_cliente.Location = new System.Drawing.Point(10, 86);
-            this.dt_lista_cliente.Margin = new System.Windows.Forms.Padding(2);
-            this.dt_lista_cliente.Name = "dt_lista_cliente";
-            this.dt_lista_cliente.ReadOnly = true;
-            this.dt_lista_cliente.RowHeadersWidth = 50;
-            this.dt_lista_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dt_lista_cliente.Size = new System.Drawing.Size(681, 391);
-            this.dt_lista_cliente.TabIndex = 68;
+            this.dt_lista.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dt_lista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dt_lista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dt_lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dt_lista.Location = new System.Drawing.Point(11, 86);
+            this.dt_lista.Margin = new System.Windows.Forms.Padding(2);
+            this.dt_lista.Name = "dt_lista";
+            this.dt_lista.ReadOnly = true;
+            this.dt_lista.RowHeadersWidth = 50;
+            this.dt_lista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dt_lista.Size = new System.Drawing.Size(681, 391);
+            this.dt_lista.TabIndex = 61;
             // 
-            // frmTablaPersonasVentas
+            // frmTablaMercaderiasCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,13 +128,13 @@
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dt_lista_cliente);
+            this.Controls.Add(this.dt_lista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmTablaPersonasVentas";
+            this.Name = "frmTablaMercaderiasCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTablaPersonasVentas";
-            this.Load += new System.EventHandler(this.frmTablaPersonasVentas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_cliente)).EndInit();
+            this.Text = "frmTablaMercaderiasCompras";
+            this.Load += new System.EventHandler(this.frmTablaMercaderiasCompras_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dt_lista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +148,6 @@
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dt_lista_cliente;
+        private System.Windows.Forms.DataGridView dt_lista;
     }
 }

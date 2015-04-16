@@ -32,7 +32,7 @@ namespace sistema_cbs
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            frm_tabla_stock fr = new frm_tabla_stock();
+            frmTablaMercaderiasCompras fr = new frmTablaMercaderiasCompras();
             fr.Show();
         }
 
@@ -46,7 +46,7 @@ namespace sistema_cbs
 
         private void btnPersonas_Click(object sender, EventArgs e)
         {
-            frm_tabla_personas fr = new frm_tabla_personas();
+            frmTablaPersonasCompras fr = new frmTablaPersonasCompras();
             fr.Show();
         }
 

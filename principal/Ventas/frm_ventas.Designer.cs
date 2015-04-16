@@ -42,7 +42,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodigoVenta = new System.Windows.Forms.TextBox();
             this.txtCodCliente = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscarClientes = new System.Windows.Forms.Button();
             this.btnMercaderia = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
@@ -50,6 +50,7 @@
             this.txtTotalVenta = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnServicios = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,15 +211,15 @@
             this.txtCodCliente.Size = new System.Drawing.Size(48, 22);
             this.txtCodCliente.TabIndex = 86;
             // 
-            // button1
+            // btnBuscarClientes
             // 
-            this.button1.Location = new System.Drawing.Point(475, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 24);
-            this.button1.TabIndex = 87;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBuscarClientes.Location = new System.Drawing.Point(475, 38);
+            this.btnBuscarClientes.Name = "btnBuscarClientes";
+            this.btnBuscarClientes.Size = new System.Drawing.Size(38, 24);
+            this.btnBuscarClientes.TabIndex = 87;
+            this.btnBuscarClientes.Text = "ADD";
+            this.btnBuscarClientes.UseVisualStyleBackColor = true;
+            this.btnBuscarClientes.Click += new System.EventHandler(this.btnBuscarClientes_Click);
             // 
             // btnMercaderia
             // 
@@ -242,7 +243,7 @@
             // 
             // btnFactura
             // 
-            this.btnFactura.Location = new System.Drawing.Point(334, 101);
+            this.btnFactura.Location = new System.Drawing.Point(792, 101);
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Size = new System.Drawing.Size(102, 24);
             this.btnFactura.TabIndex = 93;
@@ -251,7 +252,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(226, 101);
+            this.btnGuardar.Location = new System.Drawing.Point(684, 101);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 24);
             this.btnGuardar.TabIndex = 92;
@@ -282,19 +283,29 @@
             // 
             // btnServicios
             // 
-            this.btnServicios.Location = new System.Drawing.Point(121, 101);
+            this.btnServicios.Location = new System.Drawing.Point(124, 101);
             this.btnServicios.Name = "btnServicios";
-            this.btnServicios.Size = new System.Drawing.Size(102, 24);
+            this.btnServicios.Size = new System.Drawing.Size(106, 24);
             this.btnServicios.TabIndex = 98;
             this.btnServicios.Text = "&SERVICIOS";
             this.btnServicios.UseVisualStyleBackColor = true;
             this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(236, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 24);
+            this.button1.TabIndex = 99;
+            this.button1.Text = "&SERVICIOS";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frm_ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 740);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnServicios);
             this.Controls.Add(this.txtTotalVenta);
             this.Controls.Add(this.label10);
@@ -302,7 +313,7 @@
             this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnMercaderia);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscarClientes);
             this.Controls.Add(this.txtCodCliente);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCodigoVenta);
@@ -344,7 +355,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCodigoVenta;
         private System.Windows.Forms.TextBox txtCodCliente;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscarClientes;
         private System.Windows.Forms.Button btnMercaderia;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button btnFactura;
@@ -352,5 +363,6 @@
         private System.Windows.Forms.TextBox txtTotalVenta;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnServicios;
+        private System.Windows.Forms.Button button1;
     }
 }

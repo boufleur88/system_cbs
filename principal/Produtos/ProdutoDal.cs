@@ -121,6 +121,31 @@ namespace sistema_cbs
          }
       }
 
+       // Lista para compras.
+      public DataTable listarCompras()
+      {
+          try
+          {
+              NpgsqlConnection conexion = Servidor.conectar();
+
+              // executa a instrucao 
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT p.id_produto, p.pro_descr, p.pro_costocon, p.pro_costoadm, p.pro_ventamay, p.pro_ventamin, p.pro_cantmin FROM produto AS p ORDER BY p.id_produto;", conexion);
+
+              NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
+              dt_adapter.SelectCommand = sql;
+
+              DataTable dt_lista_produto = new DataTable();
+              dt_adapter.Fill(dt_lista_produto);
+
+              conexion.Close();
+              return dt_lista_produto;
+          }
+          catch (Exception error)
+          {
+              throw error;
+          }
+      }
+
       public DataTable listar_algunos()
       {
           try
