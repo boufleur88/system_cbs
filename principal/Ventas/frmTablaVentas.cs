@@ -37,5 +37,10 @@ namespace sistema_cbs
             btnAlterar.TabIndex = 3;
             btnSalir.TabIndex = 4;
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

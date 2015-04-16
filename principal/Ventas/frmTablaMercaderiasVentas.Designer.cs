@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
@@ -94,8 +94,8 @@
             // dt_lista_produto
             // 
             this.dt_lista_produto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dt_lista_produto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dt_lista_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dt_lista_produto.Location = new System.Drawing.Point(8, 71);
@@ -115,6 +115,7 @@
             this.btmAdicionar.TabIndex = 60;
             this.btmAdicionar.Text = "&ADICIONAR";
             this.btmAdicionar.UseVisualStyleBackColor = true;
+            this.btmAdicionar.Click += new System.EventHandler(this.btmAdicionar_Click);
             // 
             // frmTablaMercaderiasVentas
             // 

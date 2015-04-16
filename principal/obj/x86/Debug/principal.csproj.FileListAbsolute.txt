@@ -187,3 +187,5 @@ C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_c
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmTablaMercaderiasVentas.resources
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmTablaServiciosVentas.resources
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmTablaPersonasVentas.resources
+C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmRegistroVentas.resources
+C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmRegistroServicios.resources

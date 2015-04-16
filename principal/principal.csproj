@@ -101,6 +101,18 @@
     <Compile Include="Compras\frm_tabla_compra.Designer.cs">
       <DependentUpon>frm_tabla_compra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas\frmRegistroServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frmRegistroServicios.Designer.cs">
+      <DependentUpon>frmRegistroServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\frmRegistroVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\frmRegistroVentas.Designer.cs">
+      <DependentUpon>frmRegistroVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\frmTablaServiciosVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +334,9 @@
     <EmbeddedResource Include="Compras\frm_tabla_compra.resx">
       <DependentUpon>frm_tabla_compra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmRegistroServicios.resx">
+      <DependentUpon>frmRegistroServicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Personas\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Servicio\frm_tabla_servicios.resx">
       <DependentUpon>frm_tabla_servicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\frmRegistroVentas.resx">
+      <DependentUpon>frmRegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmTablaMercaderiasVentas.resx">
       <DependentUpon>frmTablaMercaderiasVentas.cs</DependentUpon>

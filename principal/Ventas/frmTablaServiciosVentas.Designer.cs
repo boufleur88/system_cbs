@@ -47,6 +47,7 @@
             this.btmAdicionar.TabIndex = 67;
             this.btmAdicionar.Text = "&ADICIONAR";
             this.btmAdicionar.UseVisualStyleBackColor = true;
+            this.btmAdicionar.Click += new System.EventHandler(this.btmAdicionar_Click);
             // 
             // label1
             // 
@@ -95,9 +96,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(251, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(248, 20);
+            this.label5.Size = new System.Drawing.Size(217, 20);
             this.label5.TabIndex = 63;
-            this.label5.Text = "CATALOGO DE MERCADERIAS";
+            this.label5.Text = "CATALOGO DE SERVICIOS";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dt_lista

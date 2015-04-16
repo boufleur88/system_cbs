@@ -56,5 +56,44 @@ namespace sistema_cbs
         {
             this.Close();
         }
+
+        private void btmAdicionar_Click(object sender, EventArgs e)
+        {
+            llamar_datos();
+        }
+
+        public void llamar_datos()
+        {
+            int idMercaderia;
+            string descripcion;
+            double costo, preciomin, precio;
+
+            try
+            {
+                if (dt_lista_produto.SelectedRows.Count == 1)
+                {
+                    idMercaderia = Convert.ToInt32(dt_lista_produto.CurrentRow.Cells[0].Value);
+                    descripcion = Convert.ToString(dt_lista_produto.CurrentRow.Cells[1].Value);
+                    costo = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[13].Value);
+                    preciomin = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[2].Value);
+                    precio = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[3].Value);
+
+                    this.Close();
+
+                    // MessageBox.Show("IdServicio " + idServicio + " | " + descripcion + " Costo: " + costo + " PrecioMin: " + preciomin + " Precio " + precio + " ");
+
+                    frmRegistroVentas obj = new frmRegistroVentas();
+                    obj.codigo = idMercaderia;
+                    obj.descripcion = descripcion;
+                    obj.precio = precio;
+                    obj.Show();
+
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("ERROR AL GUARDAR PERSONA" + erro);
+            }
+        }
     }
 }

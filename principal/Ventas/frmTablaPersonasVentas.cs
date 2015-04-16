@@ -63,5 +63,10 @@ namespace sistema_cbs
         {
             Close();
         }
+
+        private void btmAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
