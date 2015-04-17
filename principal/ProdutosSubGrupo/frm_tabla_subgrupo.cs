@@ -45,8 +45,9 @@ namespace sistema_cbs
            dt_lista_subgrupo.DataSource = listar.listar();
 
            dt_lista_subgrupo.Columns["id_subgrupo"].HeaderText = "CODIGO";
-           
+           dt_lista_subgrupo.Columns["id_subgrupo"].Width = 60; 
            dt_lista_subgrupo.Columns["st_subgrupo"].HeaderText = "SUBGRUPO";
+           dt_lista_subgrupo.Columns["st_subgrupo"].Width = 280;
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)

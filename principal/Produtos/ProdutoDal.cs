@@ -129,7 +129,7 @@ namespace sistema_cbs
               NpgsqlConnection conexion = Servidor.conectar();
 
               // executa a instrucao 
-              NpgsqlCommand sql = new NpgsqlCommand("SELECT p.id_produto, p.pro_descr, p.pro_costocon, p.pro_costoadm, p.pro_ventamay, p.pro_ventamin, p.pro_cantmin FROM produto AS p ORDER BY p.id_produto;", conexion);
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT p.id_produto, p.pro_descr, p.pro_costocon, p.pro_costoadm, p.pro_ventamay, p.pro_ventamin FROM produto AS p ORDER BY p.id_produto;", conexion);
 
               NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
               dt_adapter.SelectCommand = sql;

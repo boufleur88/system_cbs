@@ -58,7 +58,7 @@ namespace sistema_cbs
 
         private void btmAdicionar_Click(object sender, EventArgs e)
         {
-
+            llamar_datos();
         }
 
         public void llamar_datos()
@@ -73,8 +73,8 @@ namespace sistema_cbs
                 {
                     idMercaderia = Convert.ToInt32(dt_lista.CurrentRow.Cells[0].Value);
                     descripcion = Convert.ToString(dt_lista.CurrentRow.Cells[1].Value);
-                    costoadm = Convert.ToDouble(dt_lista.CurrentRow.Cells[2].Value);
-                    costocon = Convert.ToDouble(dt_lista.CurrentRow.Cells[3].Value);
+                    costocon = Convert.ToDouble(dt_lista.CurrentRow.Cells[2].Value);
+                    costoadm = Convert.ToDouble(dt_lista.CurrentRow.Cells[3].Value);
                     preciomin = Convert.ToDouble(dt_lista.CurrentRow.Cells[4].Value);
                     precio = Convert.ToDouble(dt_lista.CurrentRow.Cells[5].Value);
 
@@ -85,7 +85,10 @@ namespace sistema_cbs
                     frmRegistroCompras obj = new frmRegistroCompras();
                     obj.codigo = idMercaderia;
                     obj.descripcion = descripcion;
-                    obj.precio = precio;
+                    obj.costocon = costocon;
+                    obj.costoadm = costoadm;
+                    obj.preciomin = preciomin;
+                    obj.precionormal = preciomin;
                     obj.Show();
 
                 }

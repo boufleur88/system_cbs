@@ -16,6 +16,16 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
+        // CREAR NUESTRO DELEGADO.
+        public delegate void pasarMercaderia(int codigo, int cantidad, string descripcion, double precio); // tipo del metodo y parametros que llevara el metodol
+
+        // CREAR NUESTRO EVENTO.
+        public event pasarMercaderia pasadoMercaderia;
+
+        public int codigo, cantidad = 1;
+        public string descripcion;
+        public double costo, preciomin, precio;
+
         private void frmTablaMercaderiasVentas_Load(object sender, EventArgs e)
         {
             txt_buscar.Focus();
@@ -64,29 +74,21 @@ namespace sistema_cbs
 
         public void llamar_datos()
         {
-            int idMercaderia;
-            string descripcion;
-            double costo, preciomin, precio;
-
             try
             {
                 if (dt_lista_produto.SelectedRows.Count == 1)
                 {
-                    idMercaderia = Convert.ToInt32(dt_lista_produto.CurrentRow.Cells[0].Value);
+                    codigo = Convert.ToInt32(dt_lista_produto.CurrentRow.Cells[0].Value);
                     descripcion = Convert.ToString(dt_lista_produto.CurrentRow.Cells[1].Value);
+                    cantidad = 1;
                     costo = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[13].Value);
                     preciomin = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[2].Value);
                     precio = Convert.ToDouble(dt_lista_produto.CurrentRow.Cells[3].Value);
 
                     this.Close();
 
-                    // MessageBox.Show("IdServicio " + idServicio + " | " + descripcion + " Costo: " + costo + " PrecioMin: " + preciomin + " Precio " + precio + " ");
-
-                    frmRegistroVentas obj = new frmRegistroVentas();
-                    obj.codigo = idMercaderia;
-                    obj.descripcion = descripcion;
-                    obj.precio = precio;
-                    obj.Show();
+                    pasadoMercaderia(codigo, cantidad, descripcion, precio);
+                    this.Dispose();
 
                 }
             }
@@ -95,5 +97,7 @@ namespace sistema_cbs
                 MessageBox.Show("ERROR AL GUARDAR PERSONA" + erro);
             }
         }
+
+
     }
 }

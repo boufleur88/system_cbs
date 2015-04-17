@@ -52,7 +52,7 @@
             this.txtVencimiento = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFactura = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtListaItems)).BeginInit();
             this.SuspendLayout();
@@ -308,16 +308,16 @@
             this.txtTotal.Size = new System.Drawing.Size(134, 22);
             this.txtTotal.TabIndex = 117;
             // 
-            // textBox1
+            // txtFactura
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(595, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.MaxLength = 40;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
-            this.textBox1.TabIndex = 120;
+            this.txtFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFactura.Location = new System.Drawing.Point(595, 39);
+            this.txtFactura.Margin = new System.Windows.Forms.Padding(0);
+            this.txtFactura.MaxLength = 40;
+            this.txtFactura.Name = "txtFactura";
+            this.txtFactura.Size = new System.Drawing.Size(159, 22);
+            this.txtFactura.TabIndex = 120;
             // 
             // label4
             // 
@@ -335,7 +335,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFactura);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotal);
@@ -398,7 +398,7 @@
         private System.Windows.Forms.MaskedTextBox txtVencimiento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFactura;
         private System.Windows.Forms.Label label4;
     }
 }

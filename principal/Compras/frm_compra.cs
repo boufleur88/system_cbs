@@ -25,7 +25,27 @@ namespace sistema_cbs
 
         private void frm_compra_Load(object sender, EventArgs e)
         {
+            txtProveedor.Enabled = false;
+            txtIdProveedor.Enabled = false;
+            txtTelefono.Enabled = false;
+            txtRuc.Enabled = false;
+            txtInclusion.Enabled = false;
+            txtNCompra.Enabled = false;
 
+            txtVencimiento.Focus();
+            txtVencimiento.TabIndex = 0;
+            txtFactura.TabIndex = 1;
+            btnAdicionarProveedor.TabIndex = 2;
+            txtObservacion.TabIndex = 3;
+            btnProductos.TabIndex = 4;
+            btnGuardar.TabIndex = 5;
+            btnFactura.TabIndex = 6;
+            btnImprimir.TabIndex = 7;
+            btnSalir.TabIndex = 8;
+
+            txtTotal.Enabled = false;
+
+            
         }
 
         
@@ -46,8 +66,19 @@ namespace sistema_cbs
 
         private void btnPersonas_Click(object sender, EventArgs e)
         {
+            // UTILIZANDO DELEGADOS.
             frmTablaPersonasCompras fr = new frmTablaPersonasCompras();
+            fr.pasado += new frmTablaPersonasCompras.pasar(ejecutar);
             fr.Show();
+        }
+
+        // EVENT DELEGATE
+        public void ejecutar(int codigo, string nombre, string telefono, string ruc)
+        {
+            txtIdProveedor.Text = Convert.ToString(codigo);
+            txtProveedor.Text = Convert.ToString(nombre);
+            txtTelefono.Text = Convert.ToString(telefono);
+            txtRuc.Text = Convert.ToString(ruc);
         }
 
         

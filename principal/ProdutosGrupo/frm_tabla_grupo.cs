@@ -40,7 +40,10 @@ namespace sistema_cbs
            dt_lista_grupo.DataSource = lista.listar();
 
            dt_lista_grupo.Columns["id_grupo"].HeaderText = "CODIGO";
+           dt_lista_grupo.Columns["id_grupo"].Width = 60;
            dt_lista_grupo.Columns["st_grupo"].HeaderText = "GRUPO";
+           dt_lista_grupo.Columns["st_grupo"].Width = 280;
+
         }
 
        // Cuando abre el formulario para registro de grupo, cambia el focus del boton nuevo para el boton buscar, para que logre ejecutar el evente leave del bonton nuevo donde cargar nuevamente la lista.

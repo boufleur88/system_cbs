@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dt_lista_personas = new System.Windows.Forms.DataGridView();
+            this.dtVentas = new System.Windows.Forms.DataGridView();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,8 +50,12 @@
             this.txtTotalVenta = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnServicios = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).BeginInit();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dtVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,19 +91,25 @@
             this.label5.Text = "CLIENTE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dt_lista_personas
+            // dtVentas
             // 
-            this.dt_lista_personas.AllowUserToAddRows = false;
-            this.dt_lista_personas.AllowUserToDeleteRows = false;
-            this.dt_lista_personas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dt_lista_personas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dt_lista_personas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_lista_personas.Location = new System.Drawing.Point(5, 133);
-            this.dt_lista_personas.Name = "dt_lista_personas";
-            this.dt_lista_personas.ReadOnly = true;
-            this.dt_lista_personas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dt_lista_personas.Size = new System.Drawing.Size(1012, 492);
-            this.dt_lista_personas.TabIndex = 63;
+            this.dtVentas.AllowUserToAddRows = false;
+            this.dtVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CODIGO,
+            this.DESCRIPCION,
+            this.CANTIDAD,
+            this.PRECIO,
+            this.TOTAL});
+            this.dtVentas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.dtVentas.Location = new System.Drawing.Point(5, 133);
+            this.dtVentas.MultiSelect = false;
+            this.dtVentas.Name = "dtVentas";
+            this.dtVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtVentas.Size = new System.Drawing.Size(1012, 492);
+            this.dtVentas.TabIndex = 63;
             // 
             // txtNombre
             // 
@@ -291,21 +301,48 @@
             this.btnServicios.UseVisualStyleBackColor = true;
             this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
-            // button1
+            // CODIGO
             // 
-            this.button1.Location = new System.Drawing.Point(236, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 24);
-            this.button1.TabIndex = 99;
-            this.button1.Text = "&SERVICIOS";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CODIGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CODIGO.HeaderText = "CODIGO";
+            this.CODIGO.Name = "CODIGO";
+            this.CODIGO.ReadOnly = true;
+            this.CODIGO.Width = 80;
+            // 
+            // DESCRIPCION
+            // 
+            this.DESCRIPCION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.DESCRIPCION.HeaderText = "DESCRIPCION";
+            this.DESCRIPCION.Name = "DESCRIPCION";
+            this.DESCRIPCION.ReadOnly = true;
+            this.DESCRIPCION.Width = 450;
+            // 
+            // CANTIDAD
+            // 
+            this.CANTIDAD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CANTIDAD.HeaderText = "CANTIDAD";
+            this.CANTIDAD.Name = "CANTIDAD";
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
+            this.PRECIO.Width = 200;
+            // 
+            // TOTAL
+            // 
+            this.TOTAL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TOTAL.FillWeight = 200F;
+            this.TOTAL.HeaderText = "TOTAL";
+            this.TOTAL.Name = "TOTAL";
+            this.TOTAL.ReadOnly = true;
             // 
             // frm_ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 740);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnServicios);
             this.Controls.Add(this.txtTotalVenta);
             this.Controls.Add(this.label10);
@@ -327,13 +364,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dt_lista_personas);
+            this.Controls.Add(this.dtVentas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_ventas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VENTAS CONTADO Y CREDITO";
             this.Load += new System.EventHandler(this.frm_ventas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dt_lista_personas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,7 +381,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dt_lista_personas;
+        private System.Windows.Forms.DataGridView dtVentas;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label3;
@@ -363,6 +400,10 @@
         private System.Windows.Forms.TextBox txtTotalVenta;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnServicios;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL;
     }
 }

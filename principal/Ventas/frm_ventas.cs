@@ -36,6 +36,11 @@ namespace sistema_cbs
             btnFactura.TabIndex = 4;
             btn_salir.TabIndex = 5;
             txtTotalVenta.Enabled = false;
+
+            dtVentas.Columns["PRECIO"].DefaultCellStyle.Format = "N0";
+            dtVentas.Columns["PRECIO"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dtVentas.Columns["TOTAL"].DefaultCellStyle.Format = "N0";
+            dtVentas.Columns["TOTAL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
@@ -50,6 +55,33 @@ namespace sistema_cbs
             fr.Show();
         }
 
+        private void btnMercaderia_Click(object sender, EventArgs e)
+        {
+            frmTablaMercaderiasVentas fr = new frmTablaMercaderiasVentas();
+            fr.pasadoMercaderia += new frmTablaMercaderiasVentas.pasarMercaderia(ejecutarVenta);
+            // fr.Show();
+            fr.Show();
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            frmTablaServiciosVentas fr = new frmTablaServiciosVentas();
+            fr.pasadoServicio += new frmTablaServiciosVentas.pasarServicio(ejecutarServicio); 
+            
+            fr.Show();
+        }
+
+        // EVENT DELEGATE
+        public void ejecutarServicio(int codigo, int cantidad, string descripcion, double precio)
+        {
+            dtVentas.Rows.Add(codigo, descripcion, cantidad, precio);
+        }
+
+        public void ejecutarVenta(int codigo, int cantidad, string descripcion, double precio)
+        {
+            dtVentas.Rows.Add(codigo, descripcion, cantidad, precio);
+        }
+
         // EVENT DELEGATE
         public void ejecutar(int codigo, string nombre, string telefono, string ruc)
         {
@@ -57,18 +89,6 @@ namespace sistema_cbs
             txtNombre.Text = Convert.ToString(nombre);
             txtTelefono.Text = Convert.ToString(telefono);
             txtRuc.Text = Convert.ToString(ruc);
-        }
-
-        private void btnMercaderia_Click(object sender, EventArgs e)
-        {
-            frmTablaMercaderiasVentas fr = new frmTablaMercaderiasVentas();
-            fr.Show();
-        }
-
-        private void btnServicios_Click(object sender, EventArgs e)
-        {
-            frmTablaServiciosVentas fr = new frmTablaServiciosVentas();
-            fr.Show();
         }
 
         private void btnBuscarClientes_Click(object sender, EventArgs e)

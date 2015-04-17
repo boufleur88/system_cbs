@@ -106,6 +106,58 @@ namespace sistema_cbs
       }
 
       // METODO LISTA PERSONAS.
+      public DataTable listaProveedorCompra()
+      {
+          try
+          {
+              NpgsqlConnection conexion = Servidor.conectar();
+
+              // executa a instrucao 
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_ruc, per_tel1 FROM persona WHERE per_prov = 'S' ORDER BY id_per;", conexion);
+              NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
+              dt_adapter_personas.SelectCommand = sql;
+
+
+              DataTable dt_lista_personas = new DataTable();
+              dt_adapter_personas.Fill(dt_lista_personas);
+
+              conexion.Close();
+              return dt_lista_personas;
+
+          }
+          catch (Exception error)
+          {
+              throw error;
+          }
+      }
+
+
+      // METODO LISTA PERSONAS.
+      public DataTable listaClientesVentas()
+      {
+          try
+          {
+              NpgsqlConnection conexion = Servidor.conectar();
+
+              // executa a instrucao 
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_ruc, per_tel1 FROM persona WHERE per_clt = 'S' ORDER BY id_per;", conexion);
+              NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
+              dt_adapter_personas.SelectCommand = sql;
+
+
+              DataTable dt_lista_personas = new DataTable();
+              dt_adapter_personas.Fill(dt_lista_personas);
+
+              conexion.Close();
+              return dt_lista_personas;
+
+          }
+          catch (Exception error)
+          {
+              throw error;
+          }
+      }
+      // METODO LISTA PERSONAS.
       public DataTable lista_algunos()
       {
           try

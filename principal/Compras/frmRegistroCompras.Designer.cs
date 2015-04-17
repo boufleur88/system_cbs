@@ -33,18 +33,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCostoCont = new System.Windows.Forms.TextBox();
+            this.txtCosto1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPrecioMin = new System.Windows.Forms.TextBox();
+            this.txtPrecio1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPrecioCont = new System.Windows.Forms.TextBox();
+            this.txtPrecio2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCostoAdm = new System.Windows.Forms.TextBox();
+            this.txtCosto2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label5
@@ -89,6 +89,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(81, 22);
             this.txtCantidad.TabIndex = 147;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label2
             // 
@@ -101,16 +102,18 @@
             this.label2.Text = "COSTO CONT";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtCostoCont
+            // txtCosto1
             // 
-            this.txtCostoCont.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCostoCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCostoCont.Location = new System.Drawing.Point(163, 146);
-            this.txtCostoCont.Margin = new System.Windows.Forms.Padding(0);
-            this.txtCostoCont.MaxLength = 15;
-            this.txtCostoCont.Name = "txtCostoCont";
-            this.txtCostoCont.Size = new System.Drawing.Size(172, 22);
-            this.txtCostoCont.TabIndex = 141;
+            this.txtCosto1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCosto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCosto1.Location = new System.Drawing.Point(163, 146);
+            this.txtCosto1.Margin = new System.Windows.Forms.Padding(0);
+            this.txtCosto1.MaxLength = 15;
+            this.txtCosto1.Name = "txtCosto1";
+            this.txtCosto1.Size = new System.Drawing.Size(172, 22);
+            this.txtCosto1.TabIndex = 141;
+            this.txtCosto1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoCont_KeyPress);
+            this.txtCosto1.Leave += new System.EventHandler(this.txtCostoCont_Leave);
             // 
             // label3
             // 
@@ -175,16 +178,18 @@
             this.label6.Text = "PRECIO MINIMO";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtPrecioMin
+            // txtPrecio1
             // 
-            this.txtPrecioMin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecioMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioMin.Location = new System.Drawing.Point(503, 146);
-            this.txtPrecioMin.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPrecioMin.MaxLength = 15;
-            this.txtPrecioMin.Name = "txtPrecioMin";
-            this.txtPrecioMin.Size = new System.Drawing.Size(172, 22);
-            this.txtPrecioMin.TabIndex = 151;
+            this.txtPrecio1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio1.Location = new System.Drawing.Point(503, 146);
+            this.txtPrecio1.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPrecio1.MaxLength = 15;
+            this.txtPrecio1.Name = "txtPrecio1";
+            this.txtPrecio1.Size = new System.Drawing.Size(172, 22);
+            this.txtPrecio1.TabIndex = 151;
+            this.txtPrecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMin_KeyPress);
+            this.txtPrecio1.Leave += new System.EventHandler(this.txtPrecioMin_Leave);
             // 
             // label7
             // 
@@ -197,16 +202,18 @@
             this.label7.Text = "PRECIO NORMAL";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtPrecioCont
+            // txtPrecio2
             // 
-            this.txtPrecioCont.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecioCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioCont.Location = new System.Drawing.Point(503, 179);
-            this.txtPrecioCont.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPrecioCont.MaxLength = 15;
-            this.txtPrecioCont.Name = "txtPrecioCont";
-            this.txtPrecioCont.Size = new System.Drawing.Size(172, 22);
-            this.txtPrecioCont.TabIndex = 153;
+            this.txtPrecio2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio2.Location = new System.Drawing.Point(503, 179);
+            this.txtPrecio2.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPrecio2.MaxLength = 15;
+            this.txtPrecio2.Name = "txtPrecio2";
+            this.txtPrecio2.Size = new System.Drawing.Size(172, 22);
+            this.txtPrecio2.TabIndex = 153;
+            this.txtPrecio2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCont_KeyPress);
+            this.txtPrecio2.Leave += new System.EventHandler(this.txtPrecioCont_Leave);
             // 
             // label8
             // 
@@ -219,16 +226,18 @@
             this.label8.Text = "COSTO ADM";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtCostoAdm
+            // txtCosto2
             // 
-            this.txtCostoAdm.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCostoAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCostoAdm.Location = new System.Drawing.Point(163, 173);
-            this.txtCostoAdm.Margin = new System.Windows.Forms.Padding(0);
-            this.txtCostoAdm.MaxLength = 15;
-            this.txtCostoAdm.Name = "txtCostoAdm";
-            this.txtCostoAdm.Size = new System.Drawing.Size(172, 22);
-            this.txtCostoAdm.TabIndex = 155;
+            this.txtCosto2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCosto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCosto2.Location = new System.Drawing.Point(163, 173);
+            this.txtCosto2.Margin = new System.Windows.Forms.Padding(0);
+            this.txtCosto2.MaxLength = 15;
+            this.txtCosto2.Name = "txtCosto2";
+            this.txtCosto2.Size = new System.Drawing.Size(172, 22);
+            this.txtCosto2.TabIndex = 155;
+            this.txtCosto2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoAdm_KeyPress);
+            this.txtCosto2.Leave += new System.EventHandler(this.txtCostoAdm_Leave);
             // 
             // frmRegistroCompras
             // 
@@ -236,17 +245,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 278);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtCostoAdm);
+            this.Controls.Add(this.txtCosto2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtPrecioCont);
+            this.Controls.Add(this.txtPrecio2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtPrecioMin);
+            this.Controls.Add(this.txtPrecio1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtCostoCont);
+            this.Controls.Add(this.txtCosto1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescripcion);
@@ -269,17 +278,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCostoCont;
+        private System.Windows.Forms.TextBox txtCosto1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPrecioMin;
+        private System.Windows.Forms.TextBox txtPrecio1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPrecioCont;
+        private System.Windows.Forms.TextBox txtPrecio2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCostoAdm;
+        private System.Windows.Forms.TextBox txtCosto2;
     }
 }

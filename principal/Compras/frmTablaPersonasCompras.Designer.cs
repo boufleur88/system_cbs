@@ -47,6 +47,7 @@
             this.btmAdicionar.TabIndex = 81;
             this.btmAdicionar.Text = "&ADICIONAR";
             this.btmAdicionar.UseVisualStyleBackColor = true;
+            this.btmAdicionar.Click += new System.EventHandler(this.btmAdicionar_Click);
             // 
             // label1
             // 

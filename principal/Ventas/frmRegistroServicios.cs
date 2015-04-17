@@ -39,9 +39,9 @@ namespace sistema_cbs
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

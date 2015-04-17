@@ -21,7 +21,7 @@ namespace sistema_cbs
         public int codigo, cantidad = 1;
         public string descripcion;
         public double precio;
-
+        
         private void frmRegistroVentas_Load(object sender, EventArgs e)
         {
             txtCodigo.Text = Convert.ToString(codigo);
@@ -41,6 +41,8 @@ namespace sistema_cbs
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             this.Close();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

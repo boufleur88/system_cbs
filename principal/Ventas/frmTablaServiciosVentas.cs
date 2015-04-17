@@ -16,6 +16,16 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
+        // CREAR NUESTRO DELEGADO.
+        public delegate void pasarServicio(int codigo, int cantidad, string descripcion, double precio); // tipo del metodo y parametros que llevara el metodol
+
+        // CREAR NUESTRO EVENTO.
+        public event pasarServicio pasadoServicio;
+
+        public int codigo, cantidad = 1;
+        public string descripcion;
+        public double precio;
+
         private void frmTablaServiciosVentas_Load(object sender, EventArgs e)
         {
             ServiciosDal ls = new ServiciosDal();
@@ -51,30 +61,18 @@ namespace sistema_cbs
 
         public void llamar_datos()
         {
-            int idServicio;
-            string descripcion, grupo;
-            double costo, preciomin, precio;
-
             try
             {
                 if (dt_lista.SelectedRows.Count == 1)
                 {
-                    idServicio = Convert.ToInt32(dt_lista.CurrentRow.Cells[0].Value);
+                    codigo = Convert.ToInt32(dt_lista.CurrentRow.Cells[0].Value);
                     descripcion = Convert.ToString(dt_lista.CurrentRow.Cells[1].Value);
-                    costo = Convert.ToDouble(dt_lista.CurrentRow.Cells[2].Value);
-                    preciomin = Convert.ToDouble(dt_lista.CurrentRow.Cells[3].Value);
+                    cantidad = 1;
                     precio = Convert.ToDouble(dt_lista.CurrentRow.Cells[4].Value);
-                    grupo = Convert.ToString(dt_lista.CurrentRow.Cells[5].Value);
 
                     this.Close();
 
-                    // MessageBox.Show("IdServicio " + idServicio + " | " + descripcion + " Costo: " + costo + " PrecioMin: " + preciomin + " Precio " + precio + " ");
-
-                    frmRegistroVentas obj = new frmRegistroVentas();
-                    obj.codigo = idServicio;
-                    obj.descripcion = descripcion;
-                    obj.precio = precio;
-                    obj.Show();
+                    pasadoServicio(codigo, cantidad, descripcion, precio);
                     
                 }
             }

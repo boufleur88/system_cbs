@@ -47,7 +47,8 @@ namespace sistema_cbs
 
         private void rEGISTRODEGRUPOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frm_tabla_grupo fr = new frm_tabla_grupo();
+            fr.Show();
         }
 
         private void rEGISTRODESUBGRUPOSToolStripMenuItem_Click(object sender, EventArgs e)

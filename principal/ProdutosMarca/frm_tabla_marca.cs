@@ -26,7 +26,9 @@ namespace sistema_cbs
            dt_lista_marca.DataSource = listar.listar();
 
            dt_lista_marca.Columns["id_marca"].HeaderText = "CODIGO";
+           dt_lista_marca.Columns["id_marca"].Width = 60;
            dt_lista_marca.Columns["st_marca"].HeaderText = "MARCA";
+           dt_lista_marca.Columns["st_marca"].Width = 280;
         }
         
         private void frm_tabla_marca_Load(object sender, EventArgs e)
