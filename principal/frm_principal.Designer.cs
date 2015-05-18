@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sTOCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEGISTROMERCADERIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +43,10 @@
             this.rEPORTEDESTOCKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTEDETRANSFERENCIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTEDEINVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sERVICIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sERVICIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gRUPOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTESToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.pERSONASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEGISTROPERSONASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pROVEEDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,10 +81,8 @@
             this.sOBRELAEMPRESAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sOPORTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sERVICIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sERVICIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTESToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gRUPOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmrfecha = new System.Windows.Forms.Timer(this.components);
+            this.lblfecha = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,7 +153,7 @@
             this.mOVENTRADASToolStripMenuItem,
             this.mOVSALIDASToolStripMenuItem});
             this.iNVENTARIOToolStripMenuItem.Name = "iNVENTARIOToolStripMenuItem";
-            this.iNVENTARIOToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.iNVENTARIOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iNVENTARIOToolStripMenuItem.Text = "INVENTARIO";
             // 
             // tRANSFERENCIASToolStripMenuItem1
@@ -178,7 +181,7 @@
             this.rEPORTEDETRANSFERENCIASToolStripMenuItem,
             this.rEPORTEDEINVENTARIOToolStripMenuItem});
             this.rEPORTESToolStripMenuItem1.Name = "rEPORTESToolStripMenuItem1";
-            this.rEPORTESToolStripMenuItem1.Size = new System.Drawing.Size(216, 22);
+            this.rEPORTESToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.rEPORTESToolStripMenuItem1.Text = "REPORTES";
             // 
             // rEPORTEDESTOCKToolStripMenuItem
@@ -198,6 +201,36 @@
             this.rEPORTEDEINVENTARIOToolStripMenuItem.Name = "rEPORTEDEINVENTARIOToolStripMenuItem";
             this.rEPORTEDEINVENTARIOToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
             this.rEPORTEDEINVENTARIOToolStripMenuItem.Text = "REPORTE DE ENTRADAS / SALIDAS";
+            // 
+            // sERVICIOToolStripMenuItem
+            // 
+            this.sERVICIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sERVICIOSToolStripMenuItem,
+            this.gRUPOSToolStripMenuItem,
+            this.rEPORTESToolStripMenuItem6});
+            this.sERVICIOToolStripMenuItem.Name = "sERVICIOToolStripMenuItem";
+            this.sERVICIOToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.sERVICIOToolStripMenuItem.Text = "SERVICIOS";
+            // 
+            // sERVICIOSToolStripMenuItem
+            // 
+            this.sERVICIOSToolStripMenuItem.Name = "sERVICIOSToolStripMenuItem";
+            this.sERVICIOSToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.sERVICIOSToolStripMenuItem.Text = "SERVICIOS";
+            this.sERVICIOSToolStripMenuItem.Click += new System.EventHandler(this.sERVICIOSToolStripMenuItem_Click);
+            // 
+            // gRUPOSToolStripMenuItem
+            // 
+            this.gRUPOSToolStripMenuItem.Name = "gRUPOSToolStripMenuItem";
+            this.gRUPOSToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.gRUPOSToolStripMenuItem.Text = "GRUPOS";
+            this.gRUPOSToolStripMenuItem.Click += new System.EventHandler(this.gRUPOSToolStripMenuItem_Click);
+            // 
+            // rEPORTESToolStripMenuItem6
+            // 
+            this.rEPORTESToolStripMenuItem6.Name = "rEPORTESToolStripMenuItem6";
+            this.rEPORTESToolStripMenuItem6.Size = new System.Drawing.Size(129, 22);
+            this.rEPORTESToolStripMenuItem6.Text = "REPORTES";
             // 
             // pERSONASToolStripMenuItem
             // 
@@ -450,35 +483,20 @@
             this.sALIRToolStripMenuItem.Text = "&SALIR";
             this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click_1);
             // 
-            // sERVICIOToolStripMenuItem
+            // tmrfecha
             // 
-            this.sERVICIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sERVICIOSToolStripMenuItem,
-            this.gRUPOSToolStripMenuItem,
-            this.rEPORTESToolStripMenuItem6});
-            this.sERVICIOToolStripMenuItem.Name = "sERVICIOToolStripMenuItem";
-            this.sERVICIOToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.sERVICIOToolStripMenuItem.Text = "SERVICIOS";
+            this.tmrfecha.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // sERVICIOSToolStripMenuItem
+            // lblfecha
             // 
-            this.sERVICIOSToolStripMenuItem.Name = "sERVICIOSToolStripMenuItem";
-            this.sERVICIOSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sERVICIOSToolStripMenuItem.Text = "SERVICIOS";
-            this.sERVICIOSToolStripMenuItem.Click += new System.EventHandler(this.sERVICIOSToolStripMenuItem_Click);
-            // 
-            // rEPORTESToolStripMenuItem6
-            // 
-            this.rEPORTESToolStripMenuItem6.Name = "rEPORTESToolStripMenuItem6";
-            this.rEPORTESToolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
-            this.rEPORTESToolStripMenuItem6.Text = "REPORTES";
-            // 
-            // gRUPOSToolStripMenuItem
-            // 
-            this.gRUPOSToolStripMenuItem.Name = "gRUPOSToolStripMenuItem";
-            this.gRUPOSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.gRUPOSToolStripMenuItem.Text = "GRUPOS";
-            this.gRUPOSToolStripMenuItem.Click += new System.EventHandler(this.gRUPOSToolStripMenuItem_Click);
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(22, 723);
+            this.lblfecha.Margin = new System.Windows.Forms.Padding(0);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(76, 22);
+            this.lblfecha.TabIndex = 1;
+            this.lblfecha.Text = "FECHA.";
             // 
             // frm_principal
             // 
@@ -486,6 +504,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
@@ -555,6 +574,8 @@
         private System.Windows.Forms.ToolStripMenuItem sERVICIOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTESToolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem gRUPOSToolStripMenuItem;
+        private System.Windows.Forms.Timer tmrfecha;
+        private System.Windows.Forms.Label lblfecha;
     }
 }
 

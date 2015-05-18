@@ -34,10 +34,10 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.dtListCompra = new System.Windows.Forms.DataGridView();
+            this.dtLista = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dtListCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtLista)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,26 +94,26 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // dtListCompra
+            // dtLista
             // 
-            this.dtListCompra.AllowUserToDeleteRows = false;
-            this.dtListCompra.AllowUserToResizeColumns = false;
-            this.dtListCompra.AllowUserToResizeRows = false;
+            this.dtLista.AllowUserToDeleteRows = false;
+            this.dtLista.AllowUserToResizeColumns = false;
+            this.dtLista.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dtListCompra.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtListCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtLista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtListCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtListCompra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtListCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtListCompra.Location = new System.Drawing.Point(9, 68);
-            this.dtListCompra.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.dtListCompra.MultiSelect = false;
-            this.dtListCompra.Name = "dtListCompra";
-            this.dtListCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtListCompra.Size = new System.Drawing.Size(987, 684);
-            this.dtListCompra.TabIndex = 63;
+            this.dtLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtLista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtLista.Location = new System.Drawing.Point(9, 68);
+            this.dtLista.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.dtLista.MultiSelect = false;
+            this.dtLista.Name = "dtLista";
+            this.dtLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtLista.Size = new System.Drawing.Size(987, 684);
+            this.dtLista.TabIndex = 63;
             // 
             // btnSalir
             // 
@@ -147,13 +147,14 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dtListCompra);
+            this.Controls.Add(this.dtLista);
             this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_tabla_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_tabla_compra";
-            ((System.ComponentModel.ISupportInitialize)(this.dtListCompra)).EndInit();
+            this.Load += new System.EventHandler(this.frm_tabla_compra_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +167,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridView dtListCompra;
+        private System.Windows.Forms.DataGridView dtLista;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
     }

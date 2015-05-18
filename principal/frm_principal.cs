@@ -16,6 +16,8 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
+        
+
         private void rEGISTROPERSONASToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_tabla_personas tabla = new frm_tabla_personas();
@@ -24,7 +26,8 @@ namespace sistema_cbs
 
         private void frm_principal_Load(object sender, EventArgs e)
         {
-            
+            lblfecha.Enabled = false;
+            tmrfecha.Start();
         }
 
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +136,12 @@ namespace sistema_cbs
         {
             frm_tabla_grupo tabla_grupo = new frm_tabla_grupo();
             tabla_grupo.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime fecha = DateTime.Now;
+            this.lblfecha.Text = fecha.ToString();
         }
 
         

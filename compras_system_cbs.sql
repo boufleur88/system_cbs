@@ -22,22 +22,39 @@ SELECT * FROM compras
 /* Nueva tabla para compras mas estandarizada y facil de interpretar */
 CREATE TABLE compras
 (
-	compra_id serial NOT NULL,
-	PRIMARY KEY (compra_id),
-	cliente_id serial NOT NULL,
-	factura VARCHAR(15),
-	timbrado VARCHAR(12),
-	observacion VARCHAR(40),
-	f_inclusion date,
-	f_factura date,
-	status character(1),
-	iva00 numeric(15,2),
-	iva05 numeric(15,2),
-	iva10 numeric(15,2),
-	total numeric(15,2),
-	ts_creacion timestamp without time zone DEFAULT now()
+  id_compra serial NOT NULL,
+  PRIMARY KEY (id_compra),
+  id_cliente integer NOT NULL,
+  id_user integer NOT NULL,
+  observacion character varying(40),
+  d_inclusion date,
+  d_factura date,
+  status character(1),
+  tiva00 numeric(15,2),
+  tiva05 numeric(15,2),
+  tiva10 numeric(15,2),
+  total numeric(15,2),
+  n_factura character varying(15),
+  n_timbrado character varying(12),
+  ts_creacion timestamp without time zone DEFAULT now()
 );
 
+drop table compras;
 
+/* CONSULTA TABLA DE COMPRAS */
+SELECT c.id_compra, c.d_inclusion, p.per_nombre, c.total, c.observacion FROM compras AS c, persona AS p WHERE c.id_cliente = p.id_per ORDER BY 	c.id_compra;
 
+/* CONSULTA TABLA DE COMPRAS */
+SELECT c.id_compra, c.d_inclusion, p.per_nombre, c.total, c.observacion FROM compras AS c, persona AS p WHERE c.id_cliente = p.id_per ORDER BY c.id_compra;
+	
+
+INSERT INTO compras (d_inclusion, id_cliente, id_user, total, observacion) VALUES ('20-04-2015', '3', '2', 100000, 'Insert manualmente');
+
+SELECT * FROM persona;
+
+SELECT id_per FROM persona where id_per = (select max(id_per) from persona);
+
+SELECT id_compra FROM compras where id_compra = (select max(id_compra) from compras);
+
+SELECT id_compra FROM compras ORDER BY id_compra DESC LIMIT 1;
 

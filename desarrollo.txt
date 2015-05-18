@@ -40,6 +40,8 @@
 [OK]- Servicios. Solucionado problema de guardar y alterar servicios sin descripcion. Aplicacion de validación variable descripcion antes de guardar.
 
 
+
+[--]- Banco de datos. Implementar el limit en el update, delete, etc.
 [--]- Personas. No permitir guardar 2 registros con el mismo nombre.
 [--]- Informaciones sobre la empresa. Contactos. Direccion. Pagina Web. ETC.
 

@@ -15,13 +15,14 @@ namespace sistema_cbs
         {
             InitializeComponent();
         }
+        // variables cabecera compra.
+        public int cid, pid, uid;
+        public string factura;
+        public DateTime inclusion = DateTime.Now;
+        public DateTime f_factura = DateTime.Now;
 
-        public int codigo;
         public string persona, fantasia, direccion, telefono, ruc, observacion;
-        public Double cantidad, costoadm, costocont, ventamay, ventamin;
-
-
-        
+        public Double totalCompra, cantidad, costoadm, costocont, ventamay, ventamin;
 
         private void frm_compra_Load(object sender, EventArgs e)
         {
@@ -45,10 +46,10 @@ namespace sistema_cbs
 
             txtTotal.Enabled = false;
 
-            
-        }
+            txtInclusion.Text = inclusion.ToShortDateString();
+            txtVencimiento.Text = f_factura.ToShortDateString();
 
-        
+        }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
@@ -61,7 +62,6 @@ namespace sistema_cbs
             this.Close();
             frm_tabla_compra fr = new frm_tabla_compra();
             fr.Show();
-
         }
 
         private void btnPersonas_Click(object sender, EventArgs e)
@@ -79,6 +79,53 @@ namespace sistema_cbs
             txtProveedor.Text = Convert.ToString(nombre);
             txtTelefono.Text = Convert.ToString(telefono);
             txtRuc.Text = Convert.ToString(ruc);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtIdProveedor.Text == "")
+            {
+                MessageBox.Show("Adicionar al menos un proveedor para tu compra");
+            }
+            else
+            {
+                pid = Convert.ToInt32(txtIdProveedor.Text);
+                uid = 1;
+                //string dataInclusion = string.Format("{0:d}", inclusion);
+                //string dataFactura = string.Format("{0:d}", f_factura);
+                factura = Convert.ToString(txtFactura.Text);
+                factura = factura.Trim();
+                totalCompra = 1000; //Convert.ToDouble(txtTotal.Text);
+                observacion = txtObservacion.Text;
+                //MessageBox.Show("Codigo Proveedor " + pid);
+                //MessageBox.Show("Codigo usuario " + uid);
+                //MessageBox.Show("Inclusion " + dataInclusion);
+                //MessageBox.Show("Factura " + dataFactura);
+                //MessageBox.Show("Total Compra " + totalCompra);
+                try
+                {
+                    Compra obj = new Compra();
+                    obj.pid = pid;
+                    obj.uid = uid;
+                    obj.f_inclusion = inclusion;
+                    obj.factura = factura;
+                    obj.totalCompra = totalCompra;
+                    
+                    CompraDal guardar = new CompraDal();
+                    guardar.gravar_cabecera(obj);
+
+                    MessageBox.Show("COMPRA GUARDADA CORRECTAMENTE");
+
+                    this.Close();
+                    frm_tabla_compra fr = new frm_tabla_compra();
+                    fr.Show();
+                }
+
+                catch (Exception erro)
+                {
+                    MessageBox.Show("ERROR AL GUARDAR PRODUCTO" + erro);
+                }
+            }
         }
 
         

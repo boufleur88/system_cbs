@@ -22,7 +22,6 @@ namespace sistema_cbs
         private void frm_ventas_Load(object sender, EventArgs e)
         {          
             // CONFIGURACION DE TABINDEX.
-            txtFecha.Enabled = false;
             txtCodigoVenta.Enabled = false;
             txtCodCliente.Enabled = false;
             txtNombre.Enabled = false;

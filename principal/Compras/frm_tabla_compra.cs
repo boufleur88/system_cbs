@@ -39,6 +39,24 @@ namespace sistema_cbs
             Close();
         }
 
+        private void frm_tabla_compra_Load(object sender, EventArgs e)
+        {
+            CompraDal ls = new CompraDal();
+            dtLista.DataSource = ls.listar_Compras();
+
+            formata_tabla();
+        }
+
+        private void formata_tabla()
+        {
+            dtLista.Columns["id_compra"].HeaderText = "CODIGO";
+            dtLista.Columns["d_inclusion"].HeaderText = "FECHA";
+            dtLista.Columns["per_nombre"].HeaderText = "PROVEEDOR";
+            dtLista.Columns["total"].HeaderText = "TOTAL";
+            dtLista.Columns["total"].DefaultCellStyle.Format = "N0";
+            dtLista.Columns["total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
+            dtLista.Columns["observacion"].HeaderText = "OBSERVACION";
+        }
        
     }
 }

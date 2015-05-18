@@ -9,10 +9,13 @@ namespace sistema_cbs
     {
         // tabla compras utilizar como está en el banco las tablas.
         // compra_id
-        public int codigo {get; set; }
+        public int cid {get; set; } // id compra.
+        public int pid { get; set; } // id persona.
+        public int uid { get; set; } // id usuario.
 
         // fecha factura
-        public DateTime fecha { get; set; }
+        public DateTime f_inclusion { get; set; }
+        public DateTime f_factura { get; set; }
 
         // persona_id
         public int persona { get; set; }
@@ -48,21 +51,26 @@ namespace sistema_cbs
         public Double it_costoadm { get; set; }
         public Double it_ventamin {get; set; }
         public Double it_ventamay { get; set; }
+        public Double totalCompra { get; set; }
 
 
       public Compra()
       { }
 
-      public Compra(int cCodigo, DateTime fFactura, int cPersona, int cUsuario, String cFactura, String cTimbrado, String cObs,
-          String cStatus, Double cIva00, Double cIva05, Double cIva10, Double cTotal)
+      public Compra(int cCodigo, int cPersona, int cUsuario, DateTime fInclusion, String cFactura, String cObs,
+          String cStatus, Double cIva00, Double cIva05, Double cIva10, Double cTotal, Double cTotalCompra)
       {
-         this.codigo = cCodigo;
-         this.fecha = fFactura;
-         this.persona = cPersona;
+         this.cid = cCodigo;
+         this.pid = cPersona;
+         this.uid = cUsuario;
+         this.f_inclusion = fInclusion;
+         this.factura = cFactura;
+         this.totalCompra = cTotalCompra;
+         this.observacion = cObs;
+         //
          this.usuario = cUsuario;
          this.factura = cFactura;
-         this.timbrado = cTimbrado;
-         this.observacion = cObs;
+
          this.status = cStatus;
          this.iva00 = cIva00;
          this.iva05 = cIva05;

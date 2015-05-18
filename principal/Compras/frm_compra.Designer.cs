@@ -30,7 +30,7 @@
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dtListaItems = new System.Windows.Forms.DataGridView();
+            this.dtLista = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNCompra = new System.Windows.Forms.TextBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtFactura = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dtListaItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtLista)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -75,17 +75,18 @@
             this.btnGuardar.TabIndex = 87;
             this.btnGuardar.Text = "&GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dtListaItems
+            // dtLista
             // 
-            this.dtListaItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtListaItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtListaItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtListaItems.Location = new System.Drawing.Point(14, 163);
-            this.dtListaItems.Name = "dtListaItems";
-            this.dtListaItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtListaItems.Size = new System.Drawing.Size(998, 546);
-            this.dtListaItems.TabIndex = 86;
+            this.dtLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtLista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtLista.Location = new System.Drawing.Point(14, 163);
+            this.dtLista.Name = "dtLista";
+            this.dtLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtLista.Size = new System.Drawing.Size(998, 546);
+            this.dtLista.TabIndex = 86;
             // 
             // label8
             // 
@@ -360,13 +361,13 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.dtListaItems);
+            this.Controls.Add(this.dtLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COMPRAS CONTADO Y CREDITO";
             this.Load += new System.EventHandler(this.frm_compra_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtListaItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,7 +377,7 @@
 
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView dtListaItems;
+        private System.Windows.Forms.DataGridView dtLista;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNCompra;
         private System.Windows.Forms.TextBox txtObservacion;
