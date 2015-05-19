@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_alterar = new System.Windows.Forms.Button();
             this.btn_1 = new System.Windows.Forms.Button();
             this.dt_lista_produto = new System.Windows.Forms.DataGridView();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_historico = new System.Windows.Forms.Button();
+            this.btnexcel = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
@@ -76,8 +76,8 @@
             // dt_lista_produto
             // 
             this.dt_lista_produto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dt_lista_produto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dt_lista_produto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dt_lista_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dt_lista_produto.Location = new System.Drawing.Point(9, 69);
@@ -99,15 +99,15 @@
             this.btn_nuevo.UseVisualStyleBackColor = true;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
-            // btn_historico
+            // btnexcel
             // 
-            this.btn_historico.Location = new System.Drawing.Point(844, 32);
-            this.btn_historico.Name = "btn_historico";
-            this.btn_historico.Size = new System.Drawing.Size(76, 30);
-            this.btn_historico.TabIndex = 4;
-            this.btn_historico.Text = "&HISTORICO";
-            this.btn_historico.UseVisualStyleBackColor = true;
-            this.btn_historico.Click += new System.EventHandler(this.btn_historico_Click);
+            this.btnexcel.Location = new System.Drawing.Point(844, 32);
+            this.btnexcel.Name = "btnexcel";
+            this.btnexcel.Size = new System.Drawing.Size(76, 30);
+            this.btnexcel.TabIndex = 4;
+            this.btnexcel.Text = "EXCEL";
+            this.btnexcel.UseVisualStyleBackColor = true;
+            this.btnexcel.Click += new System.EventHandler(this.btn_historico_Click);
             // 
             // btnExcluir
             // 
@@ -170,7 +170,7 @@
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.btn_sair);
-            this.Controls.Add(this.btn_historico);
+            this.Controls.Add(this.btnexcel);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.label5);
@@ -195,7 +195,7 @@
         private System.Windows.Forms.Button btn_1;
         private System.Windows.Forms.DataGridView dt_lista_produto;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button btn_historico;
+        private System.Windows.Forms.Button btnexcel;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.TextBox txt_buscar;

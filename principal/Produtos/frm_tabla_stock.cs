@@ -7,6 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+// Importamos de la libreria del excel.
+using ExcelLibrary.CompoundDocumentFormat;
+using ExcelLibrary.SpreadSheet;
+using ExcelLibrary.BinaryDrawingFormat;
+using ExcelLibrary.BinaryFileFormat;
+
+
 namespace sistema_cbs
 {
     public partial class frm_tabla_stock : Form
@@ -34,8 +41,8 @@ namespace sistema_cbs
             btn_alterar.TabIndex = 3;
             btnExcluir.TabIndex = 4;
             btnExcluir.Enabled = false;
-            btn_historico.TabIndex = 5;
-            btn_historico.Enabled = false;
+            btnexcel.TabIndex = 5;
+            //btnexcel.Enabled = false;
             btn_sair.TabIndex = 6;
 
             ProdutoDal ls = new ProdutoDal();
@@ -145,7 +152,25 @@ namespace sistema_cbs
 
         private void btn_historico_Click(object sender, EventArgs e)
         {
-           MessageBox.Show("FALTA IMPLEMENTAR TODAVIA");
+           //create new xls file
+            string file = "C:\\newdoc.xls";
+            Workbook workbook = new Workbook();
+            Worksheet worksheet = new Worksheet("First Sheet");
+            worksheet.Cells[0, 0] = new Cell((short)1);
+            worksheet.Cells[0, 1] = new Cell(9999999);
+            worksheet.Cells[0, 2] = new Cell((decimal)3.45);
+            worksheet.Cells[0, 3] = new Cell("Text string");
+            worksheet.Cells[0, 4] = new Cell("Second string");
+            worksheet.Cells[0, 5] = new Cell(32764.5, "#,##0.00");
+            worksheet.Cells[0, 6] = new Cell(DateTime.Now, @"YYYY\-MM\-DD");
+            worksheet.Cells.ColumnWidth[0, 1] = 3000;
+            workbook.Worksheets.Add(worksheet);
+            workbook.Save(file);
+
+            // open xls file
+            Workbook book = Workbook.Load(file);
+            Worksheet sheet = book.Worksheets[0];
+            
         }
 
         private void button3_Click(object sender, EventArgs e)

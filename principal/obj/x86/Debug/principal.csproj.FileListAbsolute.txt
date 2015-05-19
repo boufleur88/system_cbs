@@ -192,3 +192,4 @@ C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_c
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmTablaMercaderiasCompras.resources
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmRegistroCompras.resources
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frmTablaPersonasCompras.resources
+C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\ExcelLibrary.dll
