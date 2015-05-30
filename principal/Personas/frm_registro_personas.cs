@@ -320,7 +320,7 @@ namespace sistema_cbs
 
                  // instancio o modelo datos y gravo via get y set.
                  PersonaDal obj = new PersonaDal();
-                 obj.id = codigo;
+                 obj.idPersona = codigo;
                  obj.nombre = nombre;
                  obj.ruc = ruc;
                  obj.fantasia = fantasia;

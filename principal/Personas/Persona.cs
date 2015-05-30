@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace sistema_cbs
+﻿namespace sistema_cbs
 {
-   class Persona
+   public class Persona
    {
-      public int id { get; set; }
+      public int idPersona { get; set; }
       public string nombre { get; set; }
       public string ruc { get; set; }
       public string fantasia { get; set; }
@@ -22,14 +17,15 @@ namespace sistema_cbs
       public string funcionario { get; set; }
       public string observacion { get; set; }
       public string nacimento { get; set; }
+       // public decimal LimiteCompra {get; set;};
 
-        // metodo constructor
+        // metodos constructores
         public Persona() 
         { }
 
         public Persona(int pId, string pNombre, string pRuc, string pFantasia, string pCedula, string pDireccion, string pCiudad, string pTel1, string pTel2, string pEmail, string pCliente, string pProveedor, string pFuncionario, string pObservacion, string pNacimiento)
         {
-            this.id = pId;
+            this.idPersona = pId;
             this.nombre = pNombre;
             this.ruc = pRuc;
             this.fantasia = pFantasia;
@@ -43,7 +39,7 @@ namespace sistema_cbs
             this.proveedor = pProveedor;
             this.funcionario = pFuncionario;
             this.observacion = pObservacion;
-           this.nacimento = pNacimiento;
+            this.nacimento = pNacimiento;
         }
    }
 }

@@ -140,8 +140,6 @@ namespace sistema_cbs
                  obj.stminimo = stminimo;
 
                  obj.Show();
-
-                
               }
            }
            catch (Exception erro)

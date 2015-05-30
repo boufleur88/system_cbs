@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data;
-using Npgsql;
+using System.Data; // organizar clases que trabalha com datos.
+using Npgsql; // proveedor banco de datos postgresql.
 
 namespace sistema_cbs
 {
@@ -15,9 +15,9 @@ namespace sistema_cbs
       {
          try
          {
+             // conectar ao banco de datos.
             NpgsqlConnection conexion = Servidor.conectar();
 
-            
             // comando insert sql para o banco                       
             NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO compras (d_inclusion, n_factura, id_cliente, id_user, total, observacion) VALUES (@c_fecha, @c_factura, @c_persona, @c_usuario, @c_total, @c_obs);", conexion);
             sql.Parameters.AddWithValue("@c_fecha", pCompra.f_inclusion);
@@ -61,6 +61,31 @@ namespace sistema_cbs
             }
         }
 
+        // PRODUTO. ALTERAR DATOS.
+        public void ultimo_id(Compra pCompra)
+        {
+            try
+            {
+                NpgsqlConnection conexion = Servidor.conectar();
+
+                NpgsqlCommand sql = new NpgsqlCommand("SELECT id_compra FROM compras where id_compra = (select max(id_compra) from compras);", conexion);
+
+                NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
+                dt_adapter.SelectCommand = sql;
+
+                DataTable dt_lista = new DataTable();
+                dt_adapter.Fill(dt_lista);
+
+                conexion.Close();
+                // return dt_lista;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+
         /* COMPRAS - OBTENER ULTIMO ID DE COMPRAS.
         public ultimo_id()
         {
@@ -79,6 +104,13 @@ namespace sistema_cbs
             }
         }
         */
+
+        public void Teste()
+        {
+            // instanciar compra.
+            Compra NovaCompra = new Compra();
+            NovaCompra.cid = 10;
+        }
     }
 
 }

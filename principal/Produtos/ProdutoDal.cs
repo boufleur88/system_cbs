@@ -14,7 +14,7 @@ using ExcelLibrary.BinaryFileFormat;
 
 namespace sistema_cbs
 {
-   class ProdutoDal: Produto
+   class ProdutoDal : Produto
    {
       // METODOS PARA GRAVAR PRODUTOS
       public void gravar(Produto pProduto)

@@ -7,7 +7,7 @@ using System.Data;
 
 namespace sistema_cbs
 {
-   class PersonaDal:Persona
+   class PersonaDal : Persona
    {
       public void gravar(Persona persona)
       {
@@ -53,7 +53,7 @@ namespace sistema_cbs
             
             NpgsqlCommand sql = new NpgsqlCommand("update persona set per_nombre = @nombre, per_fant = @fantasia, per_ruc = @ruc, per_ci = @cedula, per_tel1 = @tel1, per_tel2 = @tel2, per_email = @email, per_dir = @dir, per_ciudad = @ciudad, per_nac = @nacimento, per_clt = @cliente, per_prov = @proveedor, per_func = @funcionario, per_obs = @obs where  id_per = @codigo", conexion);
             
-            sql.Parameters.AddWithValue("@codigo", persona.id);
+            sql.Parameters.AddWithValue("@codigo", persona.idPersona);
             sql.Parameters.AddWithValue("@nombre", persona.nombre);
             sql.Parameters.AddWithValue("@fantasia", persona.fantasia);
             sql.Parameters.AddWithValue("@ruc", persona.ruc);
@@ -105,6 +105,7 @@ namespace sistema_cbs
          }
       }
 
+      
       // METODO LISTA PERSONAS.
       public DataTable listaProveedorCompra()
       {
@@ -157,6 +158,7 @@ namespace sistema_cbs
               throw error;
           }
       }
+
       // METODO LISTA PERSONAS.
       public DataTable lista_algunos()
       {
@@ -182,7 +184,6 @@ namespace sistema_cbs
               throw error;
           }
       }
-
       
       // EXCLUIR DATOS...
       public void excluir(Persona persona)
@@ -192,7 +193,7 @@ namespace sistema_cbs
             NpgsqlConnection conexion = Servidor.conectar();
             
             NpgsqlCommand sql = new NpgsqlCommand("delete from persona where id_per = @codigo", conexion);
-            sql.Parameters.AddWithValue("@codigo", persona.id);
+            sql.Parameters.AddWithValue("@codigo", persona.idPersona);
 
             sql.ExecuteNonQuery();
             conexion.Close();

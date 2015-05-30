@@ -155,7 +155,7 @@ namespace sistema_cbs
                  MessageBox.Show("SEGURO QUE QUIERES ELIMINAR EL REGISTRO NUMERO " + codigo);
 
                  PersonaDal obj = new PersonaDal();
-                 obj.id = codigo;
+                 obj.idPersona = codigo;
 
                  PersonaDal excluir = new PersonaDal();
                  excluir.excluir(obj);

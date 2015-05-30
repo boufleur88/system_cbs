@@ -89,6 +89,8 @@ namespace sistema_cbs
             }
             else
             {
+                ultimo_id();
+                /* ###################################################################### */
                 pid = Convert.ToInt32(txtIdProveedor.Text);
                 uid = 1;
                 //string dataInclusion = string.Format("{0:d}", inclusion);
@@ -127,6 +129,24 @@ namespace sistema_cbs
                 }
             }
         }
+
+        // FUNCAO PARA ALTERAR DATOS...
+        private void ultimo_id()
+        {
+            try
+            {
+                Compra obj = new Compra();
+                obj.cid = cid;
+
+                MessageBox.Show(" codigo " + cid);
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("ERROR AL GUARDAR PERSONA" + erro);
+            }
+        }
+
 
         
     }
