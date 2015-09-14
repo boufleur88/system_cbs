@@ -9,6 +9,7 @@ namespace sistema_cbs
 {
     class CompraDal : Compra
     {
+        public int codigo;
 
       // funcion para gravar la compra.
       public void gravar_cabecera(Compra pCompra)
@@ -64,12 +65,13 @@ namespace sistema_cbs
         // PRODUTO. ALTERAR DATOS.
         public void ultimo_id(Compra pCompra)
         {
+            
             try
             {
                 NpgsqlConnection conexion = Servidor.conectar();
 
                 NpgsqlCommand sql = new NpgsqlCommand("SELECT id_compra FROM compras where id_compra = (select max(id_compra) from compras);", conexion);
-
+               
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
                 dt_adapter.SelectCommand = sql;
 
@@ -77,7 +79,6 @@ namespace sistema_cbs
                 dt_adapter.Fill(dt_lista);
 
                 conexion.Close();
-                // return dt_lista;
             }
             catch (Exception erro)
             {
@@ -110,6 +111,11 @@ namespace sistema_cbs
             // instanciar compra.
             Compra NovaCompra = new Compra();
             NovaCompra.cid = 10;
+        }
+
+        internal void ultimo_id(int cid)
+        {
+            throw new NotImplementedException();
         }
     }
 

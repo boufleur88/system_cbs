@@ -26,6 +26,9 @@ namespace sistema_cbs
 
         private void frm_compra_Load(object sender, EventArgs e)
         {
+            CompraDal codigo = new CompraDal();
+            
+
             txtProveedor.Enabled = false;
             txtIdProveedor.Enabled = false;
             txtTelefono.Enabled = false;
