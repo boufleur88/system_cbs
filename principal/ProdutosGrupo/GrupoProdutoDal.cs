@@ -13,23 +13,28 @@ namespace sistema_cbs
 
       public void gravar(GrupoProduto pGrupo)
       {
-         try
-         {
-            // NpgsqlConnection conexion = Servidor.conectar();
-            NpgsqlConnection conexion = Servidor.conectar();
+          try
+          {
+              // NpgsqlConnection conexion = Servidor.conectar();
+              NpgsqlConnection conexion = Servidor.conectar();
 
-            NpgsqlCommand sql = new NpgsqlCommand("insert into st_grupo (st_grupo) values (@st_grupo)", conexion);
-            sql.Parameters.AddWithValue("@st_grupo", pGrupo.Grupo);
+              NpgsqlCommand sql = new NpgsqlCommand("insert into st_grupo (st_grupo) values (@st_grupo)", conexion);
+              sql.Parameters.AddWithValue("@st_grupo", pGrupo.Grupo);
 
-            sql.ExecuteNonQuery();
+              sql.ExecuteNonQuery();
 
-            conexion.Close();
+              conexion.Close();
 
-         }
-         catch (Exception error)
-         {
-            throw error;
-         }
+          }
+          catch (Exception error)
+          {
+              throw error;
+          }
+
+          finally { 
+            
+          }  
+          
       }
 
       public DataTable listar()

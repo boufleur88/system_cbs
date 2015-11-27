@@ -31,7 +31,7 @@ namespace sistema_cbs
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             bool ativo = false;
-            int x=0;
+            
 
             // crear conexao con o banco. nombre banco = cbs_master
             String conexao_banco = "Server=localhost; Port=5432; User id=postgres; Password=kikiu159; Database=cbs_master";
@@ -40,6 +40,7 @@ namespace sistema_cbs
             
                 try
                 {
+                    int x = 0;
                     conexao = new NpgsqlConnection(conexao_banco);
                     conexao.Open();
                     NpgsqlCommand validar_usuarios = new NpgsqlCommand("SELECT * FROM usuarios WHERE user_usuario='" + txt_usuario.Text + "'AND user_clave='" + txt_clave.Text + "'", conexao);
@@ -49,26 +50,22 @@ namespace sistema_cbs
                     {
                         ativo = true;
                         frm_principal principal = new frm_principal();
+                        
                         principal.Show();
                         this.Hide();
-                        x = 0;
+                        x++;
                     }
                     else
                     {
-                        x++;
-                        if (x < 2)
+                        if (x > 2)
                         {
                             if (ativo == false)
                                 MessageBox.Show("Este usuario no existe, por favor volver a intentar!!!" + x);
-
-                        }
-                        else
-                        {
-                            leer_datos.Close();
-                            conexao.Close();
+                            x++;
                         }
                     }
                 }
+        
 
                 catch (Exception error)
                 {

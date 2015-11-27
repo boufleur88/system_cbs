@@ -11,6 +11,11 @@ namespace sistema_cbs
 {
     public partial class frm_principal : Form
     {
+        public string IdUsuario = "";
+        public string Nombre = "";
+
+
+
         public frm_principal()
         {
             InitializeComponent();
@@ -153,6 +158,11 @@ namespace sistema_cbs
         {
             DateTime fecha = DateTime.Now;
             this.lblfecha.Text = fecha.ToString();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

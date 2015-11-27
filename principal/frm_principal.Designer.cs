@@ -104,6 +104,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1378, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // menuPrincipal
             // 
@@ -437,21 +438,21 @@
             // menuUsuarios
             // 
             this.menuUsuarios.Name = "menuUsuarios";
-            this.menuUsuarios.Size = new System.Drawing.Size(152, 22);
+            this.menuUsuarios.Size = new System.Drawing.Size(145, 22);
             this.menuUsuarios.Text = "USUARIOS";
             this.menuUsuarios.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
             // 
             // menuBackup
             // 
             this.menuBackup.Name = "menuBackup";
-            this.menuBackup.Size = new System.Drawing.Size(152, 22);
+            this.menuBackup.Size = new System.Drawing.Size(145, 22);
             this.menuBackup.Text = "BACKUP";
             this.menuBackup.Click += new System.EventHandler(this.bACKUPToolStripMenuItem_Click);
             // 
             // menuCotizacion
             // 
             this.menuCotizacion.Name = "menuCotizacion";
-            this.menuCotizacion.Size = new System.Drawing.Size(152, 22);
+            this.menuCotizacion.Size = new System.Drawing.Size(145, 22);
             this.menuCotizacion.Text = "COTIZACION";
             this.menuCotizacion.Click += new System.EventHandler(this.cOTIZACIONToolStripMenuItem_Click);
             // 
