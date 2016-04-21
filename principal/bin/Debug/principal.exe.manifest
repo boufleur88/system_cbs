@@ -163,14 +163,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="principal.exe" size="676352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="principal.exe" size="676864">
       <assemblyIdentity name="principal" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>P/viQTb5W7loUHe5bR1peTIno4c=</dsig:DigestValue>
+        <dsig:DigestValue>ckCGfwiZAZ9X3IEIj5PEshgl1w0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

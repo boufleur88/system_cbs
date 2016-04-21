@@ -32,7 +32,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtLista = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtNCompra = new System.Windows.Forms.TextBox();
+            this.txtIdCompra = new System.Windows.Forms.TextBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRuc = new System.Windows.Forms.TextBox();
@@ -54,6 +54,9 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtFactura = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtIva10 = new System.Windows.Forms.TextBox();
+            this.txtIva05 = new System.Windows.Forms.TextBox();
+            this.txtIva00 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +88,7 @@
             this.dtLista.Location = new System.Drawing.Point(14, 159);
             this.dtLista.Name = "dtLista";
             this.dtLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtLista.Size = new System.Drawing.Size(998, 546);
+            this.dtLista.Size = new System.Drawing.Size(998, 519);
             this.dtLista.TabIndex = 86;
             // 
             // label8
@@ -99,16 +102,17 @@
             this.label8.Text = "Nº COMPRA";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtNCompra
+            // txtIdCompra
             // 
-            this.txtNCompra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNCompra.Location = new System.Drawing.Point(858, 41);
-            this.txtNCompra.Margin = new System.Windows.Forms.Padding(0);
-            this.txtNCompra.MaxLength = 40;
-            this.txtNCompra.Name = "txtNCompra";
-            this.txtNCompra.Size = new System.Drawing.Size(134, 22);
-            this.txtNCompra.TabIndex = 3;
+            this.txtIdCompra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdCompra.Enabled = false;
+            this.txtIdCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdCompra.Location = new System.Drawing.Point(858, 41);
+            this.txtIdCompra.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIdCompra.MaxLength = 40;
+            this.txtIdCompra.Name = "txtIdCompra";
+            this.txtIdCompra.Size = new System.Drawing.Size(134, 22);
+            this.txtIdCompra.TabIndex = 3;
             // 
             // txtObservacion
             // 
@@ -116,7 +120,7 @@
             this.txtObservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservacion.Location = new System.Drawing.Point(151, 100);
             this.txtObservacion.Margin = new System.Windows.Forms.Padding(0);
-            this.txtObservacion.MaxLength = 40;
+            this.txtObservacion.MaxLength = 80;
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(841, 22);
             this.txtObservacion.TabIndex = 105;
@@ -135,6 +139,7 @@
             // txtRuc
             // 
             this.txtRuc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRuc.Enabled = false;
             this.txtRuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRuc.Location = new System.Drawing.Point(858, 70);
             this.txtRuc.Margin = new System.Windows.Forms.Padding(0);
@@ -157,6 +162,7 @@
             // txtTelefono
             // 
             this.txtTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(663, 70);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(0);
@@ -179,6 +185,7 @@
             // txtProveedor
             // 
             this.txtProveedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtProveedor.Enabled = false;
             this.txtProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProveedor.Location = new System.Drawing.Point(203, 70);
             this.txtProveedor.Margin = new System.Windows.Forms.Padding(0);
@@ -222,6 +229,7 @@
             // txtIdProveedor
             // 
             this.txtIdProveedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIdProveedor.Enabled = false;
             this.txtIdProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdProveedor.Location = new System.Drawing.Point(153, 70);
             this.txtIdProveedor.Margin = new System.Windows.Forms.Padding(0);
@@ -331,11 +339,47 @@
             this.label4.Text = "FACTURA";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // txtIva10
+            // 
+            this.txtIva10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIva10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIva10.Location = new System.Drawing.Point(782, 681);
+            this.txtIva10.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIva10.MaxLength = 40;
+            this.txtIva10.Name = "txtIva10";
+            this.txtIva10.Size = new System.Drawing.Size(101, 22);
+            this.txtIva10.TabIndex = 120;
+            // 
+            // txtIva05
+            // 
+            this.txtIva05.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIva05.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIva05.Location = new System.Drawing.Point(675, 681);
+            this.txtIva05.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIva05.MaxLength = 40;
+            this.txtIva05.Name = "txtIva05";
+            this.txtIva05.Size = new System.Drawing.Size(101, 22);
+            this.txtIva05.TabIndex = 121;
+            // 
+            // txtIva00
+            // 
+            this.txtIva00.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIva00.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIva00.Location = new System.Drawing.Point(568, 681);
+            this.txtIva00.Margin = new System.Windows.Forms.Padding(0);
+            this.txtIva00.MaxLength = 40;
+            this.txtIva00.Name = "txtIva00";
+            this.txtIva00.Size = new System.Drawing.Size(101, 22);
+            this.txtIva00.TabIndex = 122;
+            // 
             // frm_compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.txtIva00);
+            this.Controls.Add(this.txtIva05);
+            this.Controls.Add(this.txtIva10);
             this.Controls.Add(this.txtFactura);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -349,7 +393,7 @@
             this.Controls.Add(this.txtIdProveedor);
             this.Controls.Add(this.btnAdicionarProveedor);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtNCompra);
+            this.Controls.Add(this.txtIdCompra);
             this.Controls.Add(this.txtObservacion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtRuc);
@@ -379,7 +423,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView dtLista;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNCompra;
+        private System.Windows.Forms.TextBox txtIdCompra;
         private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRuc;
@@ -401,5 +445,8 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtFactura;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtIva10;
+        private System.Windows.Forms.TextBox txtIva05;
+        private System.Windows.Forms.TextBox txtIva00;
     }
 }

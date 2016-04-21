@@ -16,25 +16,30 @@ namespace sistema_cbs
             InitializeComponent();
         }
         // variables cabecera compra.
+        public int ultimoCodigo;
         public int cid, pid, uid;
         public string factura;
         public DateTime inclusion = DateTime.Now;
         public DateTime f_factura = DateTime.Now;
 
-        public string persona, fantasia, direccion, telefono, ruc, observacion;
+        public string persona, fantasia, direccion, telefono, ruc, obs;
         public Double totalCompra, cantidad, costoadm, costocont, ventamay, ventamin;
 
         private void frm_compra_Load(object sender, EventArgs e)
         {
             CompraDal codigo = new CompraDal();
+
+            ultimoCodigo = codigo.GeraCodigo();
+
+            txtIdCompra.Text = Convert.ToString(ultimoCodigo);
             
 
             txtProveedor.Enabled = false;
-            txtIdProveedor.Enabled = false;
+            txtIdProveedor.Enabled = true;
             txtTelefono.Enabled = false;
             txtRuc.Enabled = false;
             txtInclusion.Enabled = false;
-            txtNCompra.Enabled = false;
+            txtIdCompra.Enabled = false;
 
             txtVencimiento.Focus();
             txtVencimiento.TabIndex = 0;
@@ -47,7 +52,7 @@ namespace sistema_cbs
             btnImprimir.TabIndex = 7;
             btnSalir.TabIndex = 8;
 
-            txtTotal.Enabled = false;
+            txtTotal.Enabled = true;
 
             txtInclusion.Text = inclusion.ToShortDateString();
             txtVencimiento.Text = f_factura.ToShortDateString();
@@ -92,16 +97,15 @@ namespace sistema_cbs
             }
             else
             {
-                ultimo_id();
                 /* ###################################################################### */
                 pid = Convert.ToInt32(txtIdProveedor.Text);
-                uid = 1;
-                //string dataInclusion = string.Format("{0:d}", inclusion);
+                string dataInclusion = string.Format("{0:d}", inclusion);
                 //string dataFactura = string.Format("{0:d}", f_factura);
                 factura = Convert.ToString(txtFactura.Text);
                 factura = factura.Trim();
-                totalCompra = 1000; //Convert.ToDouble(txtTotal.Text);
-                observacion = txtObservacion.Text;
+                totalCompra = Convert.ToDouble(txtTotal.Text); //Convert.ToDouble(txtTotal.Text);
+                obs = txtObservacion.Text;
+                obs = obs.Trim();
                 //MessageBox.Show("Codigo Proveedor " + pid);
                 //MessageBox.Show("Codigo usuario " + uid);
                 //MessageBox.Show("Inclusion " + dataInclusion);
@@ -110,10 +114,12 @@ namespace sistema_cbs
                 try
                 {
                     Compra obj = new Compra();
+
                     obj.pid = pid;
                     obj.uid = uid;
                     obj.f_inclusion = inclusion;
                     obj.factura = factura;
+                    obj.observacion = obs;
                     obj.totalCompra = totalCompra;
                     
                     CompraDal guardar = new CompraDal();

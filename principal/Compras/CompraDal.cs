@@ -9,7 +9,29 @@ namespace sistema_cbs
 {
     class CompraDal : Compra
     {
-        public int codigo;
+        public int ultimoIdCompra;
+
+        public int GeraCodigo()
+        {
+            int codigo = 0;
+
+            try
+            {
+                // conectar ao banco de datos.
+                NpgsqlConnection conexion = Servidor.conectar();
+
+                NpgsqlCommand sql = new NpgsqlCommand("SELECT id_compra FROM compras where id_compra = (select max(id_compra) from compras);", conexion);
+
+                codigo = (int)sql.ExecuteScalar();
+            }
+            catch
+            { 
+                
+            }
+            return codigo + 1;
+        }
+
+
 
       // funcion para gravar la compra.
       public void gravar_cabecera(Compra pCompra)
@@ -20,13 +42,14 @@ namespace sistema_cbs
             NpgsqlConnection conexion = Servidor.conectar();
 
             // comando insert sql para o banco                       
-            NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO compras (d_inclusion, n_factura, id_cliente, id_user, total, observacion) VALUES (@c_fecha, @c_factura, @c_persona, @c_usuario, @c_total, @c_obs);", conexion);
-            sql.Parameters.AddWithValue("@c_fecha", pCompra.f_inclusion);
-            sql.Parameters.AddWithValue("@c_factura", pCompra.factura);
-            sql.Parameters.AddWithValue("@c_persona", pCompra.pid);
-            sql.Parameters.AddWithValue("@c_usuario", pCompra.uid);
-            sql.Parameters.AddWithValue("@c_total", pCompra.totalCompra);
-            sql.Parameters.AddWithValue("@c_obs", pCompra.observacion);
+            NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO compras (c_inclusion, c_vencimiento, c_factura, id_cliente, id_usuario, c_total, c_obs) VALUES (@inclusion, @vencimiento, @factura, @persona, @usuario, @total, @obs);", conexion);
+            sql.Parameters.AddWithValue("@inclusion", pCompra.f_inclusion);
+            sql.Parameters.AddWithValue("@vencimiento", pCompra.f_factura);
+            sql.Parameters.AddWithValue("@factura", pCompra.factura);
+            sql.Parameters.AddWithValue("@persona", pCompra.pid);
+            sql.Parameters.AddWithValue("@usuario", pCompra.uid);
+            sql.Parameters.AddWithValue("@total", pCompra.totalCompra);
+            sql.Parameters.AddWithValue("@obs", pCompra.observacion);
 
             sql.ExecuteNonQuery();
             conexion.Close();
