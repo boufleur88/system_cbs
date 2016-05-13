@@ -80,15 +80,13 @@ namespace sistema_cbs
 
                     this.Close();
 
-                    // MessageBox.Show("IdServicio " + idServicio + " | " + descripcion + " Costo: " + costo + " PrecioMin: " + preciomin + " Precio " + precio + " ");
-
                     frmRegistroCompras obj = new frmRegistroCompras();
-                    obj.codigo = idMercaderia;
+                    obj.idProduto = idMercaderia;
                     obj.descripcion = descripcion;
-                    obj.costocon = costocon;
-                    obj.costoadm = costoadm;
-                    obj.preciomin = preciomin;
-                    obj.precionormal = preciomin;
+                    obj.costo1 = costocon;
+                    obj.costo2 = costoadm;
+                    obj.precio1 = preciomin;
+                    obj.precio2 = preciomin;
                     obj.Show();
 
                 }

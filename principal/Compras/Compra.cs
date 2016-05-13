@@ -12,10 +12,14 @@ namespace sistema_cbs
         public int cid {get; set; } // id compra.
         public int pid { get; set; } // id persona.
         public int uid { get; set; } // id usuario.
+        public int moneda { get; set; } // id moeda.
+        public int sucursal { get; set; } // id sucursal.
+        public int status { get; set; }
+
 
         // fecha factura
         public DateTime f_inclusion { get; set; }
-        public DateTime f_factura { get; set; }
+        public DateTime f_vencimiento { get; set; }
 
         // persona_id
         public int persona { get; set; }
@@ -29,7 +33,6 @@ namespace sistema_cbs
         public String factura { get; set; }
         public String timbrado { get; set; }
         public String observacion { get; set; }
-        public String status { get; set; }
         public Double iva00 { get; set; }
         public Double iva05 { get; set; }
         public Double iva10 { get; set; }
@@ -58,7 +61,7 @@ namespace sistema_cbs
       { }
 
       public Compra(int cCodigo, int cPersona, int cUsuario, DateTime fInclusion, String cFactura, String cObs,
-          String cStatus, Double cIva00, Double cIva05, Double cIva10, Double cTotal, Double cTotalCompra)
+          Double cIva00, Double cIva05, Double cIva10, Double cTotal, Double cTotalCompra, int cMoneda, int cSucursal, int cStatus)
       {
          this.cid = cCodigo;
          this.pid = cPersona;
@@ -71,11 +74,13 @@ namespace sistema_cbs
          this.usuario = cUsuario;
          this.factura = cFactura;
 
-         this.status = cStatus;
          this.iva00 = cIva00;
          this.iva05 = cIva05;
          this.iva10 = cIva10;
-         this.total = cTotal; 
+         this.total = cTotal;
+         this.moneda = cMoneda;
+         this.sucursal = cSucursal;
+         this.status = cStatus;
       }
     }
 }

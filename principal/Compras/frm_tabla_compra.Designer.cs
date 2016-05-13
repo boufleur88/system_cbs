@@ -96,6 +96,7 @@
             // 
             // dtLista
             // 
+            this.dtLista.AllowUserToAddRows = false;
             this.dtLista.AllowUserToDeleteRows = false;
             this.dtLista.AllowUserToResizeColumns = false;
             this.dtLista.AllowUserToResizeRows = false;
@@ -106,6 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtLista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtLista.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dtLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtLista.Location = new System.Drawing.Point(9, 68);
             this.dtLista.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);

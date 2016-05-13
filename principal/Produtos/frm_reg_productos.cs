@@ -56,10 +56,10 @@ namespace sistema_cbs
 
                 txt_codigo.Text = Convert.ToString(codigo);
                 txt_descripcion.Text = Convert.ToString(descripcion);
-                txt_costoadmin.Text = Convert.ToString(costo_adm);
-                txt_costocont.Text = Convert.ToString(costo_cont);
-                txt_ventamay.Text = Convert.ToString(ventamay);
-                txt_ventamin.Text = Convert.ToString(ventamin);
+                txtPrecio1.Text = Convert.ToString(costo_adm);
+                txtCosto.Text = Convert.ToString(costo_cont);
+                txtPrecio2.Text = Convert.ToString(ventamay);
+                txtPrecio3.Text = Convert.ToString(ventamin);
                 txt_obser.Text = Convert.ToString(observacion);
                 txt_iva.Text = Convert.ToString(iva);
                 txt_medida.Text = Convert.ToString(medida);
@@ -67,10 +67,10 @@ namespace sistema_cbs
                 cmbgrupo.Text = Convert.ToString(grupo);
                 cmbsubgrupo.Text = Convert.ToString(subgrupo);
 
-                txt_ventamay.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamay.Text));
-                txt_ventamin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamin.Text));
-                txt_costoadmin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costoadmin.Text));
-                txt_costocont.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costocont.Text));
+                txtPrecio2.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecio2.Text));
+                txtPrecio3.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecio3.Text));
+                txtPrecio1.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecio1.Text));
+                txtCosto.Text = string.Format("{0:N0}", Convert.ToDouble(txtCosto.Text));
             }
 
 
@@ -100,10 +100,10 @@ namespace sistema_cbs
 
                 txt_codigo.Text = Convert.ToString(codigo);
                 txt_descripcion.Text = Convert.ToString(descripcion);
-                txt_costoadmin.Text = Convert.ToString(costo_adm);
-                txt_costocont.Text = Convert.ToString(costo_cont);
-                txt_ventamay.Text = Convert.ToString(ventamay);
-                txt_ventamin.Text = Convert.ToString(ventamin);
+                txtPrecio1.Text = Convert.ToString(costo_adm);
+                txtCosto.Text = Convert.ToString(costo_cont);
+                txtPrecio2.Text = Convert.ToString(ventamay);
+                txtPrecio3.Text = Convert.ToString(ventamin);
                 txt_obser.Text = Convert.ToString(observacion);
                 txt_iva.Text = Convert.ToString(iva);
                 txt_medida.Text = Convert.ToString(medida);
@@ -150,25 +150,25 @@ namespace sistema_cbs
                      txt_iva.Text = "10";
                   }
 
-                  if (txt_costocont.Text == "0" || txt_costocont.Text == "")
+                  if (txtCosto.Text == "0" || txtCosto.Text == "")
                   {
-                     txt_costocont.Text = "1";
+                     txtCosto.Text = "1";
                      
                   }
 
-                  if (txt_costoadmin.Text == "0" || txt_costoadmin.Text == "")
+                  if (txtPrecio1.Text == "0" || txtPrecio1.Text == "")
                   {
-                     txt_costoadmin.Text = "1";
+                     txtPrecio1.Text = "1";
                   }
 
-                  if (txt_ventamay.Text == "0" || txt_ventamay.Text == "")
+                  if (txtPrecio2.Text == "0" || txtPrecio2.Text == "")
                   {
-                     txt_ventamay.Text = "1";
+                     txtPrecio2.Text = "1";
                   }
 
-                  if (txt_ventamin.Text == "0" || txt_ventamin.Text == "")
+                  if (txtPrecio3.Text == "0" || txtPrecio3.Text == "")
                   {
-                     txt_ventamin.Text = "1";
+                     txtPrecio3.Text = "1";
                   }
 
                   if (txt_stcokmin.Text == "")
@@ -199,16 +199,16 @@ namespace sistema_cbs
                   iva = Convert.ToInt32(txt_iva.Text);
 
                   // Costo Contable del producto.
-                  coscont = Convert.ToDouble(txt_costocont.Text);
+                  coscont = Convert.ToDouble(txtCosto.Text);
 
                   // Costo Administrativo del producto.
-                  cosadm = Convert.ToDouble(txt_costoadmin.Text);
+                  cosadm = Convert.ToDouble(txtPrecio1.Text);
 
                   // Precio de Venta Mayorista. 
-                  venmay = Convert.ToDouble(txt_ventamay.Text);
+                  venmay = Convert.ToDouble(txtPrecio2.Text);
 
                   // Precio de Venta Minorista.
-                  venmin = Convert.ToDouble(txt_ventamin.Text);
+                  venmin = Convert.ToDouble(txtPrecio3.Text);
 
                   // Cantidad minima.
                   stmin = Convert.ToInt32(txt_stcokmin.Text);
@@ -287,24 +287,24 @@ namespace sistema_cbs
                         txt_iva.Text = "10";
                      }
 
-                     if (txt_costocont.Text == "0" || txt_costocont.Text == "")
+                     if (txtCosto.Text == "0" || txtCosto.Text == "")
                      {
-                        txt_costocont.Text = "1";
+                        txtCosto.Text = "1";
                      }
                      
-                     if (txt_costoadmin.Text == "0" || txt_costoadmin.Text == "")
+                     if (txtPrecio1.Text == "0" || txtPrecio1.Text == "")
                      {
-                        txt_costoadmin.Text = "1";
+                        txtPrecio1.Text = "1";
                      }
 
-                     if (txt_ventamay.Text == "0" || txt_ventamay.Text == "")
+                     if (txtPrecio2.Text == "0" || txtPrecio2.Text == "")
                      {
-                        txt_ventamay.Text = "1";
+                        txtPrecio2.Text = "1";
                      }
 
-                     if (txt_ventamin.Text == "0" || txt_ventamin.Text == "")
+                     if (txtPrecio3.Text == "0" || txtPrecio3.Text == "")
                      {
-                        txt_ventamin.Text = "1";
+                        txtPrecio3.Text = "1";
                      }
 
                      if (txt_stcokmin.Text == "")
@@ -335,16 +335,16 @@ namespace sistema_cbs
                      iva = Convert.ToInt32(txt_iva.Text);
 
                      // Costo Contable del producto.
-                     coscont = Convert.ToDouble(txt_costocont.Text);
+                     coscont = Convert.ToDouble(txtCosto.Text);
 
                      // Costo Administrativo del producto.
-                     cosadm = Convert.ToDouble(txt_costoadmin.Text);
+                     cosadm = Convert.ToDouble(txtPrecio1.Text);
 
                      // Precio de Venta Mayorista. 
-                     venmay = Convert.ToDouble(txt_ventamay.Text);
+                     venmay = Convert.ToDouble(txtPrecio2.Text);
 
                      // Precio de Venta Minorista.
-                     venmin = Convert.ToDouble(txt_ventamin.Text);
+                     venmin = Convert.ToDouble(txtPrecio3.Text);
 
                      // Cantidad minima.
                      stmin = Convert.ToInt32(txt_stcokmin.Text);
@@ -407,7 +407,7 @@ namespace sistema_cbs
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
            {
-              txt_ventamin.Focus();
+              txtPrecio3.Focus();
            } 
            v1.solonumeros(e);
         }
@@ -426,7 +426,7 @@ namespace sistema_cbs
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
            {
-              txt_costoadmin.Focus();
+              txtPrecio1.Focus();
            } 
            v1.solonumeros(e);
         }
@@ -435,7 +435,7 @@ namespace sistema_cbs
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
            {
-              txt_ventamay.Focus();
+              txtPrecio2.Focus();
            } 
            v1.solonumeros(e);
         }
@@ -453,7 +453,7 @@ namespace sistema_cbs
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
            {
-              txt_costocont.Focus();
+              txtCosto.Focus();
            } 
            v1.solonumeros(e);
         }
@@ -544,22 +544,22 @@ namespace sistema_cbs
 
         private void txt_costocont_Leave(object sender, EventArgs e)
         {
-           txt_costocont.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costocont.Text));
+           txtCosto.Text = string.Format("{0:N0}", Convert.ToDouble(txtCosto.Text));
         }
 
         private void txt_costoadmin_Leave(object sender, EventArgs e)
         {
-           txt_costoadmin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_costoadmin.Text));
+           txtPrecio1.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecio1.Text));
         }
 
         private void txt_ventamay_Leave(object sender, EventArgs e)
         {
-           txt_ventamay.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamay.Text));
+           txtPrecio2.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecio2.Text));
         }
 
         private void txt_ventamin_Leave(object sender, EventArgs e)
         {
-           txt_ventamin.Text = string.Format("{0:N0}", Convert.ToDouble(txt_ventamin.Text));
+           txtPrecio3.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecio3.Text));
         }
 
         private void btnMarca_Click_1(object sender, EventArgs e)
@@ -607,6 +607,16 @@ namespace sistema_cbs
            cmbsubgrupo.DataSource = ls_subgrupo.ObtenerLista();
            cmbsubgrupo.ValueMember = "Id";
            cmbsubgrupo.DisplayMember = "Subgrupo";
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -50,12 +50,13 @@ namespace sistema_cbs
         private void formata_tabla()
         {
             dtLista.Columns["id_compra"].HeaderText = "CODIGO";
-            dtLista.Columns["d_inclusion"].HeaderText = "FECHA";
+            dtLista.Columns["c_inclusion"].HeaderText = "FECHA";
+            dtLista.Columns["c_vencimiento"].HeaderText = "VENCIMIENTO";
             dtLista.Columns["per_nombre"].HeaderText = "PROVEEDOR";
-            dtLista.Columns["total"].HeaderText = "TOTAL";
-            dtLista.Columns["total"].DefaultCellStyle.Format = "N0";
-            dtLista.Columns["total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
-            dtLista.Columns["observacion"].HeaderText = "OBSERVACION";
+            dtLista.Columns["c_total"].HeaderText = "TOTAL";
+            dtLista.Columns["c_total"].DefaultCellStyle.Format = "N0";
+            dtLista.Columns["c_total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
+            dtLista.Columns["c_obs"].HeaderText = "OBSERVACION";
         }
        
     }

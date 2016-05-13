@@ -15,24 +15,27 @@ namespace sistema_cbs
         {
             InitializeComponent();
         }
+        
         // variables cabecera compra.
-        public int ultimoCodigo;
-        public int cid, pid, uid;
-        public string factura;
+        public int ultimoCodigo = 0;
+        public int cid = 0, pid = 0, uid = 1;
+        public int cMoneda = 1, cSucursal = 1, cStatus = 1; 
+        public string nFactura = "";
         public DateTime inclusion = DateTime.Now;
-        public DateTime f_factura = DateTime.Now;
+        public DateTime vencimiento = DateTime.Now;
 
-        public string persona, fantasia, direccion, telefono, ruc, obs;
-        public Double totalCompra, cantidad, costoadm, costocont, ventamay, ventamin;
+        public string persona = "", fantasia = "", direccion = "", telefono = "", ruc = "", obs = "";
+        public Double totalCompra = 0, cantidad = 0, costoadm = 0, costocont = 0, ventamay = 0, ventamin = 0;
+        public Double iva10 = 0, iva05 = 0, iva00 = 0;
 
+        
         private void frm_compra_Load(object sender, EventArgs e)
         {
             CompraDal codigo = new CompraDal();
 
             ultimoCodigo = codigo.GeraCodigo();
 
-            txtIdCompra.Text = Convert.ToString(ultimoCodigo);
-            
+            txtIdCompra.Text = Convert.ToString(ultimoCodigo);    
 
             txtProveedor.Enabled = false;
             txtIdProveedor.Enabled = true;
@@ -55,7 +58,7 @@ namespace sistema_cbs
             txtTotal.Enabled = true;
 
             txtInclusion.Text = inclusion.ToShortDateString();
-            txtVencimiento.Text = f_factura.ToShortDateString();
+            txtVencimiento.Text = vencimiento.ToShortDateString();
 
         }
 
@@ -76,12 +79,12 @@ namespace sistema_cbs
         {
             // UTILIZANDO DELEGADOS.
             frmTablaPersonasCompras fr = new frmTablaPersonasCompras();
-            fr.pasado += new frmTablaPersonasCompras.pasar(ejecutar);
+            fr.pasado += new frmTablaPersonasCompras.pasar(pasarPessoa);
             fr.Show();
         }
 
         // EVENT DELEGATE
-        public void ejecutar(int codigo, string nombre, string telefono, string ruc)
+        public void pasarPessoa(int codigo, string nombre, string telefono, string ruc)
         {
             txtIdProveedor.Text = Convert.ToString(codigo);
             txtProveedor.Text = Convert.ToString(nombre);
@@ -89,28 +92,42 @@ namespace sistema_cbs
             txtRuc.Text = Convert.ToString(ruc);
         }
 
+        
+        public void pasarProduto(int idProduto, string descripcion, int cantidad, double costo1, double costo2, double precio1, double precio2)
+        {
+            dtLista.Rows[1].Cells[0].Value = Convert.ToString(idProduto);
+            dtLista.Rows[1].Cells[1].Value = Convert.ToString(descripcion);
+            dtLista.Rows[1].Cells[2].Value = Convert.ToString(cantidad);
+            dtLista.Rows[1].Cells[3].Value = Convert.ToString(costo1);
+            dtLista.Rows[1].Cells[4].Value = Convert.ToString(costo2);        
+            
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             if (txtIdProveedor.Text == "")
             {
-                MessageBox.Show("Adicionar al menos un proveedor para tu compra");
+                MessageBox.Show("Adicionar al menos un Proveedor para la Compra");
             }
             else
             {
                 /* ###################################################################### */
                 pid = Convert.ToInt32(txtIdProveedor.Text);
                 string dataInclusion = string.Format("{0:d}", inclusion);
-                //string dataFactura = string.Format("{0:d}", f_factura);
-                factura = Convert.ToString(txtFactura.Text);
-                factura = factura.Trim();
-                totalCompra = Convert.ToDouble(txtTotal.Text); //Convert.ToDouble(txtTotal.Text);
+                string dataVencimiento = string.Format("{0:d}", vencimiento);
+                nFactura = Convert.ToString(txtFactura.Text);
+                nFactura = nFactura.Trim();
+
+                iva00 = Convert.ToDouble(txtIva00.Text);
+                iva05 = Convert.ToDouble(txtIva05.Text);
+                iva10 = Convert.ToDouble(txtIva10.Text);
+                totalCompra = Convert.ToDouble(txtTotal.Text); 
                 obs = txtObservacion.Text;
                 obs = obs.Trim();
-                //MessageBox.Show("Codigo Proveedor " + pid);
-                //MessageBox.Show("Codigo usuario " + uid);
-                //MessageBox.Show("Inclusion " + dataInclusion);
-                //MessageBox.Show("Factura " + dataFactura);
-                //MessageBox.Show("Total Compra " + totalCompra);
+
+                
+                
                 try
                 {
                     Compra obj = new Compra();
@@ -118,9 +135,16 @@ namespace sistema_cbs
                     obj.pid = pid;
                     obj.uid = uid;
                     obj.f_inclusion = inclusion;
-                    obj.factura = factura;
+                    obj.f_vencimiento = vencimiento;
+                    obj.factura = nFactura;
                     obj.observacion = obs;
+                    obj.iva00 = iva00;
+                    obj.iva05 = iva05;
+                    obj.iva10 = iva10;
                     obj.totalCompra = totalCompra;
+                    obj.moneda = cMoneda;
+                    obj.sucursal = cSucursal;
+                    obj.status = cStatus;
                     
                     CompraDal guardar = new CompraDal();
                     guardar.gravar_cabecera(obj);
@@ -139,23 +163,7 @@ namespace sistema_cbs
             }
         }
 
-        // FUNCAO PARA ALTERAR DATOS...
-        private void ultimo_id()
-        {
-            try
-            {
-                Compra obj = new Compra();
-                obj.cid = cid;
-
-                MessageBox.Show(" codigo " + cid);
-
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("ERROR AL GUARDAR PERSONA" + erro);
-            }
-        }
-
+        
 
         
     }

@@ -9,8 +9,7 @@ namespace sistema_cbs
 {
     class CompraDal : Compra
     {
-        public int ultimoIdCompra;
-
+ 
         public int GeraCodigo()
         {
             int codigo = 0;
@@ -42,14 +41,20 @@ namespace sistema_cbs
             NpgsqlConnection conexion = Servidor.conectar();
 
             // comando insert sql para o banco                       
-            NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO compras (c_inclusion, c_vencimiento, c_factura, id_cliente, id_usuario, c_total, c_obs) VALUES (@inclusion, @vencimiento, @factura, @persona, @usuario, @total, @obs);", conexion);
+            NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO compras (c_inclusion, c_vencimiento, c_factura, id_cliente, id_usuario, c_iva00, c_iva05, c_iva10, c_total, c_obs, id_moneda, id_sucursal, id_status) VALUES (@inclusion, @vencimiento, @factura, @persona, @usuario, @iva00, @iva05, @iva10, @total, @obs, @moneda, @sucursal, @status);", conexion);
             sql.Parameters.AddWithValue("@inclusion", pCompra.f_inclusion);
-            sql.Parameters.AddWithValue("@vencimiento", pCompra.f_factura);
+            sql.Parameters.AddWithValue("@vencimiento", pCompra.f_vencimiento);
             sql.Parameters.AddWithValue("@factura", pCompra.factura);
             sql.Parameters.AddWithValue("@persona", pCompra.pid);
             sql.Parameters.AddWithValue("@usuario", pCompra.uid);
+            sql.Parameters.AddWithValue("@iva00", pCompra.iva00);
+            sql.Parameters.AddWithValue("@iva05", pCompra.iva05);
+            sql.Parameters.AddWithValue("@iva10", pCompra.iva10);
             sql.Parameters.AddWithValue("@total", pCompra.totalCompra);
             sql.Parameters.AddWithValue("@obs", pCompra.observacion);
+            sql.Parameters.AddWithValue("@moneda", pCompra.moneda);
+            sql.Parameters.AddWithValue("@sucursal", pCompra.sucursal);
+            sql.Parameters.AddWithValue("@status", pCompra.status);
 
             sql.ExecuteNonQuery();
             conexion.Close();
@@ -68,7 +73,7 @@ namespace sistema_cbs
                 NpgsqlConnection conexion = Servidor.conectar();
 
                 // executa a instrucao 
-                NpgsqlCommand sql = new NpgsqlCommand("SELECT c.id_compra, c.d_inclusion, p.per_nombre, c.total, c.observacion FROM compras AS c, persona AS p WHERE c.id_cliente = p.id_per ORDER BY c.id_compra;", conexion);
+                NpgsqlCommand sql = new NpgsqlCommand("SELECT c.id_compra, c.c_inclusion, c.c_vencimiento, p.per_nombre, c.c_total, c.c_obs FROM compras AS c, persona AS p WHERE c.id_cliente = p.id_per ORDER BY c.id_compra LIMIT 20;", conexion);
 
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
                 dt_adapter.SelectCommand = sql;
@@ -109,37 +114,6 @@ namespace sistema_cbs
             }
         }
 
-
-        /* COMPRAS - OBTENER ULTIMO ID DE COMPRAS.
-        public ultimo_id()
-        {
-            try
-            {
-                NpgsqlConnection conexion = Servidor.conectar();
-
-                NpgsqlCommand sql = new NpgsqlCommand("SELECT id_compra FROM compras where id_compra = (select max(id_compra) from compras);", conexion);
-                return Convert.ToInt32(sql.ExecuteScalar());
-
-                conexion.Close();
-            }
-            catch (Exception erro)
-            {
-                throw erro;
-            }
-        }
-        */
-
-        public void Teste()
-        {
-            // instanciar compra.
-            Compra NovaCompra = new Compra();
-            NovaCompra.cid = 10;
-        }
-
-        internal void ultimo_id(int cid)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }

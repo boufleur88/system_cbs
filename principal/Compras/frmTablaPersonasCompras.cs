@@ -47,7 +47,7 @@ namespace sistema_cbs
         }
 
         private void btmAdicionar_Click(object sender, EventArgs e)
-        {
+        {           
             llamar_datos();
         }
 

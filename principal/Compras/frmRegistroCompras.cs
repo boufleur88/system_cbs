@@ -16,19 +16,28 @@ namespace sistema_cbs
             InitializeComponent();
         }
         validar_datos v1 = new validar_datos();
-        public int codigo, cantidad = 1;
-        public string descripcion;
-        public double costoadm, costocon, preciomin, precionormal;
+
+
+        public int idProduto = 0, cantidad = 1;
+        public string descripcion = "";
+        public double costo1 = 0, costo2 = 0, precio1 = 0, precio2 = 0;
+
+        // CREAR NUESTRO DELEGADO. 
+        public delegate void pasar(int idProduto, string descripcion, int cantidad, double costo1, double costo2, double precio1, double precio2); // tipo del metodo y parametros que llevara el metodol
+
+        // CREAR NUESTRO EVENTO.
+        public event pasar pasado;
+
 
         private void frmRegistroCompras_Load(object sender, EventArgs e)
         {
-            txtCodigo.Text = Convert.ToString(codigo);
+            txtCodigo.Text = Convert.ToString(idProduto);
             txtDescripcion.Text = Convert.ToString(descripcion);
             txtCantidad.Text = Convert.ToString(cantidad);
-            txtCosto2.Text = Convert.ToString(costoadm);
-            txtCosto1.Text = Convert.ToString(costocon);
-            txtPrecio1.Text = Convert.ToString(preciomin);
-            txtPrecio2.Text = Convert.ToString(precionormal);
+            txtCosto2.Text = Convert.ToString(costo1);
+            txtCosto1.Text = Convert.ToString(costo2);
+            txtPrecio1.Text = Convert.ToString(precio1);
+            txtPrecio2.Text = Convert.ToString(precio2);
 
             txtCodigo.Enabled = false;
             txtDescripcion.Enabled = false;
@@ -36,7 +45,7 @@ namespace sistema_cbs
             txtPrecio2.Text = string.Format("{0:N0}", Convert.ToDouble(txtPrecio2.Text));
             txtCosto2.Text = string.Format("{0:N0}", Convert.ToDouble(txtCosto2.Text));
             txtCosto1.Text = string.Format("{0:N0}", Convert.ToDouble(txtCosto1.Text));
-            
+
             txtCantidad.Focus();
             txtCantidad.TabIndex = 0;
             txtCosto1.TabIndex = 1;
@@ -52,7 +61,7 @@ namespace sistema_cbs
             Close();
         }
 
-        
+
         private void txtCostoCont_Leave(object sender, EventArgs e)
         {
             txtCosto1.Text = string.Format("{0:N0}", Convert.ToDouble(txtCosto1.Text));
@@ -109,7 +118,7 @@ namespace sistema_cbs
                 txtPrecio1.Focus();
             }
             v1.solonumeros(e);
-        }       
+        }
 
         private void txtPrecioMin_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -120,7 +129,41 @@ namespace sistema_cbs
             v1.solonumeros(e);
         }
 
-        
-        
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            llamar_datos();
+          
+        }
+
+        public void llamar_datos()
+        {
+            try
+            {
+                idProduto = Convert.ToInt32(txtCodigo.Text);
+                descripcion = Convert.ToString(txtDescripcion.Text.Trim());
+                cantidad = Convert.ToInt32(txtCantidad.Text);
+                costo1 = Convert.ToDouble(txtCosto1.Text);
+                costo2 = Convert.ToDouble(txtCosto1.Text);
+                precio1 = Convert.ToDouble(txtPrecio1.Text);
+                precio2 = Convert.ToDouble(txtPrecio2.Text);
+
+                this.Close();
+
+                /* UTILIZANDO DELEGADOS.
+                frmTablaPersonasCompras fr = new frmTablaPersonasCompras();
+                fr.pasado += new frmTablaPersonasCompras.pasar(pasarPessoa);
+                fr.Show();
+
+                pasado(idProduto, descripcion, cantidad, costo1, costo2, precio1, precio2);
+                 */
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("ERROR AL MOSTRAR EL ITEM EN LA COMPRA", "CBS INFORMATICA" + erro);
+            }
+        }
+
+
     }
 }

@@ -150,8 +150,8 @@ namespace sistema_cbs
 
         private void btn_historico_Click(object sender, EventArgs e)
         {
-           //create new xls file
-            string file = "C:\\newdoc.xls";
+           /*create new xls file
+            string file = "C:\Windows\TEMP\newdoc.xls";
             Workbook workbook = new Workbook();
             Worksheet worksheet = new Worksheet("First Sheet");
             worksheet.Cells[0, 0] = new Cell((short)1);
@@ -168,7 +168,7 @@ namespace sistema_cbs
             // open xls file
             Workbook book = Workbook.Load(file);
             Worksheet sheet = book.Worksheets[0];
-            
+            */
         }
 
         private void button3_Click(object sender, EventArgs e)
