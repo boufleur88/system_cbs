@@ -26,7 +26,7 @@ namespace sistema_cbs
         public delegate void pasar(int idProduto, string descripcion, int cantidad, double costo1, double costo2, double precio1, double precio2); // tipo del metodo y parametros que llevara el metodol
 
         // CREAR NUESTRO EVENTO.
-        public event pasar pasado;
+        // public event pasar pasado;
 
 
         private void frmRegistroCompras_Load(object sender, EventArgs e)
@@ -108,6 +108,7 @@ namespace sistema_cbs
                 txtCosto2.Focus();
             }
             v1.solonumeros(e);
+            lblMinimo.Text = Convert.ToString(CalcularPorcentaje(costo1, precio1));
         }
 
 
@@ -164,6 +165,16 @@ namespace sistema_cbs
             }
         }
 
+        
+        public double CalcularPorcentaje(double costo, double precio)
+        {
+            //double cost, price;
 
+            double precioCalculado = ((precio * 100) / costo);
+
+            return precioCalculado;
+        }
+
+        
     }
 }

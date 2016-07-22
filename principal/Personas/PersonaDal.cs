@@ -9,6 +9,10 @@ namespace sistema_cbs
 {
    class PersonaDal : Persona
    {
+       /*   Adicionar nueva columna personas.
+            ALTER TABLE persona ADD COLUMN per_situacion CHAR(1) DEFAULT 'A'; 
+        */
+
       public void gravar(Persona persona)
       {
          try
@@ -17,7 +21,7 @@ namespace sistema_cbs
             NpgsqlConnection conexion = Servidor.conectar();
            
             // comando insert sql para o banco                       
-            NpgsqlCommand sql = new NpgsqlCommand("insert into persona (per_ruc, per_nombre, per_ci, per_fant, per_dir, per_tel1, per_tel2, per_email, per_nac, per_clt, per_prov, per_func, per_obs, per_ciudad) values (@per_ruc, @per_nombre, @per_ci, @per_fant, @per_dir, @per_tel1, @per_tel2, @per_email, @per_nac, @per_clt, @per_prov, @per_func, @per_obs, @per_pais, @per_ciudad);", conexion);
+            NpgsqlCommand sql = new NpgsqlCommand("insert into persona (per_ruc, per_nombre, per_ci, per_fant, per_dir, per_tel1, per_tel2, per_email, per_nac, per_clt, per_prov, per_func, per_obs, per_ciudad, per_situacion, per_pais) values (@per_ruc, @per_nombre, @per_ci, @per_fant, @per_dir, @per_tel1, @per_tel2, @per_email, @per_nac, @per_clt, @per_prov, @per_func, @per_obs, @per_ciudad, @per_situacion, @per_pais);", conexion);
             sql.Parameters.AddWithValue("@per_ruc", persona.ruc);
             sql.Parameters.AddWithValue("@per_nombre", persona.nombre);
             sql.Parameters.AddWithValue("@per_ci", persona.cedula);
@@ -32,6 +36,8 @@ namespace sistema_cbs
             sql.Parameters.AddWithValue("@per_func", persona.funcionario);
             sql.Parameters.AddWithValue("@per_obs", persona.observacion);
             sql.Parameters.AddWithValue("@per_ciudad", persona.ciudad);
+            sql.Parameters.AddWithValue("@per_situacion", persona.situacion);
+            sql.Parameters.AddWithValue("@per_pais", persona.pais);
 
             sql.ExecuteNonQuery();
 
@@ -52,7 +58,7 @@ namespace sistema_cbs
          {
             NpgsqlConnection conexion = Servidor.conectar();
             
-            NpgsqlCommand sql = new NpgsqlCommand("update persona set per_nombre = @nombre, per_fant = @fantasia, per_ruc = @ruc, per_ci = @cedula, per_tel1 = @tel1, per_tel2 = @tel2, per_email = @email, per_dir = @dir, per_ciudad = @ciudad, per_nac = @nacimento, per_clt = @cliente, per_prov = @proveedor, per_func = @funcionario, per_obs = @obs where  id_per = @codigo", conexion);
+            NpgsqlCommand sql = new NpgsqlCommand("update persona set per_nombre = @nombre, per_fant = @fantasia, per_ruc = @ruc, per_ci = @cedula, per_tel1 = @tel1, per_tel2 = @tel2, per_email = @email, per_dir = @dir, per_ciudad = @ciudad, per_nac = @nacimento, per_clt = @cliente, per_prov = @proveedor, per_func = @funcionario, per_obs = @obs, per_situacion = @situacion, per_pais = @pais where id_per = @codigo", conexion);
             
             sql.Parameters.AddWithValue("@codigo", persona.idPersona);
             sql.Parameters.AddWithValue("@nombre", persona.nombre);
@@ -69,6 +75,8 @@ namespace sistema_cbs
             sql.Parameters.AddWithValue("@proveedor", persona.proveedor);
             sql.Parameters.AddWithValue("@funcionario", persona.funcionario);
             sql.Parameters.AddWithValue("@obs", persona.observacion);
+            sql.Parameters.AddWithValue("@situacion", persona.situacion);
+            sql.Parameters.AddWithValue("@pais", persona.pais);
 
             sql.ExecuteNonQuery();
 
@@ -88,7 +96,7 @@ namespace sistema_cbs
             NpgsqlConnection conexion = Servidor.conectar();
            
             // executa a instrucao 
-            NpgsqlCommand sql = new NpgsqlCommand("select id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs from persona order by id_per", conexion);
+            NpgsqlCommand sql = new NpgsqlCommand("select id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais from persona order by id_per desc", conexion);
             NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
             dt_adapter_personas.SelectCommand = sql;
        
@@ -106,6 +114,31 @@ namespace sistema_cbs
          }
       }
 
+
+      public DataTable lista_personas_Desc()
+      {
+          try
+          {
+              NpgsqlConnection conexion = Servidor.conectar();
+
+              // executa a instrucao 
+              NpgsqlCommand sql = new NpgsqlCommand("select id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais from persona order by id_per", conexion);
+              NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
+              dt_adapter_personas.SelectCommand = sql;
+
+
+              DataTable dt_lista_personas = new DataTable();
+              dt_adapter_personas.Fill(dt_lista_personas);
+
+              conexion.Close();
+              return dt_lista_personas;
+
+          }
+          catch (Exception error)
+          {
+              throw error;
+          }
+      }
       
       // METODO LISTA PERSONAS.
       public DataTable listaProveedorCompra()
@@ -142,7 +175,7 @@ namespace sistema_cbs
               NpgsqlConnection conexion = Servidor.conectar();
 
               // executa a instrucao 
-              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_ruc, per_tel1 FROM persona WHERE per_clt = 'S' ORDER BY id_per;", conexion);
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_ruc, per_tel1 FROM persona WHERE per_clt = 'S' AND per_situacion = 'A' ORDER BY id_per;", conexion);
               NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
               dt_adapter_personas.SelectCommand = sql;
 
@@ -168,7 +201,7 @@ namespace sistema_cbs
               NpgsqlConnection conexion = Servidor.conectar();
 
               // executa a instrucao 
-              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs FROM persona WHERE id_per < 50 ORDER BY id_per", conexion);
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais FROM persona WHERE per_situacion = 'A' ORDER BY id_per desc; ", conexion); //AND id_per < 50 ORDER BY
               NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
               dt_adapter_personas.SelectCommand = sql;
 
@@ -214,7 +247,7 @@ namespace sistema_cbs
             NpgsqlConnection conexion = Servidor.conectar();
 
             // executa a instrucao 
-            NpgsqlCommand sql = new NpgsqlCommand(string.Format("select id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs from persona WHERE per_nombre LIKE '%{0}%' OR per_fant LIKE '%{1}%' order by per_nombre", persona, fantasia), conexion);
+            NpgsqlCommand sql = new NpgsqlCommand(string.Format("select id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais from persona WHERE per_situacion = 'A' AND per_nombre LIKE '%{0}%' OR per_fant LIKE '%{1}%' order by per_nombre", persona, fantasia), conexion);
             NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
             dt_adapter_personas.SelectCommand = sql;
 

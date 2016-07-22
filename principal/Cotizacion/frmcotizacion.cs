@@ -16,6 +16,8 @@ namespace sistema_cbs
          InitializeComponent();
       }
 
+      public double compraUs = 0, compraRs = 0, ventaUs = 0, ventaRs = 0;
+
       private void button1_Click(object sender, EventArgs e)
       {
          Close();
@@ -25,7 +27,7 @@ namespace sistema_cbs
       {
          if (e.KeyChar == Convert.ToChar(Keys.Enter))
          {
-            txtreal.Focus();
+            txtCompraRs.Focus();
          }
       }
 
@@ -35,6 +37,32 @@ namespace sistema_cbs
          {
             btn_guardar.Focus();
          }
+      }
+
+      private void btn_guardar_Click(object sender, EventArgs e)
+      {
+          // comparacion de texto es con igual igual, compraracion de numero es igual
+          
+          if ( (txtCompraRs.Text == "") || (txtVentaRs.Text == "") || (txtCompraUs.Text == "") || (txtVentaUs.Text == "") )
+          {
+              MessageBox.Show("Falta Completar todos los valores");
+
+          }
+          else { 
+
+            compraRs = Convert.ToDouble(txtCompraRs.Text);
+            compraUs = Convert.ToDouble(txtCompraUs.Text);
+            ventaRs = Convert.ToDouble(txtVentaRs.Text);
+            ventaUs = Convert.ToDouble(txtVentaUs.Text);
+
+           
+
+          }
+      }
+
+      private void frmcotizacion_Load(object sender, EventArgs e)
+      {
+
       }
 
       

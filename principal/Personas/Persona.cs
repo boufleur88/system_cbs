@@ -17,13 +17,15 @@
       public string funcionario { get; set; }
       public string observacion { get; set; }
       public string nacimento { get; set; }
+      public string situacion { get; set; }
+      public string pais { get; set; }
        // public decimal LimiteCompra {get; set;};
 
         // metodos constructores
         public Persona() 
         { }
 
-        public Persona(int pId, string pNombre, string pRuc, string pFantasia, string pCedula, string pDireccion, string pCiudad, string pTel1, string pTel2, string pEmail, string pCliente, string pProveedor, string pFuncionario, string pObservacion, string pNacimiento)
+        public Persona(int pId, string pNombre, string pRuc, string pFantasia, string pCedula, string pDireccion, string pCiudad, string pTel1, string pTel2, string pEmail, string pCliente, string pProveedor, string pFuncionario, string pObservacion, string pNacimiento, string pSituacion, string pPais)
         {
             this.idPersona = pId;
             this.nombre = pNombre;
@@ -40,6 +42,8 @@
             this.funcionario = pFuncionario;
             this.observacion = pObservacion;
             this.nacimento = pNacimiento;
+            this.situacion = pSituacion;
+            this.pais = pPais;
         }
    }
 }

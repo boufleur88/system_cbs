@@ -126,18 +126,18 @@ namespace sistema_cbs
                  frm_reg_productos obj = new frm_reg_productos();
                  obj.codigo = codigo;
                  obj.descripcion = descripcion;
-                 obj.ventamay = ventamay;
-                 obj.ventamin = ventamin;
+                 obj.venta2 = ventamay;
+                 obj.venta3 = ventamin;
                  obj.marca = marca;
                  obj.grupo = grupo;
                  obj.subgrupo = subgrupo;
                  obj.medida = medida;
-                 obj.moneda = moneda;
-                 obj.iva = iva;
+                 //obj.moneda = moneda;
+                 //obj.iva = iva;
                  obj.observacion = observacion;
-                 obj.costo_adm = costo_adm;
-                 obj.costo_cont = costo_cont;
-                 obj.stminimo = stminimo;
+                 obj.costo = costo_adm;
+                 obj.venta1 = costo_cont;
+                 //obj.stminimo = stminimo;
 
                  obj.Show();
               }

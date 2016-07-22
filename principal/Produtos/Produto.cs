@@ -3,12 +3,12 @@
 namespace sistema_cbs
 {
    class Produto
-   {
-      
-      public int codigo {get; set; }
+   { 
+      public Double codigo {get; set; }
       public int moneda {get; set; }
       public int iva {get; set; }
       public int st_minimo { get; set; }
+      public int st_maximo { get; set; }
       
       public int marca { get; set; }
       public int grupo { get; set; }
@@ -17,6 +17,7 @@ namespace sistema_cbs
       public String descr { get; set; }
       public String unidad { get; set; }
       public String observacion { get; set; }
+      public String ativo { get; set; }
       
       // nombre marca, grupo y subgrupo
       public String Nmarcar { get; set; }
@@ -32,7 +33,7 @@ namespace sistema_cbs
       public Produto()
       { }
 
-      public Produto(int pCodigo, int pMoneda, int pIva, int pStminimo, int pMarca, int pGrupo, int pSubGrupo, String pDescr, String pUnidad, String pObs, Double pCostoAdm, Double pCostocon, Double pVentamay, Double pVentamin, String Nmarca, String Ngrupo, String Nsubgrupo)
+      public Produto(Double pCodigo, int pMoneda, int pIva, int pStminimo, int pMarca, int pGrupo, int pSubGrupo, String pDescr, String pUnidad, String pObs, Double pCostoAdm, Double pCostocon, Double pVentamay, Double pVentamin, String Nmarca, String Ngrupo, String Nsubgrupo)
       {
          this.codigo = pCodigo;
          this.moneda = pMoneda;

@@ -141,14 +141,6 @@ C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\principal.exe
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\principal.application
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\principal.exe
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\principal.pdb
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\Npgsql.pdb
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\Npgsql.xml
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\de\Npgsql.resources.dll
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\es\Npgsql.resources.dll
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\fi\Npgsql.resources.dll
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\fr\Npgsql.resources.dll
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\ja\Npgsql.resources.dll
-C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\zh-CN\Npgsql.resources.dll
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\bin\Debug\policy.2.0.Npgsql.config
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\principal.csprojResolveAssemblyReference.cache
 C:\Users\CRISTIANO\Documents\GitHub\system_cbs\principal\obj\x86\Debug\sistema_cbs.frm_control_usuario.resources

@@ -21,13 +21,15 @@ namespace sistema_cbs
 
         // VARIABLES DEL REGISTRO DE PERSONAS.
         public int codigo;
-        public String ruc, cedula, nombre, fantasia, direccion, tel1, tel2, correo, fnacimento, clt, prov, obs, func, ciudad;
+        public String ruc, cedula, nombre, fantasia, direccion, tel1, tel2, correo, fnacimento, clt, prov, obs, func, ciudad, situacion, pais;
+
+        
 
         private void frm_reg_personas_Load(object sender, EventArgs e)
         {
            txt_codigo.Text = Convert.ToString(codigo);
            // padleft primero parametro tamanho textbox y segundo parametro caracter a imprimir.
-           // txt_codigo.Text = txt_codigo.Text.PadLeft(5, '0');
+           txt_codigo.Text = txt_codigo.Text.PadLeft(5, '0');
            txt_nombre.Text = Convert.ToString(nombre);
            txt_fantasia.Text = Convert.ToString(fantasia);
            txt_cedula.Text = Convert.ToString(cedula);
@@ -42,6 +44,8 @@ namespace sistema_cbs
            txt_proveedor.Text = Convert.ToString(prov);
            txt_funcionario.Text = Convert.ToString(func);
            txt_observacion.Text = Convert.ToString(obs);
+           txt_situacion.Text = Convert.ToString(situacion);
+           txt_pais.Text = Convert.ToString(pais);
         }
 
 
@@ -156,9 +160,17 @@ namespace sistema_cbs
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
            {
-              btn_guardar.Focus();
+              txt_situacion.Focus();
            }
         }
+
+       private void txt_situacion_KeyPress(object sender, KeyPressEventArgs e)
+       {
+           if (e.KeyChar == Convert.ToChar(Keys.Enter))
+           {
+               btn_guardar.Focus();
+           }
+       }
                
 
         private void btn_salir_Click(object sender, EventArgs e)
@@ -273,6 +285,16 @@ namespace sistema_cbs
                  obs = txt_observacion.Text.ToString();
                  obs = obs.Trim();
 
+                  // situacion
+                 situacion = txt_situacion.Text.ToString();
+                 situacion = situacion.Trim();
+
+                 if (txt_situacion.Text == "")
+                     situacion = "A";
+                 
+                  // PAIS
+                  pais = "PY";
+
                  // CIUDAD
                  if (txtCiudad.Text == "")
                  {
@@ -306,11 +328,9 @@ namespace sistema_cbs
                  }
 
                  // FUNCIONARIO
-                 if (txt_funcionario.Text == " ")
+                 if (txt_funcionario.Text == "")
                  {
-                    //func = "N";
-                    txt_funcionario.Text = "N";
-                    func = txt_funcionario.Text.ToString();
+                    func = "N";                   
                  }
                  else
                  {
@@ -335,10 +355,13 @@ namespace sistema_cbs
                  obj.funcionario = func;
                  obj.observacion = obs;
                  obj.ciudad = ciudad;
+                 obj.situacion = situacion;
+                 obj.pais = pais;
 
                  // chamando clase para gravar os dados. 
-                 PersonaDal editar = new PersonaDal();
-                 editar.alterar(obj);
+                 PersonaDal alterar = new PersonaDal();
+                 alterar.alterar(obj);
+
 
                  this.Close();
                  frm_tabla_personas fr = new frm_tabla_personas();
@@ -346,6 +369,7 @@ namespace sistema_cbs
                 
               }
            }
+
                 
            else
            {
@@ -391,6 +415,16 @@ namespace sistema_cbs
                  // observacion 
                  obs = txt_observacion.Text.ToString();
                  obs = obs.Trim();
+
+                  // situacion
+                 situacion = txt_situacion.Text.ToString();
+                 situacion = situacion.Trim();
+                 
+                  if (txt_situacion.Text == "")
+                     situacion = "A";
+
+                  // PAIS
+                  pais = "PY";
 
                  // CIUDAD
                  if (txtCiudad.Text == "")
@@ -459,7 +493,9 @@ namespace sistema_cbs
                     obj.funcionario = func;
                     obj.observacion = obs;
                     obj.ciudad = ciudad;
-
+                    obj.situacion = situacion;
+                    obj.pais = pais;
+                  
                     // chamando clase para gravar os dados. 
                     PersonaDal gravar = new PersonaDal();
                     gravar.gravar(obj);
@@ -477,6 +513,8 @@ namespace sistema_cbs
 
            }
         }
+
+           
 
         
        /*

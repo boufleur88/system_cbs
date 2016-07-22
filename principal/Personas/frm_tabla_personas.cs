@@ -61,6 +61,7 @@ namespace sistema_cbs
            dt_lista_personas.Columns["per_tel1"].HeaderText = "TELEFONO";
            dt_lista_personas.Columns["per_tel2"].HeaderText = "CELULAR";
            dt_lista_personas.Columns["per_email"].HeaderText = "EMAIL";
+           dt_lista_personas.Columns["per_situacion"].HeaderText = "SITUACION";
            
            // Ocultar Campos
            dt_lista_personas.Columns["per_ciudad"].HeaderText = "CIUDAD";
@@ -77,6 +78,9 @@ namespace sistema_cbs
            dt_lista_personas.Columns["per_func"].Visible = false;
            dt_lista_personas.Columns["per_obs"].HeaderText = "OBSERVACION";
            dt_lista_personas.Columns["per_obs"].Visible = false;
+           dt_lista_personas.Columns["per_pais"].HeaderText = "PAIS";
+           dt_lista_personas.Columns["per_pais"].Visible = false;
+
 
            dt_lista_personas.Visible = true;
         }
@@ -91,7 +95,7 @@ namespace sistema_cbs
         private void editar_datos()
         {
            int codigo;
-           string nombre, fantasia, cedula, ruc, tel1, tel2, email, direccion, fnacimento, clt, prov, func, obs, ciudad;
+           string nombre, fantasia, cedula, ruc, tel1, tel2, email, direccion, fnacimento, clt, prov, func, obs, ciudad, situacion, pais;
 
            // per_clt, per_prov, per_func, per_obs
            try
@@ -113,6 +117,9 @@ namespace sistema_cbs
                  prov = Convert.ToString(dt_lista_personas.CurrentRow.Cells[12].Value);
                  func = Convert.ToString(dt_lista_personas.CurrentRow.Cells[13].Value);
                  obs = Convert.ToString(dt_lista_personas.CurrentRow.Cells[14].Value);
+                 situacion = Convert.ToString(dt_lista_personas.CurrentRow.Cells[15].Value);
+                 pais = Convert.ToString(dt_lista_personas.CurrentRow.Cells[16].Value);
+
 
                  this.Close();
 
@@ -132,6 +139,8 @@ namespace sistema_cbs
                  obj.prov = prov;
                  obj.func = func;
                  obj.obs = obs;
+                 obj.situacion = situacion;
+                 obj.pais = pais;
                  obj.Show();
               }
            }

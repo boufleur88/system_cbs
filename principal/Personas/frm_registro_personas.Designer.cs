@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_pais = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_situacion = new System.Windows.Forms.TextBox();
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.txt_nacimiento = new System.Windows.Forms.MaskedTextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -65,6 +68,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_pais);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txt_situacion);
             this.groupBox1.Controls.Add(this.txtCiudad);
             this.groupBox1.Controls.Add(this.txt_nacimiento);
             this.groupBox1.Controls.Add(this.label15);
@@ -102,6 +108,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS PRINCIPALES";
             // 
+            // txt_pais
+            // 
+            this.txt_pais.CausesValidation = false;
+            this.txt_pais.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pais.Location = new System.Drawing.Point(1020, 115);
+            this.txt_pais.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_pais.MaxLength = 38;
+            this.txt_pais.Name = "txt_pais";
+            this.txt_pais.Size = new System.Drawing.Size(41, 22);
+            this.txt_pais.TabIndex = 103;
+            this.txt_pais.Text = "PY";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(911, 664);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 20);
+            this.label6.TabIndex = 102;
+            this.label6.Text = "SITUACION";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txt_situacion
+            // 
+            this.txt_situacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_situacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_situacion.Location = new System.Drawing.Point(1020, 662);
+            this.txt_situacion.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_situacion.MaxLength = 1;
+            this.txt_situacion.Name = "txt_situacion";
+            this.txt_situacion.Size = new System.Drawing.Size(29, 22);
+            this.txt_situacion.TabIndex = 17;
+            this.txt_situacion.Text = "A";
+            this.txt_situacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_situacion_KeyPress);
+            // 
             // txtCiudad
             // 
             this.txtCiudad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -110,7 +153,7 @@
             this.txtCiudad.Margin = new System.Windows.Forms.Padding(0);
             this.txtCiudad.MaxLength = 38;
             this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(335, 22);
+            this.txtCiudad.Size = new System.Drawing.Size(281, 22);
             this.txtCiudad.TabIndex = 6;
             this.txtCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiudad_KeyPress);
             // 
@@ -440,7 +483,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(38, 722);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(118, 23);
-            this.btn_guardar.TabIndex = 17;
+            this.btn_guardar.TabIndex = 18;
             this.btn_guardar.Text = "&GUARDAR";
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -450,7 +493,7 @@
             this.btn_salir.Location = new System.Drawing.Point(162, 722);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(118, 23);
-            this.btn_salir.TabIndex = 18;
+            this.btn_salir.TabIndex = 19;
             this.btn_salir.Text = "&SALIR";
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
@@ -510,5 +553,8 @@
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.MaskedTextBox txt_nacimiento;
         private System.Windows.Forms.TextBox txtCiudad;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_situacion;
+        private System.Windows.Forms.TextBox txt_pais;
     }
 }

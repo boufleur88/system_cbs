@@ -45,6 +45,8 @@
             this.txtPrecio2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCosto2 = new System.Windows.Forms.TextBox();
+            this.lblMaximo = new System.Windows.Forms.Label();
+            this.lblMinimo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -60,7 +62,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(299, 223);
+            this.btnSalir.Location = new System.Drawing.Point(333, 332);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 30);
             this.btnSalir.TabIndex = 149;
@@ -145,7 +147,7 @@
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(0);
             this.txtDescripcion.MaxLength = 79;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(366, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(514, 22);
             this.txtDescripcion.TabIndex = 140;
             // 
             // txtCodigo
@@ -160,7 +162,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(204, 223);
+            this.btnGuardar.Location = new System.Drawing.Point(238, 332);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(80, 30);
             this.btnGuardar.TabIndex = 142;
@@ -172,7 +174,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(355, 146);
+            this.label6.Location = new System.Drawing.Point(13, 205);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(133, 20);
             this.label6.TabIndex = 152;
@@ -183,7 +185,7 @@
             // 
             this.txtPrecio1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPrecio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio1.Location = new System.Drawing.Point(503, 146);
+            this.txtPrecio1.Location = new System.Drawing.Point(161, 205);
             this.txtPrecio1.Margin = new System.Windows.Forms.Padding(0);
             this.txtPrecio1.MaxLength = 15;
             this.txtPrecio1.Name = "txtPrecio1";
@@ -196,7 +198,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(355, 179);
+            this.label7.Location = new System.Drawing.Point(13, 238);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 20);
             this.label7.TabIndex = 154;
@@ -207,7 +209,7 @@
             // 
             this.txtPrecio2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPrecio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio2.Location = new System.Drawing.Point(503, 179);
+            this.txtPrecio2.Location = new System.Drawing.Point(161, 238);
             this.txtPrecio2.Margin = new System.Windows.Forms.Padding(0);
             this.txtPrecio2.MaxLength = 15;
             this.txtPrecio2.Name = "txtPrecio2";
@@ -240,11 +242,35 @@
             this.txtCosto2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoAdm_KeyPress);
             this.txtCosto2.Leave += new System.EventHandler(this.txtCostoAdm_Leave);
             // 
+            // lblMaximo
+            // 
+            this.lblMaximo.AutoSize = true;
+            this.lblMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaximo.Location = new System.Drawing.Point(350, 240);
+            this.lblMaximo.Name = "lblMaximo";
+            this.lblMaximo.Size = new System.Drawing.Size(23, 20);
+            this.lblMaximo.TabIndex = 157;
+            this.lblMaximo.Text = "%";
+            this.lblMaximo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblMinimo
+            // 
+            this.lblMinimo.AutoSize = true;
+            this.lblMinimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimo.Location = new System.Drawing.Point(350, 205);
+            this.lblMinimo.Name = "lblMinimo";
+            this.lblMinimo.Size = new System.Drawing.Size(23, 20);
+            this.lblMinimo.TabIndex = 158;
+            this.lblMinimo.Text = "%";
+            this.lblMinimo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmRegistroCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 278);
+            this.ClientSize = new System.Drawing.Size(693, 374);
+            this.Controls.Add(this.lblMinimo);
+            this.Controls.Add(this.lblMaximo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCosto2);
             this.Controls.Add(this.label7);
@@ -291,5 +317,7 @@
         private System.Windows.Forms.TextBox txtPrecio2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCosto2;
+        private System.Windows.Forms.Label lblMaximo;
+        private System.Windows.Forms.Label lblMinimo;
     }
 }
