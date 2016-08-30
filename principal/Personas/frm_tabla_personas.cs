@@ -212,6 +212,7 @@ namespace sistema_cbs
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))
            {
+               MessageBox.Show("Preciono Enter");
               btn_buscar.Focus();
            }
         }

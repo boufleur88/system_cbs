@@ -15,12 +15,13 @@ namespace sistema_cbs
         {
             InitializeComponent();
         }
-        
+
         // variables cabecera compra.
         public int ultimoCodigo = 0;
         public int cid = 0, pid = 0, uid = 1;
-        public int cMoneda = 1, cSucursal = 1, cStatus = 1; 
+        public int cMoneda = 1, cSucursal = 1, cStatus = 1;
         public string nFactura = "";
+        public string nTimbrado = "";
         public DateTime inclusion = DateTime.Now;
         public DateTime vencimiento = DateTime.Now;
 
@@ -28,14 +29,16 @@ namespace sistema_cbs
         public Double totalCompra = 0, cantidad = 0, costoadm = 0, costocont = 0, ventamay = 0, ventamin = 0;
         public Double iva10 = 0, iva05 = 0, iva00 = 0;
 
-        
+
         private void frm_compra_Load(object sender, EventArgs e)
         {
+            // Reset values for default
+            OptContado.Select(); // option contado
+
+            // Carrega o codigo da compra
             CompraDal codigo = new CompraDal();
-
             ultimoCodigo = codigo.GeraCodigo();
-
-            txtIdCompra.Text = Convert.ToString(ultimoCodigo);    
+            txtIdCompra.Text = Convert.ToString(ultimoCodigo);
 
             txtProveedor.Enabled = false;
             txtIdProveedor.Enabled = true;
@@ -44,6 +47,8 @@ namespace sistema_cbs
             txtInclusion.Enabled = false;
             txtIdCompra.Enabled = false;
 
+            txtInclusion.Text = inclusion.ToShortDateString();
+            txtVencimiento.Text = vencimiento.ToShortDateString();
             txtVencimiento.Focus();
             txtVencimiento.TabIndex = 0;
             txtFactura.TabIndex = 1;
@@ -56,10 +61,6 @@ namespace sistema_cbs
             btnSalir.TabIndex = 8;
 
             txtTotal.Enabled = true;
-
-            txtInclusion.Text = inclusion.ToShortDateString();
-            txtVencimiento.Text = vencimiento.ToShortDateString();
-
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -92,20 +93,20 @@ namespace sistema_cbs
             txtRuc.Text = Convert.ToString(ruc);
         }
 
-        
+
         public void pasarProduto(int idProduto, string descripcion, int cantidad, double costo1, double costo2, double precio1, double precio2)
         {
             dtLista.Rows[1].Cells[0].Value = Convert.ToString(idProduto);
             dtLista.Rows[1].Cells[1].Value = Convert.ToString(descripcion);
             dtLista.Rows[1].Cells[2].Value = Convert.ToString(cantidad);
             dtLista.Rows[1].Cells[3].Value = Convert.ToString(costo1);
-            dtLista.Rows[1].Cells[4].Value = Convert.ToString(costo2);        
-            
+            dtLista.Rows[1].Cells[4].Value = Convert.ToString(costo2);
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
+
             if (txtIdProveedor.Text == "")
             {
                 MessageBox.Show("Adicionar al menos un Proveedor para la Compra");
@@ -119,15 +120,26 @@ namespace sistema_cbs
                 nFactura = Convert.ToString(txtFactura.Text);
                 nFactura = nFactura.Trim();
 
-                iva00 = Convert.ToDouble(txtIva00.Text);
-                iva05 = Convert.ToDouble(txtIva05.Text);
-                iva10 = Convert.ToDouble(txtIva10.Text);
-                totalCompra = Convert.ToDouble(txtTotal.Text); 
+                if (iva00 == 0)
+                    //iva00 = Convert.ToDouble(txtIva00.Text);
+                    iva00 = 0;
+
+                if (iva05 == 0)
+                    //iva05 = Convert.ToDouble(txtIva05.Text);
+                    iva05 = 0;
+
+                if (iva10 == 0)
+                    //iva10 = Convert.ToDouble(txtIva10.Text);
+                    iva10 = 0;
+                
+                if (totalCompra == 0)
+                    //totalCompra = Convert.ToDouble(txtTotal.Text); 
+                    totalCompra = 0;
+                    MessageBox.Show("No hay ninguna mercaderia incluida en la compra");
+
                 obs = txtObservacion.Text;
                 obs = obs.Trim();
 
-                
-                
                 try
                 {
                     Compra obj = new Compra();
@@ -145,7 +157,7 @@ namespace sistema_cbs
                     obj.moneda = cMoneda;
                     obj.sucursal = cSucursal;
                     obj.status = cStatus;
-                    
+
                     CompraDal guardar = new CompraDal();
                     guardar.gravar_cabecera(obj);
 
@@ -163,8 +175,22 @@ namespace sistema_cbs
             }
         }
 
-        
+        private void txtIdProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                MessageBox.Show("Preciono Enter");
+                txtObservacion.Focus();
+            }
+        }
 
-        
+        private void txtInclusion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                MessageBox.Show("Preciono Enter");
+                txtVencimiento.Focus();
+            }
+        }
     }
 }
