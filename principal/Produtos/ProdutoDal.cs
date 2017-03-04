@@ -177,6 +177,8 @@ namespace sistema_cbs
           }
       }
 
+      
+
       // METODO BUSCAR...
       public DataTable Buscar(string produto)
       {

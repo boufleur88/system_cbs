@@ -164,5 +164,34 @@ namespace sistema_cbs
         {
 
         }
+
+        private void mOVENTRADASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pUNTODEEQUILIBRIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPuntoDeEquilibrio fr = new frmPuntoDeEquilibrio();
+            fr.Show();
+        }
+
+        private void mOVIMIENTOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGiroTigoMov fr = new frmGiroTigoMov();
+            fr.Show();
+        }
+
+        private void cAJACHICAGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CajaChica fr = new CajaChica();
+            fr.Show();
+        }
+
+        private void menuPlanCuentas_Click(object sender, EventArgs e)
+        {
+            frm_PlanCta fr = new frm_PlanCta();
+            fr.Show();
+        }
     }
 }

@@ -22,12 +22,11 @@ namespace sistema_cbs
         public string descripcion = "";
         public double costo1 = 0, costo2 = 0, precio1 = 0, precio2 = 0;
 
-        // CREAR NUESTRO DELEGADO. 
-        public delegate void pasar(int idProduto, string descripcion, int cantidad, double costo1, double costo2, double precio1, double precio2); // tipo del metodo y parametros que llevara el metodol
+        // metodo delegate
+        public delegate void pasar(int cod, string des, double cos1, double cos2, double pre1, double pre2);
 
         // CREAR NUESTRO EVENTO.
-        // public event pasar pasado;
-
+        public event pasar pasado;
 
         private void frmRegistroCompras_Load(object sender, EventArgs e)
         {
@@ -150,13 +149,9 @@ namespace sistema_cbs
 
                 this.Close();
 
-                /* UTILIZANDO DELEGADOS.
-                frmTablaPersonasCompras fr = new frmTablaPersonasCompras();
-                fr.pasado += new frmTablaPersonasCompras.pasar(pasarPessoa);
-                fr.Show();
-
-                pasado(idProduto, descripcion, cantidad, costo1, costo2, precio1, precio2);
-                 */
+                // pasando os dados 
+                pasado(idProduto, descripcion, costo1, costo2, precio1, precio2);
+                this.Dispose();
 
             }
             catch (Exception erro)

@@ -90,8 +90,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caja\CajaChica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\CajaChica.Designer.cs">
+      <DependentUpon>CajaChica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\Compra.cs" />
     <Compile Include="Compras\CompraDal.cs" />
+    <Compile Include="Compras\frmPuntoDeEquilibrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmPuntoDeEquilibrio.Designer.cs">
+      <DependentUpon>frmPuntoDeEquilibrio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cotizacion\Cotizacion.cs" />
     <Compile Include="Cotizacion\frmcotizacion.cs">
       <SubType>Form</SubType>
@@ -122,6 +134,22 @@
     </Compile>
     <Compile Include="Compras\frmTablaPersonasCompras.Designer.cs">
       <DependentUpon>frmTablaPersonasCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\Cuenta.cs" />
+    <Compile Include="Caja\CuentaDal.cs" />
+    <Compile Include="Estoque\Movimentacao\Estoque.cs" />
+    <Compile Include="Estoque\Movimentacao\EstoqueDal.cs" />
+    <Compile Include="GiroTigo\frmGiroTigoMov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiroTigo\frmGiroTigoMov.Designer.cs">
+      <DependentUpon>frmGiroTigoMov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\PlanDeCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\PlanDeCuentas.Designer.cs">
+      <DependentUpon>PlanDeCuentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\frmRegistroServicios.cs">
       <SubType>Form</SubType>
@@ -205,10 +233,10 @@
     <Compile Include="ProdutosSubGrupo\ProdutoSubGrupoDal.cs" />
     <Compile Include="ProdutosSubGrupo\ProdutoSubGrupo.cs" />
     <Compile Include="clases\conexao_datos.cs" />
-    <Compile Include="Compras\Config\frm_backup.cs">
+    <Compile Include="Config\frm_backup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\Config\frm_backup.Designer.cs">
+    <Compile Include="Config\frm_backup.Designer.cs">
       <DependentUpon>frm_backup.cs</DependentUpon>
     </Compile>
     <Compile Include="Compras\frm_compra.cs">
@@ -305,16 +333,16 @@
       <DependentUpon>frm_tabla_subgrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="clases\modelo_datos.cs" />
-    <Compile Include="Compras\Config\frm_control_usuario.cs">
+    <Compile Include="Config\frm_control_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\Config\frm_control_usuario.Designer.cs">
+    <Compile Include="Config\frm_control_usuario.Designer.cs">
       <DependentUpon>frm_control_usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Compras\Config\frm_lista_usuarios.cs">
+    <Compile Include="Config\frm_lista_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\Config\frm_lista_usuarios.Designer.cs">
+    <Compile Include="Config\frm_lista_usuarios.Designer.cs">
       <DependentUpon>frm_lista_usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_principal.cs">
@@ -329,23 +357,29 @@
     <Compile Include="Personas\frm_registro_personas.Designer.cs">
       <DependentUpon>frm_registro_personas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Compras\Config\frm_registro_usuario.cs">
+    <Compile Include="Config\frm_registro_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\Config\frm_registro_usuario.Designer.cs">
+    <Compile Include="Config\frm_registro_usuario.Designer.cs">
       <DependentUpon>frm_registro_usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="clases\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clases\validar_datos.cs" />
-    <EmbeddedResource Include="Compras\Config\frm_control_usuario.resx">
+    <EmbeddedResource Include="Caja\CajaChica.resx">
+      <DependentUpon>CajaChica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\frm_control_usuario.resx">
       <DependentUpon>frm_control_usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compras\Config\frm_lista_usuarios.resx">
+    <EmbeddedResource Include="Config\frm_lista_usuarios.resx">
       <DependentUpon>frm_lista_usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compras\Config\frm_backup.resx">
+    <EmbeddedResource Include="Config\frm_backup.resx">
       <DependentUpon>frm_backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmPuntoDeEquilibrio.resx">
+      <DependentUpon>frmPuntoDeEquilibrio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frm_compra.resx">
       <DependentUpon>frm_compra.cs</DependentUpon>
@@ -364,6 +398,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmTablaPersonasCompras.resx">
       <DependentUpon>frmTablaPersonasCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiroTigo\frmGiroTigoMov.resx">
+      <DependentUpon>frmGiroTigoMov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\PlanDeCuentas.resx">
+      <DependentUpon>PlanDeCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\frmRegistroServicios.resx">
       <DependentUpon>frmRegistroServicios.cs</DependentUpon>
@@ -407,7 +447,7 @@
     <EmbeddedResource Include="Personas\frm_registro_personas.resx">
       <DependentUpon>frm_registro_personas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compras\Config\frm_registro_usuario.resx">
+    <EmbeddedResource Include="Config\frm_registro_usuario.resx">
       <DependentUpon>frm_registro_usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonasCiudad\frm_reg_ciudad.resx">

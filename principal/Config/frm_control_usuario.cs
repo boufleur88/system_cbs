@@ -19,7 +19,8 @@ namespace sistema_cbs
 
         private void frm_control_usuario_Load(object sender, EventArgs e)
         {
-            
+            txt_clave.Text = "1";
+            txt_usuario.Text = "1";
         }
 
         private void btn_alterar_Click(object sender, EventArgs e)

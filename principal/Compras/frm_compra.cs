@@ -17,7 +17,7 @@ namespace sistema_cbs
         }
 
         // variables cabecera compra.
-        public int ultimoCodigo = 0;
+        public int ultimoCodigo = 0, linha = 0;
         public int cid = 0, pid = 0, uid = 1;
         public int cMoneda = 1, cSucursal = 1, cStatus = 1;
         public string nFactura = "";
@@ -61,12 +61,40 @@ namespace sistema_cbs
             btnSalir.TabIndex = 8;
 
             txtTotal.Enabled = true;
+
+
+            dtLista.ColumnCount = 4;
+            dtLista.ColumnHeadersVisible = true;
+
+            // Set the column header style.
+            DataGridViewCellStyle columnHeaderStyle =
+                new DataGridViewCellStyle();
+            columnHeaderStyle.BackColor = Color.Aqua;
+            columnHeaderStyle.Font = new Font("Verdana", 10, FontStyle.Bold);
+            dtLista.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+
+            // Set the column header names.
+            dtLista.Columns[0].Name = "CODIGO";
+            dtLista.Columns[1].Name = "DESCRIPCION";
+            dtLista.Columns[2].Name = "CANTIDAD";
+            dtLista.Columns[3].Name = "COSTO";
+
+            // Populate the rows.
+            for (linha = 0; linha==24; linha++)
+            {
+                
+            }
+            
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
             frmTablaMercaderiasCompras fr = new frmTablaMercaderiasCompras();
+            //fr.pasado += new frmTablaMercaderiasCompras.pasar
             fr.Show();
+
+          
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -94,13 +122,15 @@ namespace sistema_cbs
         }
 
 
-        public void pasarProduto(int idProduto, string descripcion, int cantidad, double costo1, double costo2, double precio1, double precio2)
+        public void pasarProduto(int idProduto, string descripcion, double costo1, double costo2, double precio1, double precio2)
         {
             dtLista.Rows[1].Cells[0].Value = Convert.ToString(idProduto);
             dtLista.Rows[1].Cells[1].Value = Convert.ToString(descripcion);
             dtLista.Rows[1].Cells[2].Value = Convert.ToString(cantidad);
             dtLista.Rows[1].Cells[3].Value = Convert.ToString(costo1);
             dtLista.Rows[1].Cells[4].Value = Convert.ToString(costo2);
+            dtLista.Rows[1].Cells[5].Value = Convert.ToString(precio1);
+            dtLista.Rows[1].Cells[6].Value = Convert.ToString(precio2);
 
         }
 
@@ -191,6 +221,12 @@ namespace sistema_cbs
                 MessageBox.Show("Preciono Enter");
                 txtVencimiento.Focus();
             }
+        }
+
+        private void dtLista_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            string msg = String.Format("Cell at row {0}, column {1} value changed",e.RowIndex, e.ColumnIndex);
+            MessageBox.Show(msg, "Cell Value Changed");
         }
     }
 }

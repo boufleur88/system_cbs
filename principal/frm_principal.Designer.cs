@@ -57,12 +57,17 @@
             this.cOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONTADOCREDITOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTESToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cALCULOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pUNTODEEQUILIBRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONTADOCREDITOToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pRESUPUESTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTESToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gIROTIGOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mOVIMIENTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCaja = new System.Windows.Forms.ToolStripMenuItem();
             this.cAJAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cAJACHICAGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBanco = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCheques = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCtaCte = new System.Windows.Forms.ToolStripMenuItem();
@@ -168,6 +173,7 @@
             this.mOVENTRADASToolStripMenuItem.Name = "mOVENTRADASToolStripMenuItem";
             this.mOVENTRADASToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.mOVENTRADASToolStripMenuItem.Text = "MOV. ENTRADAS";
+            this.mOVENTRADASToolStripMenuItem.Click += new System.EventHandler(this.mOVENTRADASToolStripMenuItem_Click);
             // 
             // mOVSALIDASToolStripMenuItem
             // 
@@ -292,7 +298,8 @@
             // 
             this.cOMPRASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cONTADOCREDITOToolStripMenuItem,
-            this.rEPORTESToolStripMenuItem2});
+            this.rEPORTESToolStripMenuItem2,
+            this.cALCULOSToolStripMenuItem});
             this.cOMPRASToolStripMenuItem.Name = "cOMPRASToolStripMenuItem";
             this.cOMPRASToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.cOMPRASToolStripMenuItem.Text = "COMPRAS";
@@ -310,12 +317,28 @@
             this.rEPORTESToolStripMenuItem2.Size = new System.Drawing.Size(191, 22);
             this.rEPORTESToolStripMenuItem2.Text = "REPORTES";
             // 
+            // cALCULOSToolStripMenuItem
+            // 
+            this.cALCULOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pUNTODEEQUILIBRIOToolStripMenuItem});
+            this.cALCULOSToolStripMenuItem.Name = "cALCULOSToolStripMenuItem";
+            this.cALCULOSToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cALCULOSToolStripMenuItem.Text = "CALCULOS";
+            // 
+            // pUNTODEEQUILIBRIOToolStripMenuItem
+            // 
+            this.pUNTODEEQUILIBRIOToolStripMenuItem.Name = "pUNTODEEQUILIBRIOToolStripMenuItem";
+            this.pUNTODEEQUILIBRIOToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.pUNTODEEQUILIBRIOToolStripMenuItem.Text = "PUNTO DE EQUILIBRIO";
+            this.pUNTODEEQUILIBRIOToolStripMenuItem.Click += new System.EventHandler(this.pUNTODEEQUILIBRIOToolStripMenuItem_Click);
+            // 
             // vENTASToolStripMenuItem
             // 
             this.vENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cONTADOCREDITOToolStripMenuItem1,
             this.pRESUPUESTOToolStripMenuItem,
-            this.rEPORTESToolStripMenuItem3});
+            this.rEPORTESToolStripMenuItem3,
+            this.gIROTIGOToolStripMenuItem});
             this.vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
             this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.vENTASToolStripMenuItem.Text = "VENTAS";
@@ -340,6 +363,21 @@
             this.rEPORTESToolStripMenuItem3.Size = new System.Drawing.Size(191, 22);
             this.rEPORTESToolStripMenuItem3.Text = "REPORTES";
             // 
+            // gIROTIGOToolStripMenuItem
+            // 
+            this.gIROTIGOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mOVIMIENTOSToolStripMenuItem});
+            this.gIROTIGOToolStripMenuItem.Name = "gIROTIGOToolStripMenuItem";
+            this.gIROTIGOToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.gIROTIGOToolStripMenuItem.Text = "GIRO TIGO";
+            // 
+            // mOVIMIENTOSToolStripMenuItem
+            // 
+            this.mOVIMIENTOSToolStripMenuItem.Name = "mOVIMIENTOSToolStripMenuItem";
+            this.mOVIMIENTOSToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.mOVIMIENTOSToolStripMenuItem.Text = "MOVIMIENTOS";
+            this.mOVIMIENTOSToolStripMenuItem.Click += new System.EventHandler(this.mOVIMIENTOSToolStripMenuItem_Click);
+            // 
             // menuCaja
             // 
             this.menuCaja.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -354,9 +392,18 @@
             // 
             // cAJAToolStripMenuItem
             // 
+            this.cAJAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cAJACHICAGToolStripMenuItem});
             this.cAJAToolStripMenuItem.Name = "cAJAToolStripMenuItem";
             this.cAJAToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cAJAToolStripMenuItem.Text = "CAJA";
+            // 
+            // cAJACHICAGToolStripMenuItem
+            // 
+            this.cAJACHICAGToolStripMenuItem.Name = "cAJACHICAGToolStripMenuItem";
+            this.cAJACHICAGToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.cAJACHICAGToolStripMenuItem.Text = "CAJA CHICA G$";
+            this.cAJACHICAGToolStripMenuItem.Click += new System.EventHandler(this.cAJACHICAGToolStripMenuItem_Click);
             // 
             // menuBanco
             // 
@@ -412,6 +459,7 @@
             this.menuPlanCuentas.Name = "menuPlanCuentas";
             this.menuPlanCuentas.Size = new System.Drawing.Size(170, 22);
             this.menuPlanCuentas.Text = "PLAN DE CUENTA";
+            this.menuPlanCuentas.Click += new System.EventHandler(this.menuPlanCuentas_Click);
             // 
             // menuLibroCompra
             // 
@@ -579,6 +627,11 @@
         private System.Windows.Forms.ToolStripMenuItem gRUPOSToolStripMenuItem;
         private System.Windows.Forms.Timer tmrfecha;
         private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.ToolStripMenuItem cALCULOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pUNTODEEQUILIBRIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gIROTIGOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mOVIMIENTOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cAJACHICAGToolStripMenuItem;
     }
 }
 

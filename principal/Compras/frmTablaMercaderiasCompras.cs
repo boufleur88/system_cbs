@@ -16,6 +16,12 @@ namespace sistema_cbs
             InitializeComponent();
         }
 
+        // CREAR NUESTRO DELEGADO.
+        public delegate void pasar(int codigo, string nombre, string telefono, string ruc); // tipo del metodo y parametros que llevara el metodol
+
+        // CREAR NUESTRO EVENTO.
+        // public event pasar pasado;
+       
         private void btn_sair_Click(object sender, EventArgs e)
         {
             Close();
@@ -87,13 +93,13 @@ namespace sistema_cbs
                     obj.costo2 = costoadm;
                     obj.precio1 = preciomin;
                     obj.precio2 = preciomin;
-                    obj.Show();
+                    obj.Show();                   
 
                 }
             }
             catch (Exception erro)
             {
-                MessageBox.Show("ERROR AL GUARDAR PERSONA" + erro);
+                MessageBox.Show("ERROR AL CARGAR LOS ITEMS EN LA TABLA DE COMPRAS" + erro);
             }
         }
 

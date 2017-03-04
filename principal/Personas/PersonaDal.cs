@@ -96,7 +96,7 @@ namespace sistema_cbs
             NpgsqlConnection conexion = Servidor.conectar();
            
             // executa a instrucao 
-            NpgsqlCommand sql = new NpgsqlCommand("select id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais from persona order by id_per desc", conexion);
+            NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais FROM persona WHERE id_per < 10 ORDER BY id_per desc", conexion);
             NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
             dt_adapter_personas.SelectCommand = sql;
        
@@ -201,7 +201,7 @@ namespace sistema_cbs
               NpgsqlConnection conexion = Servidor.conectar();
 
               // executa a instrucao 
-              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais FROM persona WHERE per_situacion = 'A' ORDER BY id_per desc; ", conexion); //AND id_per < 50 ORDER BY
+              NpgsqlCommand sql = new NpgsqlCommand("SELECT id_per, per_nombre, per_fant, per_ruc, per_ci, per_tel1, per_tel2, per_email, per_dir, per_ciudad, per_nac, per_clt, per_prov, per_func, per_obs, per_situacion, per_pais FROM persona WHERE id_per < 10 AND per_situacion = 'A' ORDER BY id_per desc; ", conexion); //AND id_per < 50 ORDER BY
               NpgsqlDataAdapter dt_adapter_personas = new NpgsqlDataAdapter();
               dt_adapter_personas.SelectCommand = sql;
 
