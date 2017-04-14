@@ -20,6 +20,15 @@ namespace sistema_cbs
         {
             CuentaDal ls = new CuentaDal();
             dt_lista.DataSource = ls.listar();
+
+            formatarTabla();
         }
+
+        private void formatarTabla()
+        {
+            dt_lista.Columns["codcta"].HeaderText = "CODIGO";
+            dt_lista.Columns["c_descr"].HeaderText = "CUENTA CONTABLE";
+        }
+
     }
 }

@@ -67,7 +67,7 @@ namespace sistema_cbs
                 NpgsqlConnection conexion = Servidor.conectar();
 
                 // executa a instrucao 
-                NpgsqlCommand sql = new NpgsqlCommand("SELECT c_cod, c_descr, c_moneda, c_impu FROM plancta", conexion);
+                NpgsqlCommand sql = new NpgsqlCommand("SELECT codcta, c_descr FROM plancta ORDER BY codcta", conexion);
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
                 dt_adapter.SelectCommand = sql;
 

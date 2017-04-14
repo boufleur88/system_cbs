@@ -499,6 +499,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="principal_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\CuentaDal.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
