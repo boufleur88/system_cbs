@@ -17,35 +17,72 @@ namespace sistema_cbs
         }
 
         // variables cabecera compra.
-        public int ultimoCodigo = 0, linha = 0;
-        public int cid = 0, pid = 0, uid = 1;
+        public int ultimoCodigo = 0, linha = 0, codigoItem = 0;
+        public string nomeProveedor = "";
+      
+        public int idProveedor = 0, pid = 0, uid = 1;
         public int cMoneda = 1, cSucursal = 1, cStatus = 1;
         public string nFactura = "";
         public string nTimbrado = "";
         public DateTime inclusion = DateTime.Now;
         public DateTime vencimiento = DateTime.Now;
 
+        // itesm
+        public string descricaoItem = "";
+
         public string persona = "", fantasia = "", direccion = "", telefono = "", ruc = "", obs = "";
         public Double totalCompra = 0, cantidad = 0, costoadm = 0, costocont = 0, ventamay = 0, ventamin = 0;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int valor = Convert.ToInt32(dtLista.Rows.Count);
+
+            MessageBox.Show(valor.ToString());
+        }
+
         public Double iva10 = 0, iva05 = 0, iva00 = 0;
 
 
         private void frm_compra_Load(object sender, EventArgs e)
         {
+            txtIdCompra.Enabled = false;
+            txtProveedor.Enabled = false;
+            txtIdProveedor.Enabled = false;
+
             // Reset values for default
             OptContado.Select(); // option contado
+            // Carrega o codigo da compra se for alterar
+            if (ultimoCodigo > 0)
+            {
+                txtIdCompra.Text = Convert.ToString(ultimoCodigo);
+                txtIdCompra.Enabled = false;
+                txtIdProveedor.Text = Convert.ToString(idProveedor);
+                txtProveedor.Text = Convert.ToString(nomeProveedor);
+                txtObservacion.Text = Convert.ToString(obs);
+                txtRuc.Text = Convert.ToString(ruc);
+                txtTelefono.Text = Convert.ToString(telefono);
+                txtInclusion.Enabled = true;
+                txtTotal.Enabled = true;
 
-            // Carrega o codigo da compra
-            CompraDal codigo = new CompraDal();
-            ultimoCodigo = codigo.GeraCodigo();
-            txtIdCompra.Text = Convert.ToString(ultimoCodigo);
+                CompraDal item = new CompraDal();
+                dtLista.DataSource = item.listarItemsCompras(ultimoCodigo.ToString());
+                FormataTablaItems();
 
-            txtProveedor.Enabled = false;
-            txtIdProveedor.Enabled = true;
-            txtTelefono.Enabled = false;
-            txtRuc.Enabled = false;
-            txtInclusion.Enabled = false;
-            txtIdCompra.Enabled = false;
+            }
+            else
+            {
+                CompraDal codigo = new CompraDal();
+                ultimoCodigo = codigo.GeraCodigo();
+                txtIdCompra.Text = Convert.ToString(ultimoCodigo);
+                txtIdProveedor.Enabled = true;
+                txtTelefono.Enabled = false;
+                txtRuc.Enabled = false;
+                txtInclusion.Enabled = false;
+                txtIdCompra.Enabled = false;
+                txtTotal.Enabled = true;
+                CreaTablaItems();
+
+            }
 
             txtInclusion.Text = inclusion.ToShortDateString();
             txtVencimiento.Text = vencimiento.ToShortDateString();
@@ -59,12 +96,7 @@ namespace sistema_cbs
             btnFactura.TabIndex = 6;
             btnImprimir.TabIndex = 7;
             btnSalir.TabIndex = 8;
-
-            txtTotal.Enabled = true;
-
-
-            dtLista.ColumnCount = 4;
-            dtLista.ColumnHeadersVisible = true;
+      
 
             // Set the column header style.
             DataGridViewCellStyle columnHeaderStyle =
@@ -73,28 +105,45 @@ namespace sistema_cbs
             columnHeaderStyle.Font = new Font("Verdana", 10, FontStyle.Bold);
             dtLista.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
-            // Set the column header names.
+
+
+        }
+
+        public void CreaTablaItems()
+        {
+            dtLista.ColumnCount = 4;
+            dtLista.ColumnHeadersVisible = true;
             dtLista.Columns[0].Name = "CODIGO";
             dtLista.Columns[1].Name = "DESCRIPCION";
             dtLista.Columns[2].Name = "CANTIDAD";
             dtLista.Columns[3].Name = "COSTO";
+            //dtLista.Columns["it_costo1"].DefaultCellStyle.Format = "N0";
+            //dtLista.Columns["it_costo1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            // Populate the rows.
-            for (linha = 0; linha==24; linha++)
-            {
-                
-            }
-            
+        }
+
+        public void FormataTablaItems()
+        {
+            // Set the column header names.
+            dtLista.Columns["id_produto"].HeaderText = "CODIGO";
+            dtLista.Columns["it_desc"].HeaderText = "DESCRIPCION";
+            dtLista.Columns["it_cant"].HeaderText = "CANTIDAD";
+            dtLista.Columns["it_costo1"].HeaderText = "COSTO";
+            dtLista.Columns["it_costo1"].DefaultCellStyle.Format = "N0";
+            dtLista.Columns["it_costo1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            // UTILIZANDO DELEGADOS.
             frmTablaMercaderiasCompras fr = new frmTablaMercaderiasCompras();
-            //fr.pasado += new frmTablaMercaderiasCompras.pasar
+            fr.EventoPassar += new frmTablaMercaderiasCompras.pasarItems(pasarProduto);
             fr.Show();
-
-          
             
+            // Exemplo para adicionar uma linha 
+            //string[] row0 = { "Codigo", "Descricao", "Cantidad", "costo" };
+            //dtLista.Rows.Add(row0);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -122,27 +171,23 @@ namespace sistema_cbs
         }
 
 
-        public void pasarProduto(int idProduto, string descripcion, double costo1, double costo2, double precio1, double precio2)
+        public void pasarProduto(int idProduto, string descripcion, int cantidad, double costo1)
         {
-            dtLista.Rows[1].Cells[0].Value = Convert.ToString(idProduto);
-            dtLista.Rows[1].Cells[1].Value = Convert.ToString(descripcion);
-            dtLista.Rows[1].Cells[2].Value = Convert.ToString(cantidad);
-            dtLista.Rows[1].Cells[3].Value = Convert.ToString(costo1);
-            dtLista.Rows[1].Cells[4].Value = Convert.ToString(costo2);
-            dtLista.Rows[1].Cells[5].Value = Convert.ToString(precio1);
-            dtLista.Rows[1].Cells[6].Value = Convert.ToString(precio2);
-
+            string[] row0 = { Convert.ToString(idProduto), Convert.ToString(descripcion), Convert.ToString(cantidad), Convert.ToString(costo1)};
+            dtLista.Rows.Add(row0);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             if (txtIdProveedor.Text == "")
             {
                 MessageBox.Show("Adicionar al menos un Proveedor para la Compra");
             }
             else
             {
+                btnAdicionarProveedor.Focus();
+            }
+
                 /* ###################################################################### */
                 pid = Convert.ToInt32(txtIdProveedor.Text);
                 string dataInclusion = string.Format("{0:d}", inclusion);
@@ -165,7 +210,7 @@ namespace sistema_cbs
                 if (totalCompra == 0)
                     //totalCompra = Convert.ToDouble(txtTotal.Text); 
                     totalCompra = 0;
-                    MessageBox.Show("No hay ninguna mercaderia incluida en la compra");
+                    //MessageBox.Show("No hay ninguna mercaderia incluida en la compra");
 
                 obs = txtObservacion.Text;
                 obs = obs.Trim();
@@ -191,8 +236,30 @@ namespace sistema_cbs
                     CompraDal guardar = new CompraDal();
                     guardar.gravar_cabecera(obj);
 
-                    MessageBox.Show("COMPRA GUARDADA CORRECTAMENTE");
+                    MessageBox.Show("Cabecalho guardado corretamente");
 
+                 for (int linha=0; linha < dtLista.Rows.Count - 1; linha++)
+                    {
+
+                        codigoItem = Convert.ToInt32(dtLista.Rows[linha].Cells[0].Value);
+                        descricaoItem = Convert.ToString(dtLista.Rows[linha].Cells[1].Value);
+                        cantidad = Convert.ToInt32(dtLista.Rows[linha].Cells[2].Value);
+                        costocont = Convert.ToDouble(dtLista.Rows[linha].Cells[3].Value);
+
+                        Compra Item = new Compra();
+                        Item.cid = Convert.ToInt32(txtIdCompra.Text);
+                        Item.it_codigo = Convert.ToInt32(codigoItem);
+                        Item.it_description = descricaoItem;
+                        Item.it_cantidad = cantidad;
+                        Item.it_costocont = costocont;
+
+                        CompraDal guardarItem = new CompraDal();
+                        guardarItem.gravar_itens(Item);
+
+                        MessageBox.Show("Item guardado corretamente");
+
+                    }
+                    
                     this.Close();
                     frm_tabla_compra fr = new frm_tabla_compra();
                     fr.Show();
@@ -202,7 +269,6 @@ namespace sistema_cbs
                 {
                     MessageBox.Show("ERROR AL GUARDAR PRODUCTO" + erro);
                 }
-            }
         }
 
         private void txtIdProveedor_KeyPress(object sender, KeyPressEventArgs e)

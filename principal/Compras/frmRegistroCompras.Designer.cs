@@ -40,13 +40,13 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPrecio1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrecio2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCosto2 = new System.Windows.Forms.TextBox();
             this.lblMaximo = new System.Windows.Forms.Label();
             this.lblMinimo = new System.Windows.Forms.Label();
+            this.txtPrecio1 = new System.Windows.Forms.TextBox();
+            this.txtPreMin = new System.Windows.Forms.TextBox();
+            this.txtPreMax = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label5
@@ -62,7 +62,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(333, 332);
+            this.btnSalir.Location = new System.Drawing.Point(324, 246);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 30);
             this.btnSalir.TabIndex = 149;
@@ -114,7 +114,7 @@
             this.txtCosto1.Name = "txtCosto1";
             this.txtCosto1.Size = new System.Drawing.Size(172, 22);
             this.txtCosto1.TabIndex = 141;
-            this.txtCosto1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoCont_KeyPress);
+            this.txtCosto1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCosto1_KeyPress);
             this.txtCosto1.Leave += new System.EventHandler(this.txtCostoCont_Leave);
             // 
             // label3
@@ -162,7 +162,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(238, 332);
+            this.btnGuardar.Location = new System.Drawing.Point(238, 246);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(80, 30);
             this.btnGuardar.TabIndex = 142;
@@ -174,31 +174,18 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 205);
+            this.label6.Location = new System.Drawing.Point(13, 179);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(133, 20);
             this.label6.TabIndex = 152;
             this.label6.Text = "PRECIO MINIMO";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtPrecio1
-            // 
-            this.txtPrecio1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio1.Location = new System.Drawing.Point(161, 205);
-            this.txtPrecio1.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPrecio1.MaxLength = 15;
-            this.txtPrecio1.Name = "txtPrecio1";
-            this.txtPrecio1.Size = new System.Drawing.Size(172, 22);
-            this.txtPrecio1.TabIndex = 151;
-            this.txtPrecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMin_KeyPress);
-            this.txtPrecio1.Leave += new System.EventHandler(this.txtPrecioMin_Leave);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 238);
+            this.label7.Location = new System.Drawing.Point(13, 212);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 20);
             this.label7.TabIndex = 154;
@@ -209,7 +196,7 @@
             // 
             this.txtPrecio2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPrecio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio2.Location = new System.Drawing.Point(161, 238);
+            this.txtPrecio2.Location = new System.Drawing.Point(161, 212);
             this.txtPrecio2.Margin = new System.Windows.Forms.Padding(0);
             this.txtPrecio2.MaxLength = 15;
             this.txtPrecio2.Name = "txtPrecio2";
@@ -218,35 +205,11 @@
             this.txtPrecio2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCont_KeyPress);
             this.txtPrecio2.Leave += new System.EventHandler(this.txtPrecioCont_Leave);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(10, 173);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 20);
-            this.label8.TabIndex = 156;
-            this.label8.Text = "COSTO ADM";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtCosto2
-            // 
-            this.txtCosto2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCosto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCosto2.Location = new System.Drawing.Point(163, 173);
-            this.txtCosto2.Margin = new System.Windows.Forms.Padding(0);
-            this.txtCosto2.MaxLength = 15;
-            this.txtCosto2.Name = "txtCosto2";
-            this.txtCosto2.Size = new System.Drawing.Size(172, 22);
-            this.txtCosto2.TabIndex = 155;
-            this.txtCosto2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoAdm_KeyPress);
-            this.txtCosto2.Leave += new System.EventHandler(this.txtCostoAdm_Leave);
-            // 
             // lblMaximo
             // 
             this.lblMaximo.AutoSize = true;
             this.lblMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaximo.Location = new System.Drawing.Point(350, 240);
+            this.lblMaximo.Location = new System.Drawing.Point(396, 212);
             this.lblMaximo.Name = "lblMaximo";
             this.lblMaximo.Size = new System.Drawing.Size(23, 20);
             this.lblMaximo.TabIndex = 157;
@@ -257,22 +220,59 @@
             // 
             this.lblMinimo.AutoSize = true;
             this.lblMinimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinimo.Location = new System.Drawing.Point(350, 205);
+            this.lblMinimo.Location = new System.Drawing.Point(396, 179);
             this.lblMinimo.Name = "lblMinimo";
             this.lblMinimo.Size = new System.Drawing.Size(23, 20);
             this.lblMinimo.TabIndex = 158;
             this.lblMinimo.Text = "%";
             this.lblMinimo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // txtPrecio1
+            // 
+            this.txtPrecio1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio1.Location = new System.Drawing.Point(161, 179);
+            this.txtPrecio1.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPrecio1.MaxLength = 15;
+            this.txtPrecio1.Name = "txtPrecio1";
+            this.txtPrecio1.Size = new System.Drawing.Size(172, 22);
+            this.txtPrecio1.TabIndex = 151;
+            this.txtPrecio1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMin_KeyPress);
+            this.txtPrecio1.Leave += new System.EventHandler(this.txtPrecioMin_Leave);
+            // 
+            // txtPreMin
+            // 
+            this.txtPreMin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPreMin.Enabled = false;
+            this.txtPreMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreMin.Location = new System.Drawing.Point(344, 179);
+            this.txtPreMin.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPreMin.MaxLength = 15;
+            this.txtPreMin.Name = "txtPreMin";
+            this.txtPreMin.Size = new System.Drawing.Size(52, 22);
+            this.txtPreMin.TabIndex = 159;
+            // 
+            // txtPreMax
+            // 
+            this.txtPreMax.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPreMax.Enabled = false;
+            this.txtPreMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreMax.Location = new System.Drawing.Point(344, 212);
+            this.txtPreMax.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPreMax.MaxLength = 15;
+            this.txtPreMax.Name = "txtPreMax";
+            this.txtPreMax.Size = new System.Drawing.Size(49, 22);
+            this.txtPreMax.TabIndex = 160;
+            // 
             // frmRegistroCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 374);
+            this.ClientSize = new System.Drawing.Size(685, 296);
+            this.Controls.Add(this.txtPreMax);
+            this.Controls.Add(this.txtPreMin);
             this.Controls.Add(this.lblMinimo);
             this.Controls.Add(this.lblMaximo);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtCosto2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPrecio2);
             this.Controls.Add(this.label6);
@@ -312,12 +312,12 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPrecio1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPrecio2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCosto2;
         private System.Windows.Forms.Label lblMaximo;
         private System.Windows.Forms.Label lblMinimo;
+        private System.Windows.Forms.TextBox txtPrecio1;
+        private System.Windows.Forms.TextBox txtPreMin;
+        private System.Windows.Forms.TextBox txtPreMax;
     }
 }

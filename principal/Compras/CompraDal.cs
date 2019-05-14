@@ -65,6 +65,32 @@ namespace sistema_cbs
          }
       }
 
+        // funcion para gravar la compra.
+        public void gravar_itens(Compra itCompra)
+        {
+            try
+            {
+                // conectar ao banco de datos.
+                NpgsqlConnection conexion = Servidor.conectar();
+
+                // comando insert sql para o banco                       
+                NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO itemcompras (id_compra, id_produto, it_desc, it_cant, it_costo1) " +
+                                                     " VALUES (@idCompra, @idProduto, @descricao, @cantidad, @costo);", conexion);
+                sql.Parameters.AddWithValue("@idCompra", itCompra.cid);
+                sql.Parameters.AddWithValue("@idProduto", itCompra.it_codigo);
+                sql.Parameters.AddWithValue("@descricao", itCompra.it_description);
+                sql.Parameters.AddWithValue("@cantidad", itCompra.it_cantidad);
+                sql.Parameters.AddWithValue("@costo", itCompra.it_costocont);
+                
+                sql.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
         // METODO LISTA COMPRAS.
         public DataTable listar_Compras()
         {
@@ -73,7 +99,10 @@ namespace sistema_cbs
                 NpgsqlConnection conexion = Servidor.conectar();
 
                 // executa a instrucao 
-                NpgsqlCommand sql = new NpgsqlCommand("SELECT c.id_compra, c.c_inclusion, c.c_vencimiento, p.per_nombre, c.c_total, c.c_obs FROM compras AS c, persona AS p WHERE c.id_cliente = p.id_per ORDER BY c.id_compra LIMIT 20;", conexion);
+                NpgsqlCommand sql = new NpgsqlCommand("SELECT c.id_compra, c.c_inclusion, c.c_vencimiento, c.id_cliente, p.per_nombre, c.c_total, c.c_obs, p.per_tel1, p.per_ruc " +
+                                                       "FROM compras AS c, persona AS p " +
+                                                      "WHERE c.id_cliente = p.id_per " +
+                                                      "ORDER BY c.id_compra desc LIMIT 20;", conexion);
 
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
                 dt_adapter.SelectCommand = sql;
@@ -89,6 +118,35 @@ namespace sistema_cbs
                 throw error;
             }
         }
+
+        // METODO LISTAR ITEMS COMPRAS.
+        public DataTable listarItemsCompras(string ultimoCodigo)
+        {
+            try
+            {
+                NpgsqlConnection conexion = Servidor.conectar();
+
+                // executa a instrucao 
+                string consulta = "";
+                consulta = "SELECT id_produto, it_desc, it_cant, it_costo1 FROM itemcompras WHERE id_compra = " + ultimoCodigo + "";
+
+                NpgsqlCommand sql = new NpgsqlCommand(consulta, conexion);
+
+                NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter();
+                dt_adapter.SelectCommand = sql;
+
+                DataTable dtItem = new DataTable();
+                dt_adapter.Fill(dtItem);
+
+                conexion.Close();
+                return dtItem;
+            }
+            catch (Exception error)
+            {
+                throw error;
+            }
+        }
+
 
         // PRODUTO. ALTERAR DATOS.
         public void ultimo_id(Compra pCompra)

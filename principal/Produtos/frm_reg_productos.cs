@@ -232,7 +232,12 @@ namespace sistema_cbs
            fr.Show();
         }
 
-       // EVENTOS KEY PRESS
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        // EVENTOS KEY PRESS
         private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
            if (e.KeyChar == Convert.ToChar(Keys.Enter))

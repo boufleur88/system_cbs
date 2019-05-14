@@ -30,9 +30,51 @@ namespace sistema_cbs
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            frm_compra fr = new frm_compra();
-            fr.Show();   
+            SeleccionarCompras();
+            this.Close(); 
         }
+
+        private void SeleccionarCompras()
+        {
+            int CodCom = 0, CodPro = 0;
+            string NomPro = "", ObsCom = "", TelPro = "", RucPro = "";
+            DateTime DatInc, DatVen;
+            // string grupo, subgrupo, marca, descripcion, iva, moneda, observacion, medida, stminimo;
+            // Double costo_adm, costo_cont, ventamay, ventamin;
+
+            try
+            {
+                if (dtLista.SelectedRows.Count == 1)
+                {
+                    CodCom = Convert.ToInt32(dtLista.CurrentRow.Cells[0].Value);
+                    CodPro = Convert.ToInt32(dtLista.CurrentRow.Cells[3].Value);
+                    DatInc = Convert.ToDateTime(dtLista.CurrentRow.Cells[1].Value);
+                    DatVen = Convert.ToDateTime(dtLista.CurrentRow.Cells[2].Value);
+                    ObsCom = Convert.ToString(dtLista.CurrentRow.Cells[6].Value);
+                    NomPro = Convert.ToString(dtLista.CurrentRow.Cells[4].Value);
+                    TelPro = Convert.ToString(dtLista.CurrentRow.Cells[7].Value);
+                    RucPro = Convert.ToString(dtLista.CurrentRow.Cells[8].Value);
+
+                    frm_compra obj = new frm_compra();
+                    obj.ultimoCodigo = CodCom;
+                    obj.idProveedor = CodPro;
+                    obj.nomeProveedor = NomPro;
+                    obj.inclusion = DatInc;
+                    obj.vencimiento = DatVen;
+                    obj.obs = ObsCom;
+                    obj.ruc = RucPro;
+                    obj.telefono = TelPro;
+                    obj.Show();
+                    
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("ERROR AL TRAER ITEMS DE LA COMPRA" + erro);
+            }
+        }
+
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -49,14 +91,17 @@ namespace sistema_cbs
 
         private void formata_tabla()
         {
-            dtLista.Columns["id_compra"].HeaderText = "CODIGO";
-            dtLista.Columns["c_inclusion"].HeaderText = "FECHA";
-            dtLista.Columns["c_vencimiento"].HeaderText = "VENCIMIENTO";
-            dtLista.Columns["per_nombre"].HeaderText = "PROVEEDOR";
-            dtLista.Columns["c_total"].HeaderText = "TOTAL";
+            dtLista.Columns["id_compra"].HeaderText = "Numero";
+            dtLista.Columns["c_inclusion"].HeaderText = "Fecha";
+            dtLista.Columns["c_vencimiento"].HeaderText = "Vencimiento";
+            dtLista.Columns["id_cliente"].HeaderText = "Codigo";
+            dtLista.Columns["per_nombre"].HeaderText = "Proveedor";
+            dtLista.Columns["c_total"].HeaderText = "Total";
             dtLista.Columns["c_total"].DefaultCellStyle.Format = "N0";
             dtLista.Columns["c_total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
-            dtLista.Columns["c_obs"].HeaderText = "OBSERVACION";
+            dtLista.Columns["c_obs"].HeaderText = "Observacion";
+            dtLista.Columns["per_tel1"].HeaderText = "Telefono";
+            dtLista.Columns["per_ruc"].HeaderText = "Ruc";
         }
        
     }

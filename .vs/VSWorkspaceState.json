@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\principal",
+    "\\principal\\Caja",
+    "\\principal\\clases",
+    "\\principal\\Compras",
+    "\\principal\\Estoque",
+    "\\principal\\Estoque\\Movimentacao",
+    "\\principal\\Produtos",
+    "\\principal\\ProdutosGrupo"
+  ],
+  "SelectedNode": "\\principal\\Estoque",
+  "PreviewInSolutionExplorer": false
+}

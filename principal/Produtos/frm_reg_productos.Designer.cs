@@ -57,6 +57,8 @@
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtAtivo = new System.Windows.Forms.TextBox();
             this.btn_guardar = new System.Windows.Forms.Button();
@@ -88,8 +90,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtPrecio1 = new System.Windows.Forms.TextBox();
             this.txtCosto = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -458,6 +458,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PRECIOS DEL PRODUCTO";
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(470, 304);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(97, 20);
+            this.label28.TabIndex = 134;
+            this.label28.Text = "COMPRAR";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox3
+            // 
+            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(585, 303);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(52, 22);
+            this.textBox3.TabIndex = 133;
+            this.textBox3.Text = "S";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -499,6 +522,7 @@
             this.btn_salir.TabIndex = 130;
             this.btn_salir.Text = "&SALIR";
             this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // label24
             // 
@@ -818,29 +842,6 @@
             this.txtCosto.TabIndex = 70;
             this.txtCosto.Text = "0";
             this.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(470, 304);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(97, 20);
-            this.label28.TabIndex = 134;
-            this.label28.Text = "COMPRAR";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox3
-            // 
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(585, 303);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(52, 22);
-            this.textBox3.TabIndex = 133;
-            this.textBox3.Text = "S";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frm_reg_productos
             // 

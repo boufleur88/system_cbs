@@ -31,6 +31,12 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtLista = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.venta1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.venta2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.txtIdCompra = new System.Windows.Forms.TextBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
@@ -62,12 +68,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.OptContado = new System.Windows.Forms.RadioButton();
             this.OptCredito = new System.Windows.Forms.RadioButton();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.venta1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.venta2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,23 +94,53 @@
             // 
             // dtLista
             // 
-            this.dtLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtLista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.description,
-            this.cant,
-            this.costo,
-            this.venta1,
-            this.venta2});
-            this.dtLista.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dtLista.Location = new System.Drawing.Point(14, 159);
+            this.dtLista.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtLista.Location = new System.Drawing.Point(12, 159);
             this.dtLista.Name = "dtLista";
-            this.dtLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtLista.Size = new System.Drawing.Size(998, 519);
-            this.dtLista.TabIndex = 86;
-            this.dtLista.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLista_CellValueChanged);
+            this.dtLista.Size = new System.Drawing.Size(996, 489);
+            this.dtLista.TabIndex = 129;
+            // 
+            // codigo
+            // 
+            this.codigo.Frozen = true;
+            this.codigo.HeaderText = "CODIGO";
+            this.codigo.Name = "codigo";
+            this.codigo.Width = 74;
+            // 
+            // description
+            // 
+            this.description.Frozen = true;
+            this.description.HeaderText = "DESCRIPCION";
+            this.description.Name = "description";
+            this.description.Width = 105;
+            // 
+            // cant
+            // 
+            this.cant.Frozen = true;
+            this.cant.HeaderText = "CANTIDAD";
+            this.cant.Name = "cant";
+            this.cant.Width = 87;
+            // 
+            // costo
+            // 
+            this.costo.Frozen = true;
+            this.costo.HeaderText = "COSTO";
+            this.costo.Name = "costo";
+            this.costo.Width = 69;
+            // 
+            // venta1
+            // 
+            this.venta1.Frozen = true;
+            this.venta1.HeaderText = "MAYORISTA";
+            this.venta1.Name = "venta1";
+            this.venta1.Width = 95;
+            // 
+            // venta2
+            // 
+            this.venta2.Frozen = true;
+            this.venta2.HeaderText = "MAYORISTA";
+            this.venta2.Name = "venta2";
+            this.venta2.Width = 95;
             // 
             // label8
             // 
@@ -125,7 +156,6 @@
             // txtIdCompra
             // 
             this.txtIdCompra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtIdCompra.Enabled = false;
             this.txtIdCompra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCompra.Location = new System.Drawing.Point(122, 4);
             this.txtIdCompra.Margin = new System.Windows.Forms.Padding(0);
@@ -142,7 +172,7 @@
             this.txtObservacion.Margin = new System.Windows.Forms.Padding(0);
             this.txtObservacion.MaxLength = 80;
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(507, 26);
+            this.txtObservacion.Size = new System.Drawing.Size(841, 26);
             this.txtObservacion.TabIndex = 105;
             // 
             // label7
@@ -447,53 +477,22 @@
             this.OptCredito.Text = "Credito";
             this.OptCredito.UseVisualStyleBackColor = true;
             // 
-            // codigo
+            // button1
             // 
-            this.codigo.Frozen = true;
-            this.codigo.HeaderText = "CODIGO";
-            this.codigo.Name = "codigo";
-            this.codigo.Width = 74;
-            // 
-            // description
-            // 
-            this.description.Frozen = true;
-            this.description.HeaderText = "DESCRIPCION";
-            this.description.Name = "description";
-            this.description.Width = 105;
-            // 
-            // cant
-            // 
-            this.cant.Frozen = true;
-            this.cant.HeaderText = "CANTIDAD";
-            this.cant.Name = "cant";
-            this.cant.Width = 87;
-            // 
-            // costo
-            // 
-            this.costo.Frozen = true;
-            this.costo.HeaderText = "COSTO";
-            this.costo.Name = "costo";
-            this.costo.Width = 69;
-            // 
-            // venta1
-            // 
-            this.venta1.Frozen = true;
-            this.venta1.HeaderText = "MAYORISTA";
-            this.venta1.Name = "venta1";
-            this.venta1.Width = 95;
-            // 
-            // venta2
-            // 
-            this.venta2.Frozen = true;
-            this.venta2.HeaderText = "MAYORISTA";
-            this.venta2.Name = "venta2";
-            this.venta2.Width = 95;
+            this.button1.Location = new System.Drawing.Point(478, 128);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 24);
+            this.button1.TabIndex = 130;
+            this.button1.Text = "teste";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.OptCredito);
             this.Controls.Add(this.OptContado);
             this.Controls.Add(this.label11);
@@ -581,5 +580,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn venta1;
         private System.Windows.Forms.DataGridViewTextBoxColumn venta2;
+        private System.Windows.Forms.Button button1;
     }
 }
