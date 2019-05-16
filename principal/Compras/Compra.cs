@@ -47,11 +47,10 @@ namespace sistema_cbs
         public string cl_ruc {get; set; }
      
         // tabla item
-        public int it_codigo { get; set; }
+        public string it_codigo { get; set; }
         public string it_description {get; set; }
         public Double it_cantidad { get; set; }
-        public Double it_costocont {get; set; }
-        public Double it_costoadm { get; set; }
+        public Double it_costo {get; set; }
         public Double it_ventamin {get; set; }
         public Double it_ventamay { get; set; }
         public Double totalCompra { get; set; }

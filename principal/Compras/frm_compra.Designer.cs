@@ -94,11 +94,12 @@
             // 
             // dtLista
             // 
-            this.dtLista.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtLista.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dtLista.Location = new System.Drawing.Point(12, 159);
             this.dtLista.Name = "dtLista";
             this.dtLista.Size = new System.Drawing.Size(996, 489);
             this.dtLista.TabIndex = 129;
+            this.dtLista.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dtLista_CellStateChanged);
             // 
             // codigo
             // 

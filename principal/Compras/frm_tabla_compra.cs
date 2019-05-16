@@ -92,9 +92,11 @@ namespace sistema_cbs
         private void formata_tabla()
         {
             dtLista.Columns["id_compra"].HeaderText = "Numero";
+            dtLista.Columns["id_compra"].DefaultCellStyle.Format = "00000";
             dtLista.Columns["c_inclusion"].HeaderText = "Fecha";
             dtLista.Columns["c_vencimiento"].HeaderText = "Vencimiento";
             dtLista.Columns["id_cliente"].HeaderText = "Codigo";
+            dtLista.Columns["id_cliente"].DefaultCellStyle.Format = "00000";
             dtLista.Columns["per_nombre"].HeaderText = "Proveedor";
             dtLista.Columns["c_total"].HeaderText = "Total";
             dtLista.Columns["c_total"].DefaultCellStyle.Format = "N0";
@@ -103,6 +105,11 @@ namespace sistema_cbs
             dtLista.Columns["per_tel1"].HeaderText = "Telefono";
             dtLista.Columns["per_ruc"].HeaderText = "Ruc";
         }
-       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_testeGrid fr = new frm_testeGrid();
+            fr.Show();
+        }
     }
 }

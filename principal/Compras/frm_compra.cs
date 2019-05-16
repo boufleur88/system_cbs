@@ -17,7 +17,8 @@ namespace sistema_cbs
         }
 
         // variables cabecera compra.
-        public int ultimoCodigo = 0, linha = 0, codigoItem = 0;
+        public int ultimoCodigo = 0, linha = 0;
+        public string codigoItem = "";
         public string nomeProveedor = "";
       
         public int idProveedor = 0, pid = 0, uid = 1;
@@ -31,14 +32,45 @@ namespace sistema_cbs
         public string descricaoItem = "";
 
         public string persona = "", fantasia = "", direccion = "", telefono = "", ruc = "", obs = "";
-        public Double totalCompra = 0, cantidad = 0, costoadm = 0, costocont = 0, ventamay = 0, ventamin = 0;
-
+        public Double totalCompra, cantidad = 0, costoadm = 0, costocont = 0, ventamay = 0, ventamin = 0;
+                
         private void button1_Click(object sender, EventArgs e)
         {
-            int valor = Convert.ToInt32(dtLista.Rows.Count);
-
-            MessageBox.Show(valor.ToString());
+            somaTotalCompra();
+            
         }
+
+        private void dtLista_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            somaTotalItems();
+            somaTotalCompra();
+        }
+
+        void somaTotalCompra()
+        {
+            int tamanho = dtLista.Rows.Count - 1;
+            totalCompra = 0;
+            for (int c = 0; c < tamanho; c++)
+            {
+                totalCompra += Convert.ToDouble(dtLista.Rows[c].Cells["TOTAL"].Value);
+                //MessageBox.Show(totalCompra.ToString());
+                //MessageBox.Show("Tamanho " + tamanho.ToString());
+            }          
+            //MessageBox.Show("Total Compras " + totalCompra.ToString());
+            txtTotal.Text = totalCompra.ToString();
+        }
+
+        void somaTotalItems()
+        {
+
+            for (int i = 0; i < dtLista.Rows.Count - 1; i++)
+            {
+                double q = Convert.ToDouble(dtLista.Rows[i].Cells["CANTIDAD"].Value);
+                double c = Convert.ToDouble(dtLista.Rows[i].Cells["COSTO"].Value);
+                dtLista.Rows[i].Cells["TOTAL"].Value = q * c;
+            }
+        }
+
 
         public Double iva10 = 0, iva05 = 0, iva00 = 0;
 
@@ -64,10 +96,10 @@ namespace sistema_cbs
                 txtInclusion.Enabled = true;
                 txtTotal.Enabled = true;
 
+
                 CompraDal item = new CompraDal();
                 dtLista.DataSource = item.listarItemsCompras(ultimoCodigo.ToString());
                 FormataTablaItems();
-
             }
             else
             {
@@ -111,27 +143,35 @@ namespace sistema_cbs
 
         public void CreaTablaItems()
         {
-            dtLista.ColumnCount = 4;
+            dtLista.ColumnCount = 5;
             dtLista.ColumnHeadersVisible = true;
             dtLista.Columns[0].Name = "CODIGO";
+            dtLista.Columns[0].ReadOnly = true;
             dtLista.Columns[1].Name = "DESCRIPCION";
+            dtLista.Columns[1].ReadOnly = true;
             dtLista.Columns[2].Name = "CANTIDAD";
             dtLista.Columns[3].Name = "COSTO";
-            //dtLista.Columns["it_costo1"].DefaultCellStyle.Format = "N0";
-            //dtLista.Columns["it_costo1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dtLista.Columns[4].ReadOnly = true;
+            dtLista.Columns[4].Name = "TOTAL";
 
         }
 
         public void FormataTablaItems()
         {
             // Set the column header names.
-            dtLista.Columns["id_produto"].HeaderText = "CODIGO";
+            dtLista.Columns["codpro"].HeaderText = "CODIGO";
+            dtLista.Columns["codpro"].ReadOnly = true;
             dtLista.Columns["it_desc"].HeaderText = "DESCRIPCION";
+            dtLista.Columns["it_desc"].ReadOnly = true;
             dtLista.Columns["it_cant"].HeaderText = "CANTIDAD";
+            dtLista.Columns["it_cant"].DefaultCellStyle.Format = "N2";
             dtLista.Columns["it_costo1"].HeaderText = "COSTO";
             dtLista.Columns["it_costo1"].DefaultCellStyle.Format = "N0";
             dtLista.Columns["it_costo1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
+            dtLista.Columns["TOTAL"].HeaderText = "TOTAL";
+            dtLista.Columns["TOTAL"].DefaultCellStyle.Format = "N0";
+            dtLista.Columns["TOTAL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dtLista.Columns["TOTAL"].ReadOnly = true;
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -177,6 +217,7 @@ namespace sistema_cbs
             dtLista.Rows.Add(row0);
         }
 
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtIdProveedor.Text == "")
@@ -215,6 +256,7 @@ namespace sistema_cbs
                 obs = txtObservacion.Text;
                 obs = obs.Trim();
 
+            
                 try
                 {
                     Compra obj = new Compra();
@@ -241,17 +283,17 @@ namespace sistema_cbs
                  for (int linha=0; linha < dtLista.Rows.Count - 1; linha++)
                     {
 
-                        codigoItem = Convert.ToInt32(dtLista.Rows[linha].Cells[0].Value);
+                        codigoItem = Convert.ToString(dtLista.Rows[linha].Cells[0].Value);
                         descricaoItem = Convert.ToString(dtLista.Rows[linha].Cells[1].Value);
                         cantidad = Convert.ToInt32(dtLista.Rows[linha].Cells[2].Value);
                         costocont = Convert.ToDouble(dtLista.Rows[linha].Cells[3].Value);
 
                         Compra Item = new Compra();
                         Item.cid = Convert.ToInt32(txtIdCompra.Text);
-                        Item.it_codigo = Convert.ToInt32(codigoItem);
+                        Item.it_codigo = codigoItem;
                         Item.it_description = descricaoItem;
                         Item.it_cantidad = cantidad;
-                        Item.it_costocont = costocont;
+                        Item.it_costo = costocont;
 
                         CompraDal guardarItem = new CompraDal();
                         guardarItem.gravar_itens(Item);

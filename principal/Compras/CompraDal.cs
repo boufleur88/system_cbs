@@ -74,13 +74,13 @@ namespace sistema_cbs
                 NpgsqlConnection conexion = Servidor.conectar();
 
                 // comando insert sql para o banco                       
-                NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO itemcompras (id_compra, id_produto, it_desc, it_cant, it_costo1) " +
+                NpgsqlCommand sql = new NpgsqlCommand("INSERT INTO itemcompras (NumCom, CodPro, it_desc, it_cant, it_costo1) " +
                                                      " VALUES (@idCompra, @idProduto, @descricao, @cantidad, @costo);", conexion);
                 sql.Parameters.AddWithValue("@idCompra", itCompra.cid);
                 sql.Parameters.AddWithValue("@idProduto", itCompra.it_codigo);
                 sql.Parameters.AddWithValue("@descricao", itCompra.it_description);
                 sql.Parameters.AddWithValue("@cantidad", itCompra.it_cantidad);
-                sql.Parameters.AddWithValue("@costo", itCompra.it_costocont);
+                sql.Parameters.AddWithValue("@costo", itCompra.it_costo);
                 
                 sql.ExecuteNonQuery();
                 conexion.Close();
@@ -128,7 +128,7 @@ namespace sistema_cbs
 
                 // executa a instrucao 
                 string consulta = "";
-                consulta = "SELECT id_produto, it_desc, it_cant, it_costo1 FROM itemcompras WHERE id_compra = " + ultimoCodigo + "";
+                consulta = "SELECT CodPro, it_desc, it_cant, it_costo1, (it_cant * it_costo1) as TOTAL FROM itemcompras WHERE NumCom = '" + ultimoCodigo + "'";
 
                 NpgsqlCommand sql = new NpgsqlCommand(consulta, conexion);
 

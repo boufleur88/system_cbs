@@ -245,3 +245,4 @@ C:\system_cbs\principal\bin\Debug\policy.2.0.Npgsql.config
 C:\system_cbs\principal\obj\x86\Debug\principal.exe.manifest
 C:\system_cbs\principal\obj\x86\Debug\principal.application
 C:\system_cbs\principal\obj\x86\Debug\principal.csproj.CopyComplete
+C:\system_cbs\principal\obj\x86\Debug\sistema_cbs.frm_testeGrid.resources
